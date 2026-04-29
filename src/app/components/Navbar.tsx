@@ -105,20 +105,7 @@ export const Navbar = () => {
           </div>
         ))}
       </div>
-
-      {/* RIGHT: Action Button & Login */}
-      <div className="flex items-center gap-8 h-full">
-        <Link
-          href="/login"
-          className="text-[10px] font-black uppercase tracking-widest text-slate-500 hover:text-[#1B79EE] transition-colors"
-        >
-          Portal Login
-        </Link>
-        {/* Button height adjusted to fit slim nav */}
-        <Button className="bg-[#1B79EE] hover:bg-[#004aad] text-white rounded-none p-4 rounded-xl uppercase text-[10px] font-black tracking-[0.2em] transition-all border-none shadow-lg shadow-[#1B79EE]/10">
-          Get Started
-        </Button>
-      </div>
+ 
     </nav>
   );
 };
