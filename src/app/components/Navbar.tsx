@@ -29,7 +29,7 @@ const menu = [
       { name: 'Building Product Category', href: '/products/round-risers' },
       { name: 'Certifications', href: '/products/catch-basin-frames' },
       { name: 'HPDs', href: '/products/d-shape-risers' },
-      { name: 'EPDs', href: '/products/valve-box-risers' }, zzk 
+      { name: 'EPDs', href: '/products/valve-box-risers' },  
       { name: 'DATA Sheets', href: '/products/valve-box-risers' },
     ],
   }, {
