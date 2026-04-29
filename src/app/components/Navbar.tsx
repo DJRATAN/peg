@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Button } from "@/components/ui/button"; 
+import { Button } from "@/components/ui/button";
 import { ChevronDown } from 'lucide-react'
 
 const menu = [
@@ -29,7 +29,7 @@ const menu = [
       { name: 'Building Product Category', href: '/products/round-risers' },
       { name: 'Certifications', href: '/products/catch-basin-frames' },
       { name: 'HPDs', href: '/products/d-shape-risers' },
-      { name: 'EPDs', href: '/products/valve-box-risers' },  
+      { name: 'EPDs', href: '/products/valve-box-risers' },
       { name: 'DATA Sheets', href: '/products/valve-box-risers' },
     ],
   }, {
@@ -72,7 +72,7 @@ export const Navbar = () => {
           alt="H2O Logo"
           width={200}
           height={65}
-          className="object-contain h-[100px] py-2 w-auto"
+          className="object-contain h-25 py-2 w-auto"
           priority
         />
       </div>
@@ -89,7 +89,7 @@ export const Navbar = () => {
 
             {/* Dropdown Menu (Black & Red Theme) */}
             <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0 z-[60]">
-              <ul className="w-72 bg-white border-t-[3px] border-[#004aad] shadow-2xl ring-1 ring-[#1B79EE]/5 overflow-hidden">
+              <ul className="w-48 bg-white border-t-[3px] border-[#004aad] shadow-2xl ring-1 ring-[#1B79EE]/5 overflow-hidden">
                 {link.dropdown.map((item) => (
                   <li key={item.name}>
                     <Link
@@ -105,7 +105,7 @@ export const Navbar = () => {
           </div>
         ))}
       </div>
- 
+      <div><Button>Get Started</Button></div>
     </nav>
   );
 };
