@@ -41,9 +41,7 @@ export default function RootLayout({
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", figtree.variable)}
     >
       <Navbar/>
-      
       <body className="min-h-full flex flex-col">{children}</body>
-      
       <Footer/>
     </html>
   );
