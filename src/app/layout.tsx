@@ -3,8 +3,8 @@ import { Geist, Geist_Mono, Figtree } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "./components/Navbar";
 import { cn } from "@/lib/utils";
-import Footer from "./components/Footer";
-
+import { Footer } from "./components/Footer";
+ 
 const figtree = Figtree({subsets:['latin'],variable:'--font-sans'});
 
 const geistSans = Geist({
@@ -43,6 +43,7 @@ export default function RootLayout({
       <Navbar/>
       
       <body className="min-h-full flex flex-col">{children}</body>
+      
       <Footer/>
     </html>
   );
