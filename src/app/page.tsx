@@ -5,6 +5,7 @@ import { ResourceDirectory } from "./components/ResourceDirectory";
 import { ContentSection } from "./components/ContentSection";
 import { BusinessPodcastSection } from "./components/BusinessPodcastSection";
 import InternationalCreditManager from "./components/InternationalCreditManager";
+import PegHero from "./components/PegHero";
 
 export default function Home() {
   return (
@@ -16,7 +17,8 @@ export default function Home() {
       <RegistrationBanner txtSrc={'News and Updated Content'} btSrc="" />
       <ContentSection />
       {/* <BusinessPodcastSection/> */}
-      
+    
+      <PegHero/>
     </main>
   );
 }
