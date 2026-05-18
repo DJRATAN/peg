@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "./components/Navbar";
 import { cn } from "@/lib/utils";
 import { Footer } from "./components/Footer";
+import ExtraordinaryFooter from "./components/ExtraordinaryFooter";
  
 const figtree = Figtree({subsets:['latin'],variable:'--font-sans'});
 
@@ -43,6 +44,7 @@ export default function RootLayout({
       <Navbar/>
       <body className="min-h-full flex flex-col">{children}</body>
       <Footer/>
+      <ExtraordinaryFooter/>
     </html>
   );
 }
