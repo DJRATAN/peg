@@ -7,6 +7,7 @@ import { BusinessPodcastSection } from "./components/BusinessPodcastSection";
 import InternationalCreditManager from "./components/InternationalCreditManager";
 import PegHero from "./components/PegHero";
 import LoginGateway from "./components/(auth)/page";
+import AgencySlider from "./components/AgencySlider";
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
       <RegistrationBanner txtSrc={'News and Updated Content'} btSrc="" />
       <ContentSection />
       {/* <BusinessPodcastSection/> */}
-      {/* <AgencySlider /> */}
+      <AgencySlider />
       <PegHero />
     </main>
   );

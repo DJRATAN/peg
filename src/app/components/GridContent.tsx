@@ -7,7 +7,7 @@ import Link from 'next/link';
 const GridContent = () => {
     return (
         < section className="w-full" >
-            <div className="container px-4 mx-auto">
+            <div className="w-full px-6 mx-auto">
                 <h2 className='text-5xl text-center m-8 font-bold text-[#004aad]'>Get complete PEG solutions for everyone on the team. </h2>
                 <div className="flex justify-between items-end mb-10">
                     <div>
