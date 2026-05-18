@@ -52,7 +52,7 @@ const menu = [
 export const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full z-50 bg-white border-b-2 border-slate-100 h-22.5 flex items-center">
-      <div className="container mx-auto px-4 flex items-center justify-between">
+      <div className="w-full mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center">
           <Link href="/">
             <Image

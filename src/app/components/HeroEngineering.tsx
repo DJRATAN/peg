@@ -17,8 +17,7 @@ const HeroEngineering = () => {
               High-Performance <span className="text-[#1B79EE]">Precast</span> Data
             </h1>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              The industry's most comprehensive library for precast concrete specifications, 
-              CAD details, and BIM objects. Precision engineered for model analysis.
+              from conception to execution the futurstic highway of precast concrete engineering and Technologies......
             </p>
           </div>
 
