@@ -1,0 +1,103 @@
+
+export const footerData = [
+    {
+        title: "Corporate",
+        links: [
+            "Customer Service",
+            "Accounts",
+            "Awards",
+            "Achievements",
+            "Current Events",
+            "Executive Committee",
+            "Our Foundation",
+            "Human Resources",
+            "Media Management",
+            "Mission & Vision",
+            "Organizational Struture",
+            "Scholarships",
+            "Testmonials",
+            "Our Milestones",
+            "Industry News",
+        ],
+    },
+    {
+        title: "Policies",
+        links: [
+            "Warranties",
+            "Return Policy",
+            "Product Liability",
+            "Promotions",
+            "Confidentiality",
+            "Sustainability",
+            "Government Policy",
+            "Corporate Social Responsibility",
+            "Credit Application",
+            "Terms & Conditions",
+            "Security & Maintenance",
+            "Non Disclosure Agreement",
+            "Insurances",
+            "Complaints",
+            "Privacy Policy",
+            "Patents"
+        ],
+    },
+    {
+        title: "Sales",
+        links: [
+            "Pricing",
+            "Exports",
+            "Videos",
+            "Trade Shows",
+            "Sales Team",
+            "Library",
+            "Locations",
+            "On going projects",
+            "Ineractive",
+            "Valueable sales tools",
+            "Follow your",
+            "Request a Delivery",
+            "Request for quote",
+            "Digital Marketing",
+            "Logistics",
+            "Webinars"
+        ]
+    },
+    {
+        title: "Products",
+        links: [
+            "Molded Gratings",
+            "Pultruded Grating",
+            "Dynaform Structural Shapes",
+            "Dynarail/DynaRound Guardrail & Handrail Products",
+            "Dynarail Ladder Products",
+            "Stair Solutions",
+            "Fiberglass Plate",
+            "Work Platforms",
+            "Accessories / Complementary Products",
+            "Custom Pultrusions",
+            "Metering Pump Stands",
+            "Rooftop Safety Products",
+            "Unique Product Solutions"
+        ],
+    },
+    {
+        title: "Engineering",
+        links: [
+            "Submittals",
+            "Data Sheets",
+            "Engineers & Architects",
+            "Customization",
+            "Design Team",
+            "Certificates",
+            "Specifications",
+            "Standards",
+            "Get Digital With USF",
+            "IT Department",
+            "Case Studies",
+            "Design & Innovations",
+            "Product Approvals",
+            "Quality Control",
+            "Show Drawings"
+        ]
+    },
+];
