@@ -31,13 +31,10 @@ export default function ExtraordinaryFooter() {
 
             {/* 32-INCH FULL WIDTH CONTAINER */}
             <div className="w-full px-6">
-
+                <div className="text-5xl text-center m-8 font-bold text-[#004aad]"><h1>Our Group Dedicated to Precast </h1></div>
                 <div className="w-full bg-white border-t border-slate-100 py-10 ">
-                    {/* MAIN CONTAINER: 
-         - flex-row: places everything in one line.
-         - items-center: ensures perfect vertical centering.
-         - justify-between: pushes logo left, social right, marquee middle.
-      */}
+
+   
                     <div className="w-full mx-auto flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-4">
 
                         {/* 1. LEFT: PEG BRANDING */}
@@ -103,8 +100,7 @@ export default function ExtraordinaryFooter() {
                         </div>
 
                     </div>
-                </div>
-                {/* MAIN SITEMAP: 5-COLUMN GRID */}
+                </div> 
                 <div className="grid grid-cols-2 md:grid-cols-6 gap-1 border-b border-slate-100 pb-20">
                     {footerData.map((section, idx) => (
                         <div key={idx} className="flex flex-col gap-6">

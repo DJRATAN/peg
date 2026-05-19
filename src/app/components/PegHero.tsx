@@ -60,33 +60,57 @@ export default function PegHero() {
           </span>
         </motion.div>
 
-        {/* The Brutalist Typography Block */}
-        <div className="flex flex-col items-center leading-[0.8] mb-8 uppercase">
-          {/* Row 1: PEG Dark Blue (Solid) */}
-          <motion.h1 
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[14vw] md:text-[11rem] font-black text-[#004aad] tracking-tighter"
-          >
-            PRECAST
-          </motion.h1>
-          
-          {/* Row 2: PEG Light Blue (Typing Outline) */}
-          <div className="text-[14vw] md:text-[11rem] font-black tracking-tighter">
-            <TypingOutline text="ENGINEER" delay={0.6} />
-          </div>
-          
-          {/* Row 3: Solid Dark Blue Accent */}
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 1.4, duration: 0.6 }}
-            className="text-[#004aad] text-[7vw] md:text-[6.5rem] font-black tracking-tight mt-4"
-          >
-            FOR ANY STRUCTURE.
-          </motion.div>
-        </div>
+<div className="flex flex-col items-center leading-[0.85] mb-8 uppercase text-center">
+      
+      {/* Row 1: PEG Dark Blue (Solid) */}
+      <motion.h1 
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="text-[12vw] md:text-[10rem] font-black text-[#004aad] tracking-tighter"
+      >
+        PRECAST
+      </motion.h1>
+      
+      {/* Row 2: PEG Light Blue (Typing Outline) 
+          Using your TypingOutline component for the core service
+      */}
+      <div className="text-[10vw] md:text-[8.5rem] font-black tracking-tighter">
+        <TypingOutline text="ENGINEERS" delay={0.6} />
+      </div>
+
+      {/* Row 3: The "By the Hour" Accent 
+          We use a slightly smaller, stretched font style for that premium B2B look
+      */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
+        className="text-[#1B79EE] text-[4vw] md:text-[3.5rem] font-black tracking-[0.2em] mt-2 italic"
+      >
+        BY THE HOUR.
+      </motion.div>
+      
+      {/* Row 4: Solid Dark Blue Conclusion */}
+      <motion.div
+        initial={{ scale: 0.95, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 1.8, duration: 0.6 }}
+        className="text-[#004aad] text-[6vw] md:text-[5.5rem] font-black tracking-tight mt-6"
+      >
+        FOR ANY SITUATION.
+      </motion.div>
+
+      {/* Engineering Sub-text for 32" Screens */}
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.4 }}
+        transition={{ delay: 2.2 }}
+        className="mt-8 font-mono text-[10px] tracking-[0.5em] text-[#004aad]"
+      >
+        PEG_EST_1998 // INFRASTRUCTURE_PRECISION
+      </motion.p>
+    </div>
 
         {/* Professional Subtext */}
         <motion.p 
