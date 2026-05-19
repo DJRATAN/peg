@@ -8,6 +8,7 @@ import InternationalCreditManager from "./components/InternationalCreditManager"
 import PegHero from "./components/PegHero";
 import LoginGateway from "./components/(auth)/page";
 import AgencySlider from "./components/AgencySlider";
+import PegLocations from "./components/PegLocations";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       {/* <BusinessPodcastSection/> */}
       <AgencySlider />
       <PegHero />
+      <PegLocations />
     </main>
   );
 }

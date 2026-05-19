@@ -121,7 +121,7 @@ export default function PegPortalDashboard() {
                   {s.icon}
                 </div>
               </div>
-              <span className="text-[10px] font-mono text-slate-300">0{i + 1}</span>
+              <span className="text-xs font-mono text-slate-300">0{i + 1}</span>
             </div>
 
             <div>
@@ -145,12 +145,12 @@ export default function PegPortalDashboard() {
       </div>
 
       {/* 3. SYSTEM FOOTER INFO (For Ben's 32" Screen) */}
-      <div className="w-full max-w-[1800px] mt-20 flex justify-between border-t border-slate-200 pt-8 opacity-40">
-        <div className="text-[9px] font-mono text-slate-700 space-y-1">
+      <div className="w-full ] mt-20 flex justify-between border-t border-slate-200 pt-8 opacity-70">
+        <div className="text-xs font-mono text-slate-700 space-y-1">
           <p>LOAD_STRENGTH: 4500_PSI</p>
           <p>ENCRYPTION: SH-512_RSA</p>
         </div>
-        <div className="text-[9px] font-mono text-[#1B79EE] text-right font-bold uppercase tracking-[0.2em]">
+        <div className="text-xs font-mono text-[#1B79EE] text-right font-bold uppercase tracking-[0.2em]">
           Precast Engineering Group // USA Division
         </div>
       </div>

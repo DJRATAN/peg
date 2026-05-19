@@ -99,5 +99,23 @@ export const footerData = [
             "Quality Control",
             "Show Drawings"
         ]
+    }, {
+        title: "Support & Services",
+        links: [
+            "Technical Support", 
+            "Customer Support", 
+            "Engineering Consultancy", 
+            "After Sales Services", 
+            "Installation Support", 
+            "Custom Support", 
+            "Live Solution", 
+            "Chemical Testing", 
+            "PHysical Testing", 
+            "Manual Testing", 
+            "Testing & Inspection", 
+            "Material Analysis", 
+            "Quality Control Process", 
+            "Apporval & Certification"
+        ]
     },
 ];

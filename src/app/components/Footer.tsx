@@ -45,7 +45,7 @@ export const Footer = () => {
         <div className="absolute top-0 left-1/2 w-full h-full bg-gradient-to-br from-white/20 to-transparent skew-x-[-20deg] transform origin-top"></div>
       </div>
 
-      <div className="container mx-auto px-6 py-16 relative z-10">
+      <div className="w-full px-6 py-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
           {/* Left Side: Branding & Mission */}
