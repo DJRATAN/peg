@@ -1,74 +1,232 @@
-import React from 'react'
-import { Search, FileText, Box, PenTool, ClipboardCheck, LayoutGrid, HardHat, Factory } from "lucide-react";
+"use client";
+
+import React from 'react';
+import {
+    Cpu,
+    Binary,
+    Workflow,
+    ShieldAlert,
+    Maximize,
+    Zap,
+    ArrowRight,
+    PenTool
+} from "lucide-react";
+import {
+    Box,
+    Settings,
+    CheckCircle2,
+    MousePointer2,
+    Activity,
+    ArrowUpRight
+} from "lucide-react";
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+const technicalData = [
+    {
+        category: "Engineering",
+        icon: <PenTool className="w-6 h-6" />,
+        items: [
+            { label: "Hourly Engineering", sub: "Professional PE services billed by the hour for agility." },
+            { label: "Structural Submittals", sub: "Calculations & stamped drawings for agency approval." },
+            { label: "BIM/CAD Strategy", sub: "Seamless digital integration into master site models." }
+        ],
+        color: "bg-white",
+        footer: "ENG_SOLUTIONS"
+    },
+    {
+        category: "Technologies",
+        icon: <Cpu className="w-6 h-6" />,
+        items: [
+            { label: "Precast Technologies", sub: "Vertical integration & structural precision." },
+            { label: "Ready & Custom Softwares", sub: "Proprietary ERP & design automation." },
+            { label: "Rapid Approvals", sub: "Accelerated PE stamping & submittal cycles." }
+        ],
+        color: "bg-[#004aad]", // Inverted Dark Blue
+        footer: "SYSTEM_READY"
+    },
+    {
+        category: "Manufacturing",
+        icon: <Settings className="w-6 h-6" />,
+        items: [
+            { label: "Mold & Forms Designs", sub: "Parametric modeling for complex geometries." },
+            { label: "Mold & Forms Manufacturing", sub: "Precision CNC fabrication & assembly." }
+        ],
+        color: "bg-white",
+        footer: "FAB_ACTIVE"
+    },
+    {
+        category: "IT & Automation",
+        icon: <Activity className="w-6 h-6" />,
+        items: [
+            { label: "Robotics Implementation", sub: "Automated casting & reinforcement placement." },
+            { label: "Neural Process Mapping", sub: "AI-driven supply chain optimization." }
+        ],
+        color: "bg-[#F8FAFC]",
+        footer: "AUTO_SYNC"
+    },
 
-
+];
 const GridContent = () => {
     return (
-        < section className="w-full" >
-            <div className="w-full px-6 mx-auto">
-                <h2 className='text-5xl text-center m-8 font-bold text-[#004aad]'>Get complete PEG solutions for everyone on the team. </h2>
-                <div className="flex justify-between items-end mb-10">
-                    <div>
-                        <h2 className="text-3xl font-bold text-[#004aad]">Technical Resources</h2>
-                        <p className="text-slate-500">Select a category to view drawings and data</p>
+        <section className="w-full py-24 bg-white overflow-hidden">
+            <div className="w-full px-6 mx-auto  ">
+
+                {/* HIGH-IMPACT HEADER SECTION */}
+                <div className="mb-20 space-y-4">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        className='text-6xl md:text-8xl font-black text-[#004aad] tracking-tighter leading-none'
+                    >
+                        PEG SOLUTIONS <br />
+                        <span style={{ WebkitTextStroke: "1px #1B79EE", color: "transparent" }}>FOR THE WHOLE TEAM.</span>
+                    </motion.h2>
+
+                    <div className="flex flex-col md:flex-row justify-between items-end gap-8 pt-10 border-t border-slate-100">
+                        <div className="max-w-2xl">
+                            <h3 className="text-3xl font-black text-[#004aad] uppercase tracking-tight mb-4">
+                                What is Precast Engineering?
+                            </h3>
+                            <p className="text-slate-500 font-medium text-lg leading-relaxed">
+                                It is the vertical integration of structural precision and manufacturing speed.
+                                We provide the calculations, BIM data, and hourly expertise to turn complex
+                                infrastructure into rapid-assembly reality.
+                            </p>
+                        </div>
+                        <Button className="bg-[#004aad] hover:bg-[#1B79EE] text-white px-10 py-8 text-xs font-black uppercase tracking-widest rounded-none transition-all shadow-[8px_8px_0px_#1B79EE20]">
+                            Access Technical Vault
+                        </Button>
                     </div>
-                    <Button variant="outline" className="border-[#1B79EE] text-[#1B79EE] font-bold">View All Resources</Button>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <QuickLinkCard
-                        icon={<PenTool className="w-8 h-8" />}
-                        title="CAD Details"
-                        description="DWG, DXF & PDF library for structural precast connections."
-                        href="/content-type/cad"
-                        count="1,200+ Files"
-                    />
-                    <QuickLinkCard
-                        icon={<Box className="w-8 h-8" />}
-                        title="BIM Objects"
-                        description="Revit-ready families with embedded structural metadata."
-                        href="/content-type/bim"
-                        count="450+ Objects"
-                    />
-                    <QuickLinkCard
-                        icon={<FileText className="w-8 h-8" />}
-                        title="CSI Specs"
-                        description="3-Part specifications formatted for Section 03 40 00."
-                        href="/content-type/spec"
-                        count="85 Specs"
-                    />
-                    <QuickLinkCard
-                        icon={<ClipboardCheck className="w-8 h-8" />}
-                        title="SpecWizard"
-                        description="Configure custom precast specs in minutes."
-                        href="/content-type/sw"
-                        count="Interactive"
-                    />
+
+                {/* HEADER: Brutalist Style */}
+                <div className="mb-16 border-l-8 border-[#1B79EE] pl-8">
+                    <h2 className="text-[#004aad] text-[10px] font-mono tracking-[0.5em] uppercase mb-2">Core_Capabilities</h2>
+                    <p className="text-5xl md:text-7xl font-black text-[#004aad] tracking-tighter">
+                        TECHNICAL <span style={{ WebkitTextStroke: "1px #1B79EE", color: "transparent" }}>SPECS.</span>
+                    </p>
                 </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {technicalData.map((spec, idx) => (
+                        <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ delay: idx * 0.1 }}
+                            className={`relative border border-slate-200 p-10 flex flex-col h-full transition-all duration-500 hover:shadow-[30px_30px_0px_-10px_rgba(27,121,238,0.05)] ${spec.color === 'bg-[#004aad]' ? 'bg-[#004aad] text-white' : 'bg-white'}`}
+                        >
+                            {/* Module Header */}
+                            <div className="flex justify-between items-start mb-12">
+                                <div className={`p-4 ${spec.color === 'bg-[#004aad]' ? 'bg-white/10 text-white' : 'bg-[#F1F5F9] text-[#1B79EE]'}`}>
+                                    {spec.icon}
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <div className={`w-2 h-2 rounded-full ${spec.color === 'bg-[#004aad]' ? 'bg-emerald-400' : 'bg-[#1B79EE]'} animate-pulse`} />
+                                    <span className={`font-mono text-[9px] uppercase tracking-widest ${spec.color === 'bg-[#004aad]' ? 'text-white/40' : 'text-slate-300'}`}>
+                                        {spec.footer}
+                                    </span>
+                                </div>
+                            </div>
+
+                            <h3 className={`text-3xl font-black uppercase tracking-tighter mb-10 ${spec.color === 'bg-[#004aad]' ? 'text-white' : 'text-[#004aad]'}`}>
+                                {spec.category}
+                            </h3>
+
+                            {/* Technical Bullet Points */}
+                            <ul className="space-y-8 flex-1">
+                                {spec.items.map((item, i) => (
+                                    <li key={i} className="group cursor-default">
+                                        <div className="flex items-start gap-4">
+                                            <div className={`mt-1.5 shrink-0 transition-transform group-hover:rotate-45 ${spec.color === 'bg-[#004aad]' ? 'text-[#1B79EE]' : 'text-[#1B79EE]'}`}>
+                                                <ArrowUpRight className="w-4 h-4" />
+                                            </div>
+                                            <div>
+                                                <p className={`text-sm font-black uppercase tracking-wider mb-1 ${spec.color === 'bg-[#004aad]' ? 'text-white' : 'text-[#004aad]'}`}>
+                                                    {item.label}
+                                                </p>
+                                                <p className={`text-[11px] font-medium leading-relaxed ${spec.color === 'bg-[#004aad]' ? 'text-white/60' : 'text-slate-500'}`}>
+                                                    {item.sub}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            {/* Decorative Background ID */}
+                            <div className={`absolute bottom-4 right-6 font-mono text-[60px] font-black opacity-[0.03] select-none ${spec.color === 'bg-[#004aad]' ? 'text-white' : 'text-[#004aad]'}`}>
+                                0{idx + 1}
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+                {/* INNOVATION FOOTER */}
+                <div className="mt-24 relative">
+                    <div className="absolute inset-0 flex items-center" aria-hidden="true">
+                        <div className="w-full border-t border-slate-100"></div>
+                    </div>
+                    <div className="relative flex justify-center">
+                        <span className="bg-white px-6">
+                            <Zap className="w-8 h-8 text-[#1B79EE] animate-pulse" />
+                        </span>
+                    </div>
+                    <h2 className='text-4xl md:text-6xl text-center mt-10 font-black text-[#004aad] tracking-tighter uppercase'>
+                        Innovations, More Innovations <br />
+                        <span className="text-[#1B79EE]">& Non-Stop Innovations.</span>
+                    </h2>
+                </div>
+
             </div>
+ 
         </section >
     )
 }
-function QuickLinkCard({ icon, title, description, href, count }: { icon: React.ReactNode, title: string, description: string, href: string, count: string }) {
+
+function QuickLinkCard({ icon, title, description, href, count, tag }: {
+    icon: React.ReactNode,
+    title: string,
+    description: string,
+    href: string,
+    count: string,
+    tag: string
+}) {
     return (
         <Link href={href} className="group">
-            <div className="bg-white border border-slate-200 p-8 rounded-none transition-all duration-300 group-hover:border-[#1B79EE] group-hover:shadow-xl flex flex-col h-full relative">
-                <div className="mb-6 text-[#1B79EE] group-hover:scale-110 transition-transform duration-300">
-                    {icon}
+            <div className="bg-white border border-slate-200 p-10 transition-all duration-500 group-hover:border-[#1B79EE] group-hover:shadow-[30px_30px_0px_-10px_rgba(27,121,238,0.04)] flex flex-col h-full relative overflow-hidden">
+
+                {/* Top Label */}
+                <div className="flex justify-between items-center mb-10">
+                    <div className="text-[#1B79EE] scale-125 group-hover:rotate-12 transition-transform duration-500">
+                        {icon}
+                    </div>
+                    <span className="font-mono text-[9px] font-bold text-slate-300 tracking-[0.3em] uppercase">
+                        {tag}
+                    </span>
                 </div>
+
                 <div className="flex flex-col flex-1">
-                    <h3 className="text-xl font-bold text-[#004aad] mb-2">{title}</h3>
-                    <p className="text-sm text-slate-500 leading-relaxed mb-4">{description}</p>
+                    <h3 className="text-2xl font-black text-[#004aad] mb-4 tracking-tight group-hover:text-[#1B79EE] transition-colors">
+                        {title}
+                    </h3>
+                    <p className="text-sm font-medium text-slate-500 leading-relaxed mb-8">
+                        {description}
+                    </p>
                 </div>
-                <div className="mt-auto pt-4 border-t border-slate-100 flex justify-between items-center">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">{count}</span>
-                    <span className="text-[#1B79EE] font-bold text-sm opacity-0 group-hover:opacity-100 transition-opacity">BROWSE →</span>
+
+                <div className="mt-auto pt-6 border-t border-slate-50 flex justify-between items-center">
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
+                        {count}
+                    </span>
+                    <ArrowRight className="w-5 h-5 text-[#1B79EE] -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300" />
                 </div>
-                {/* Accent Bar */}
-                <div className="absolute top-0 left-0 w-full h-1 bg-[#1B79EE] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+                {/* Corner Decoration */}
+                <div className="absolute top-0 right-0 w-8 h-8 border-r border-t border-transparent group-hover:border-[#1B79EE] transition-all" />
             </div>
         </Link>
     );
 }
-export default GridContent
+
+export default GridContent;
