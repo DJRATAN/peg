@@ -9,41 +9,101 @@ import Link from "next/link";
 import Image from "next/image";
 import { footerData } from "@/lib/data";
 
- 
-
+const logos = [
+    { src: "/assets/footer_logo/peg.jpeg", alt: "Partner 01" },
+    { src: "/assets/footer_logo/precasteng.jpeg", alt: "Partner 02" },
+    { src: "/assets/footer_logo/pxchange.jpeg", alt: "Partner 03" },
+    { src: "/assets/footer_logo/totaltech.jpeg", alt: "Partner 04" },
+    { src: "/assets/footer_logo/trench-unlimited.jpeg", alt: "Partner 05" },
+];
+const socialLogos = [
+    { Icon: FaFacebook },
+    { Icon: BsTwitter },
+    { Icon: FaYoutube },
+    { Icon: FaInstagram },
+    { Icon: FaLinkedinIn },
+];
 export default function ExtraordinaryFooter() {
+    const marqueeLogos = [...logos, ...logos, ...logos];
     return (
+
         <footer className="relative w-full bg-white border-t-2 border-slate-100 pt-24 pb-12 overflow-hidden select-none">
 
             {/* 32-INCH FULL WIDTH CONTAINER */}
             <div className="w-full px-6">
 
-                {/* TOP SECTION: BIG BRANDING */}
-                <div className="flex flex-col md:flex-row justify-between items-start mb-20 gap-10">
-                    <div className="max-w-md">
-                        <Image src={'/PEG.png'} alt="" width={200} height={200} />
-                        {/* <h2 className="text-[#004aad] text-5xl font-black tracking-tighter mb-4">
-                            PEG <span style={{ WebkitTextStroke: "1px #1B79EE", color: "transparent" }}>GLOBAL</span>
-                        </h2>
-                        <p className="text-slate-400 font-mono text-[10px] uppercase tracking-widest leading-relaxed">
-                            Leading the infrastructure standard through precision precast engineering and vertical coordinate systems.
-                        </p> */}
-                    </div>
+                <div className="w-full bg-white border-t border-slate-100 py-10 ">
+                    {/* MAIN CONTAINER: 
+         - flex-row: places everything in one line.
+         - items-center: ensures perfect vertical centering.
+         - justify-between: pushes logo left, social right, marquee middle.
+      */}
+                    <div className="w-full mx-auto flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-4">
 
-                    <div className="flex justify-center lg:justify-end gap-3 mb-12">
-                        {[FaFacebook, BsTwitter, FaYoutube, FaInstagram, FaInstagram].map((Icon, i) => (
+                        {/* 1. LEFT: PEG BRANDING */}
+                        <div className="shrink-0">
+                            <Image
+                                src="/PEG.png"
+                                alt="Precast Engineering Group"
+                                width={200}
+                                height={200}
+                                className="object-contain"
+                            />
+                        </div>
+
+                        <div className="relative flex-1 max-w-[800px] h-24 overflow-hidden border-x border-slate-50 mx-4">
+                            {/* Edge Masks */}
+                            <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+                            <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
                             <motion.div
-                                key={i}
-                                whileHover={{ y: -5, backgroundColor: "#004aad", color: "#fff" }}
-                                className="p-4 border flex justify-center lg:justify-end gap-3 mb-12 border-slate-200 cursor-pointer transition-colors text-[#004aad]"
+                                animate={{ x: ["0%", "-50%"] }}
+                                transition={{
+                                    duration: 20,
+                                    ease: "linear",
+                                    repeat: Infinity,
+                                }}
+                                className="flex items-center h-full"
                             >
-                                <Icon className="w-5 h-5" />
+                                {[...marqueeLogos, ...marqueeLogos].map((logo, i) => (
+                                    <div key={i} className="px-8 shrink-0">
+                                        <div className="relative w-36 h-36 opacity-100">
+                                            <Image
+                                                src={logo.src}
+                                                alt={logo.alt}
+                                                fill
+                                                className="object-contain"
+                                            />
+                                        </div>
+                                    </div>
+                                ))}
                             </motion.div>
-                        ))}
+                        </div>
+
+                        <div className="flex items-center shrink-0">
+                            {[FaFacebook, BsTwitter, FaYoutube, FaInstagram, FaInstagram].map((Icon, i) => (
+
+                                <motion.div
+
+                                    key={i}
+
+                                    whileHover={{ y: -5, backgroundColor: "#004aad", color: "#fff" }}
+
+                                    className="p-4 border flex justify-center lg:justify-end gap-3 mb-12 border-slate-200 cursor-pointer transition-colors text-[#004aad]"
+
+                                >
+
+                                    <Icon className="w-5 h-5" />
+
+                                </motion.div>
+
+                            ))}
+
+
+                        </div>
 
                     </div>
                 </div>
-
                 {/* MAIN SITEMAP: 5-COLUMN GRID */}
                 <div className="grid grid-cols-2 md:grid-cols-6 gap-1 border-b border-slate-100 pb-20">
                     {footerData.map((section, idx) => (
@@ -90,12 +150,6 @@ export default function ExtraordinaryFooter() {
 
             </div>
 
-            {/* BACKGROUND DECORATION FOR ULTRA-WIDE SCREENS */}
-            <div className="absolute -bottom-20 -right-20 opacity-[0.03] pointer-events-none select-none">
-                <h1 className="text-[25rem] font-black text-[#004aad] leading-none tracking-tighter">
-                    PEG
-                </h1>
-            </div>
         </footer>
     );
 }
