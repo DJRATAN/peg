@@ -31,7 +31,9 @@ const technicalData = [
             { label: "Structural Submittals", sub: "Calculations & stamped drawings for agency approval." },
             { label: "BIM/CAD Strategy", sub: "Seamless digital integration into master site models." }
         ],
-        color: "bg-white",
+        // Default colors
+        activeBg: "#004aad",
+        activeText: "#ffffff",
         footer: "ENG_SOLUTIONS"
     },
     {
@@ -42,7 +44,8 @@ const technicalData = [
             { label: "Ready & Custom Softwares", sub: "Proprietary ERP & design automation." },
             { label: "Rapid Approvals", sub: "Accelerated PE stamping & submittal cycles." }
         ],
-        color: "bg-[#004aad]", // Inverted Dark Blue
+        activeBg: "#1B79EE", // Using Light Blue for this one for variety
+        activeText: "#ffffff",
         footer: "SYSTEM_READY"
     },
     {
@@ -52,7 +55,8 @@ const technicalData = [
             { label: "Mold & Forms Designs", sub: "Parametric modeling for complex geometries." },
             { label: "Mold & Forms Manufacturing", sub: "Precision CNC fabrication & assembly." }
         ],
-        color: "bg-white",
+        activeBg: "#004aad",
+        activeText: "#ffffff",
         footer: "FAB_ACTIVE"
     },
     {
@@ -62,10 +66,10 @@ const technicalData = [
             { label: "Robotics Implementation", sub: "Automated casting & reinforcement placement." },
             { label: "Neural Process Mapping", sub: "AI-driven supply chain optimization." }
         ],
-        color: "bg-[#F8FAFC]",
+        activeBg: "#004aad",
+        activeText: "#ffffff",
         footer: "AUTO_SYNC"
     },
-
 ];
 const GridContent = () => {
     return (
@@ -112,41 +116,48 @@ const GridContent = () => {
                     {technicalData.map((spec, idx) => (
                         <motion.div
                             key={idx}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 20, backgroundColor: "#ffffff" }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: idx * 0.1 }}
-                            className={`relative border border-slate-200 p-10 flex flex-col h-full transition-all duration-500 hover:shadow-[30px_30px_0px_-10px_rgba(27,121,238,0.05)] ${spec.color === 'bg-[#004aad]' ? 'bg-[#004aad] text-white' : 'bg-white'}`}
+                            /* THE MAGIC: 
+                               This animates the background color and box shadow on hover.
+                            */
+                            whileHover={{
+                                backgroundColor: spec.activeBg,
+                                transition: { duration: 0.3, ease: "circOut" }
+                            }}
+                            viewport={{ once: true }}
+                            className="relative border border-slate-200 p-10 flex flex-col h-full group cursor-pointer overflow-hidden"
                         >
                             {/* Module Header */}
-                            <div className="flex justify-between items-start mb-12">
-                                <div className={`p-4 ${spec.color === 'bg-[#004aad]' ? 'bg-white/10 text-white' : 'bg-[#F1F5F9] text-[#1B79EE]'}`}>
+                            <div className="flex justify-between items-start mb-12 relative z-10">
+                                <div className="p-4 bg-[#F1F5F9] text-[#1B79EE] group-hover:bg-white/20 group-hover:text-white transition-colors duration-300">
                                     {spec.icon}
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <div className={`w-2 h-2 rounded-full ${spec.color === 'bg-[#004aad]' ? 'bg-emerald-400' : 'bg-[#1B79EE]'} animate-pulse`} />
-                                    <span className={`font-mono text-[9px] uppercase tracking-widest ${spec.color === 'bg-[#004aad]' ? 'text-white/40' : 'text-slate-300'}`}>
+                                    <div className="w-2 h-2 rounded-full bg-[#1B79EE] group-hover:bg-emerald-400 animate-pulse" />
+                                    <span className="font-mono text-[9px] uppercase tracking-widest text-slate-300 group-hover:text-white/50 transition-colors">
                                         {spec.footer}
                                     </span>
                                 </div>
                             </div>
 
-                            <h3 className={`text-3xl font-black uppercase tracking-tighter mb-10 ${spec.color === 'bg-[#004aad]' ? 'text-white' : 'text-[#004aad]'}`}>
+                            <h3 className="text-3xl font-black uppercase tracking-tighter mb-10 text-[#004aad] group-hover:text-white relative z-10 transition-colors duration-300">
                                 {spec.category}
                             </h3>
 
                             {/* Technical Bullet Points */}
-                            <ul className="space-y-8 flex-1">
+                            <ul className="space-y-8 flex-1 relative z-10">
                                 {spec.items.map((item, i) => (
-                                    <li key={i} className="group cursor-default">
+                                    <li key={i} className="group/item cursor-default">
                                         <div className="flex items-start gap-4">
-                                            <div className={`mt-1.5 shrink-0 transition-transform group-hover:rotate-45 ${spec.color === 'bg-[#004aad]' ? 'text-[#1B79EE]' : 'text-[#1B79EE]'}`}>
+                                            <div className="mt-1.5 shrink-0 transition-transform group-hover:rotate-45 text-[#1B79EE] group-hover:text-white">
                                                 <ArrowUpRight className="w-4 h-4" />
                                             </div>
                                             <div>
-                                                <p className={`text-sm font-black uppercase tracking-wider mb-1 ${spec.color === 'bg-[#004aad]' ? 'text-white' : 'text-[#004aad]'}`}>
+                                                <p className="text-sm font-black uppercase tracking-wider mb-1 text-[#004aad] group-hover:text-white transition-colors">
                                                     {item.label}
                                                 </p>
-                                                <p className={`text-[11px] font-medium leading-relaxed ${spec.color === 'bg-[#004aad]' ? 'text-white/60' : 'text-slate-500'}`}>
+                                                <p className="text-[11px] font-medium leading-relaxed text-slate-500 group-hover:text-white/70 transition-colors">
                                                     {item.sub}
                                                 </p>
                                             </div>
@@ -155,8 +166,8 @@ const GridContent = () => {
                                 ))}
                             </ul>
 
-                            {/* Decorative Background ID */}
-                            <div className={`absolute bottom-4 right-6 font-mono text-[60px] font-black opacity-[0.03] select-none ${spec.color === 'bg-[#004aad]' ? 'text-white' : 'text-[#004aad]'}`}>
+                            {/* Faded Background Number */}
+                            <div className="absolute bottom-4 right-6 font-mono text-[60px] font-black opacity-[0.03] select-none text-[#004aad] group-hover:text-white group-hover:opacity-[0.07] transition-all">
                                 0{idx + 1}
                             </div>
                         </motion.div>
@@ -179,7 +190,7 @@ const GridContent = () => {
                 </div>
 
             </div>
- 
+
         </section >
     )
 }
