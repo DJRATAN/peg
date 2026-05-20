@@ -19,10 +19,11 @@ export default function Home() {
       <RegistrationBanner txtSrc={'Register now to save projects, bookmark favorites, and get the most out of PEG'} btSrc="Join PEG" />
       <ResourceDirectory />
       <RegistrationBanner txtSrc={'News and Updated Content'} btSrc="" />
-      <ContentSection />
       {/* <BusinessPodcastSection/> */}
       <AgencySlider />
+      <ContentSection />
       <PegHero />
+ 
       <PegLocations />
     </main>
   );

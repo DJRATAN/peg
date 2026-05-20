@@ -5,6 +5,7 @@ import { Navbar } from "./components/Navbar";
 import { cn } from "@/lib/utils";
 import { Footer } from "./components/Footer";
 import ExtraordinaryFooter from "./components/ExtraordinaryFooter";
+import EntrySystem from "./components/EntrySystem";
  
 const figtree = Figtree({subsets:['latin'],variable:'--font-sans'});
 
@@ -42,6 +43,7 @@ export default function RootLayout({
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", figtree.variable)}
     >
       <Navbar/>
+      <EntrySystem/>
       <body className="min-h-full flex flex-col">{children}</body>
       <Footer/>
       <ExtraordinaryFooter/>

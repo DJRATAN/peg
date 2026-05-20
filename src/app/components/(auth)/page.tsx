@@ -75,7 +75,7 @@ export default function PegPortalDashboard() {
   ];
 
   return (
-    <section className="min-h-screen w-full bg-[#F8F9FA] flex flex-col items-center justify-center py-20 px-10 overflow-hidden">
+    <section className="min-h-screen w-full px-10 md:px-20 py-16 bg-[#F8F9FA] flex flex-col items-center justify-center  overflow-hidden">
       
       {/* 1. DYNAMIC TYPING HEADER */}
       <div className="w-full  mb-20 text-center">

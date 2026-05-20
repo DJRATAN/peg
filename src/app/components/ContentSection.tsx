@@ -2,8 +2,8 @@ import React from 'react';
 
 export const ContentSection = () => {
   return (
-    <section className="w-full bg-[#f8fafc] py-20 px-4">
-      <div className="container px-4 mx-auto bg-[#004aad] text-white p-12 md:p-16 shadow-2xl">
+    <section className="w-full bg-[#f8fafc]">
+      <div className="w-full px-10 md:px-20 py-16 mx-auto bg-[#004aad] text-white p-12 md:p-16 shadow-2xl">
         
         {/* Main Title */}
         <h2 className="text-3xl md:text-4xl font-bold mb-8 border-b border-white/20 pb-6">
