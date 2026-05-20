@@ -19,7 +19,7 @@ const locations = {
 
 export default function PegLocations() {
   return (
-    <section className="w-full bg-white py-24 px-6 overflow-hidden">
+    <section className="w-full px-10 md:px-20 py-16 bg-white overflow-hidden">
       <div className="w-full">
         
         {/* SECTION HEADER */}

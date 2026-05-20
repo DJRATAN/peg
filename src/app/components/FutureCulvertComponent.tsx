@@ -37,7 +37,7 @@ const kulvertBgImage = "/assets/BOX CULVERTS.png";
 export default function FutureCulvertComponent() {
   return (
     // We use PEG Dark Blue (#004aad) as the foundation color
-    <section className="w-full bg-[#004aad] overflow-hidden min-h-[850px] flex flex-col select-none">
+    <section className="w-full bg-[#004aad] overflow-hidden flex flex-col select-none">
       
       {/* 1. HEADER STRIP: 32" Screen Information Density */}
       <div className="w-full px-10 md:px-20 py-16 flex justify-between items-end border-b border-white/10 relative z-30">

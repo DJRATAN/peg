@@ -30,7 +30,7 @@ export default function ExtraordinaryFooter() {
         <footer className="relative w-full bg-white border-t-2 border-slate-100 pt-24 pb-12 overflow-hidden select-none">
 
             {/* 32-INCH FULL WIDTH CONTAINER */}
-            <div className="w-full px-6">
+            <div className="w-full px-10 md:px-20 py-16">
                 <div className="text-5xl text-center m-8 font-bold text-[#004aad]"><h1>Our Group Dedicated to Precast </h1></div>
                 <div className="w-full bg-white border-t border-slate-100 py-10 ">
 

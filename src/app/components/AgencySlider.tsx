@@ -15,7 +15,7 @@ export default function FullWidthAgencySlider() {
     <section className="relative w-full py-24 bg-[#F5F5F5] overflow-x-hidden select-none">
       
       {/* 1. HEADER: FULL WIDTH WITH PADDING */}
-      <div className="w-full px-6 mb-16">
+      <div className="w-full px-10 md:px-20 py-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -8,8 +8,9 @@ import InternationalCreditManager from "./components/InternationalCreditManager"
 import PegHero from "./components/PegHero";
 import LoginGateway from "./components/(auth)/page";
 import AgencySlider from "./components/AgencySlider";
-import PegLocations from "./components/PegLocations"; 
+import PegLocations from "./components/PegLocations";
 import FutureCulvertComponent from "./components/FutureCulvertComponent";
+import DeliverableUpgrade from "./components/DeliverableUpgrade";
 
 export default function Home() {
   return (
@@ -17,14 +18,15 @@ export default function Home() {
       <HeroEngineering />
       <LoginGateway />
       <GridContent />
+      <DeliverableUpgrade />
       <RegistrationBanner txtSrc={'Register now to save projects, bookmark favorites, and get the most out of PEG'} btSrc="Join PEG" />
       <ResourceDirectory />
       <RegistrationBanner txtSrc={'News and Updated Content'} btSrc="" />
       {/* <BusinessPodcastSection/> */}
       <AgencySlider />
       <ContentSection />
-      <PegHero /> 
-      <FutureCulvertComponent/>
+      <PegHero />
+      <FutureCulvertComponent />
       <PegLocations />
     </main>
   );
