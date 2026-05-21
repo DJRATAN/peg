@@ -57,7 +57,7 @@ export default function FutureCulvertComponent() {
       </div>
 
       {/* 2. TRIPTYCH GRID: The 3 vertical panels */}
-      <div className="flex-grow grid grid-cols-1 md:grid-cols-3 h-full">
+      <div className="w-full px-10 md:px-20 py-16 flex-grow grid grid-cols-1 md:grid-cols-3 h-full">
         {futureInitiatives.map((item, idx) => (
           <motion.div
             key={idx}

@@ -40,16 +40,16 @@ const TypingOutline = ({ text, delay = 0 }: { text: string; delay?: number }) =>
 
 export default function PegHero() {
   return (
-    <section className="relative min-h-screen w-full bg-[#F5F5F5] flex flex-col justify-center items-center overflow-hidden px-4 py-20 font-sans select-none">
-      
+    <section className="relative min-h-screen w-full px-10 md:px-20 py-16 bg-[#F5F5F5] flex flex-col justify-center items-center overflow-hidden  font-sans select-none">
+
       {/* Background: Engineering Matrix Grid (Subtle) */}
-      <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none" 
-           style={{ backgroundImage: `radial-gradient(#004aad 1.5px, transparent 1.5px)`, backgroundSize: '40px 40px' }} />
+      <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none"
+        style={{ backgroundImage: `radial-gradient(#004aad 1.5px, transparent 1.5px)`, backgroundSize: '40px 40px' }} />
 
       <div className="max-w-7xl w-full flex flex-col items-center text-center z-10">
-        
+
         {/* Top Floating Badge */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="bg-[#004aad] text-white px-6 py-2 mb-10 flex items-center gap-3 shadow-lg"
@@ -60,71 +60,71 @@ export default function PegHero() {
           </span>
         </motion.div>
 
-<div className="flex flex-col items-center leading-[0.85] mb-8 uppercase text-center">
-      
-      {/* Row 1: PEG Dark Blue (Solid) */}
-      <motion.h1 
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="text-[12vw] md:text-[10rem] font-black text-[#004aad] tracking-tighter"
-      >
-        PRECAST
-      </motion.h1>
-      
-      {/* Row 2: PEG Light Blue (Typing Outline) 
+        <div className="flex flex-col items-center leading-[0.85] mb-8 uppercase text-center">
+
+          {/* Row 1: PEG Dark Blue (Solid) */}
+          <motion.h1
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-[12vw] md:text-[10rem] font-black text-[#004aad] tracking-tighter"
+          >
+            PRECAST
+          </motion.h1>
+
+          {/* Row 2: PEG Light Blue (Typing Outline) 
           Using your TypingOutline component for the core service
       */}
-      <div className="text-[10vw] md:text-[8.5rem] font-black tracking-tighter">
-        <TypingOutline text="ENGINEERS" delay={0.6} />
-      </div>
+          <div className="text-[10vw] md:text-[8.5rem] font-black tracking-tighter">
+            <TypingOutline text="ENGINEERS" delay={0.6} />
+          </div>
 
-      {/* Row 3: The "By the Hour" Accent 
+          {/* Row 3: The "By the Hour" Accent 
           We use a slightly smaller, stretched font style for that premium B2B look
       */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
-        className="text-[#1B79EE] text-[4vw] md:text-[3.5rem] font-black tracking-[0.2em] mt-2 italic"
-      >
-        BY THE HOUR.
-      </motion.div>
-      
-      {/* Row 4: Solid Dark Blue Conclusion */}
-      <motion.div
-        initial={{ scale: 0.95, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 1.8, duration: 0.6 }}
-        className="text-[#004aad] text-[6vw] md:text-[5.5rem] font-black tracking-tight mt-6"
-      >
-        FOR ANY SITUATION.
-      </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+            className="text-[#1B79EE] text-[4vw] md:text-[3.5rem] font-black tracking-[0.2em] mt-2 italic"
+          >
+            BY THE HOUR.
+          </motion.div>
 
-      {/* Engineering Sub-text for 32" Screens */}
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.4 }}
-        transition={{ delay: 2.2 }}
-        className="mt-8 font-mono text-[10px] tracking-[0.5em] text-[#004aad]"
-      >
-        PEG_EST_1998 // INFRASTRUCTURE_PRECISION
-      </motion.p>
-    </div>
+          {/* Row 4: Solid Dark Blue Conclusion */}
+          <motion.div
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 1.8, duration: 0.6 }}
+            className="text-[#004aad] text-[6vw] md:text-[5.5rem] font-black tracking-tight mt-6"
+          >
+            FOR ANY SITUATION.
+          </motion.div>
+
+          {/* Engineering Sub-text for 32" Screens */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.4 }}
+            transition={{ delay: 2.2 }}
+            className="mt-8 font-mono text-[10px] tracking-[0.5em] text-[#004aad]"
+          >
+            PEG_EST_1998 // INFRASTRUCTURE_PRECISION
+          </motion.p>
+        </div>
 
         {/* Professional Subtext */}
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2, duration: 1 }}
           className="max-w-2xl text-slate-500 italic text-lg md:text-xl font-medium leading-relaxed mt-4"
         >
-          "From municipal streets to international airport runways, 
+          "From municipal streets to international airport runways,
           we provide the vertical precision required for the world's toughest environments."
         </motion.p>
 
         {/* Actions using PEG Palette */}
-        <motion.div 
+        <motion.div
           initial={{ y: 40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 2.4 }}
@@ -145,7 +145,7 @@ export default function PegHero() {
       </div>
 
       {/* Decorative Blueprint Markers */}
-      <div className="absolute top-10 left-10 text-[10px] font-mono text-[#1B79EE] font-bold">
+      <div className="absolute top-10 left-20 text-[10px] font-mono text-[#1B79EE] font-bold">
         VER: 2026.04 // ENGINEERED_PRECISION
       </div>
       <div className="absolute bottom-10 right-10 text-[10px] font-mono text-[#004aad] font-bold">

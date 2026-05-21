@@ -11,6 +11,7 @@ import AgencySlider from "./components/AgencySlider";
 import PegLocations from "./components/PegLocations";
 import FutureCulvertComponent from "./components/FutureCulvertComponent";
 import DeliverableUpgrade from "./components/DeliverableUpgrade"; 
+import DotMatrixSlider from "./components/DotMatrixSlider";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
       <AgencySlider />
       <ContentSection />
       <PegHero /> 
+      <DotMatrixSlider/>
       <FutureCulvertComponent />
       <PegLocations />
     </main>

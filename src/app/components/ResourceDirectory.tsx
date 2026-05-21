@@ -71,7 +71,7 @@ export const ResourceDirectory = () => {
       <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#004aad] via-[#004aad]/80 to-transparent" />
 
       {/* CONTENT CONTAINER */}
-      <div className="container max-w-[1800px] mx-auto px-10 md:px-20 relative z-10 py-24">
+      <div className="w-full px-10 md:px-20 py-16 relative z-10">
         
         {/* FROSTED GLASS TERMINAL */}
         <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-12 md:p-16 shadow-[0_20px_50px_rgba(0,74,173,0.3)] max-w-6xl">
