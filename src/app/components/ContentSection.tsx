@@ -1,65 +1,130 @@
+"use client";
+
 import React from 'react';
+import { motion } from 'framer-motion';
+import { Clock, Database, Workflow, Unlock, ArrowRight, Activity } from 'lucide-react';
 
 export const ContentSection = () => {
   return (
-    <section className="w-full bg-[#f8fafc]">
-      <div className="w-full px-10 md:px-20 py-16 mx-auto bg-[#004aad] text-white p-12 md:p-16 shadow-2xl">
+    <section className="w-full bg-[#f8fafc] py-32 px-10 md:px-20 overflow-hidden">
+      <div className="max-w-[1800px] mx-auto">
         
-        {/* Main Title */}
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 border-b border-white/20 pb-6">
-          Precast Engineering and Construction Solutions for PEGs
-        </h2>
-
-        {/* Introduction Section */}
-        <div className="space-y-6 text-slate-100 leading-relaxed">
-          <p>
-            Picture this: It's 1 am, you're on your 5th cup of coffee, and a draft of your design is due first thing in the morning. 
-            Manufacturers' reps are not available. Time is of the essence. You need to select and document 4 more products. 
-            You're out of time and you need product selections now.
-          </p>
-          <p>
-            You need a building information modeling services company you can trust to provide a quality BIM with minimal geometry 
-            and the key data needed for model analysis. You need the best CSI specification writing firm to document the selected products. 
-            And you need architecture details showing how products work together to solve problems.
-          </p>
-          <p className="font-bold text-white text-lg">
-            Where can you find all this? PEG to the rescue.
-          </p>
-          <p>
-            PEG is the free building information modeling company, the free building details modeler, and the free spec writer you need now.
-          </p>
+        {/* HEADER: Massive Structural Typography */}
+        <div className="mb-20 space-y-6">
+          <div className="flex items-center gap-4 text-[#1B79EE] font-mono text-[10px] uppercase tracking-[0.5em] font-black">
+             <Activity className="w-4 h-4 animate-pulse" /> System_Architecture
+          </div>
+          <h2 className="text-6xl md:text-8xl font-black text-[#004aad] tracking-tighter leading-[0.9] uppercase">
+            SOLUTIONS FOR <br />
+            <span style={{ WebkitTextStroke: "1.5px #1B79EE", color: "transparent" }}>THE CRITICAL PATH.</span>
+          </h2>
         </div>
 
-        {/* Supporting Lifecycle Section */}
-        <div className="mt-12 space-y-6">
-          <h3 className="text-2xl font-bold text-white">
-            Supporting You Throughout the Building Lifecycle
-          </h3>
-          <div className="space-y-4 text-slate-200">
-            <p>From design, to construction, to facilities management, we’re with you throughout every step of the building lifecycle.</p>
-            <p>Browse our easy-to-navigate building materials directory and building product database to find the right products to complete your project documents.</p>
-            <p>You don’t need to be under a time crunch to find our free building information modeling company resources useful.</p>
-            <p>We’re experts, providing you with the building details, architecture details, and construction project information you require to get every job done right.</p>
+        {/* THE ASYMMETRIC GRID SYSTEM (Perfect for 32" screens) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          {/* LEFT COLUMN: The "1 AM Scenario" (5 Columns Wide) */}
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className="lg:col-span-5 bg-[#004aad] text-white p-12 md:p-16 flex flex-col justify-between relative overflow-hidden group"
+          >
+            {/* Background Grid Pattern */}
+            <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: `radial-gradient(#ffffff 1px, transparent 1px)`, backgroundSize: '24px 24px' }} />
+            
+            <div className="relative z-10">
+                <div className="flex justify-between items-center mb-12">
+                    <Clock className="w-10 h-10 text-[#1B79EE]" />
+                    <span className="font-mono text-[10px] tracking-[0.4em] uppercase text-white/40">T-Minus_06:00</span>
+                </div>
+                
+                <h3 className="text-4xl font-black uppercase tracking-tighter mb-8 leading-none">
+                    01:00 HRS.<br />The Midnight<br />Submittal.
+                </h3>
+                
+                <div className="space-y-6 text-white/70 font-medium leading-relaxed text-lg border-l-2 border-[#1B79EE] pl-6">
+                    <p>
+                        The manufacturers are offline. Time is evaporating. You need to select, document, and integrate four complex precast products before the dawn deadline. 
+                    </p>
+                    <p>
+                        You don't need a sales pitch—you need a high-fidelity BIM, precision CSI specs, and exact architectural details. You need an engineering fail-safe.
+                    </p>
+                    <p className="font-black text-white text-xl mt-8">
+                        PEG is your on-demand infrastructure.
+                    </p>
+                </div>
+            </div>
+          </motion.div>
+
+          {/* RIGHT COLUMN: The Solutions Grid (7 Columns Wide) */}
+          <div className="lg:col-span-7 grid grid-cols-1 md:grid-rows-2 gap-8">
+            
+            {/* Top Row: Lifecycle Support */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="bg-white border border-slate-200 p-12 group hover:border-[#1B79EE] hover:shadow-2xl transition-all duration-500 flex flex-col justify-center"
+            >
+                <div className="flex items-start gap-8">
+                    <div className="p-5 bg-slate-50 text-[#004aad] group-hover:bg-[#004aad] group-hover:text-white transition-colors duration-500">
+                        <Workflow className="w-8 h-8" />
+                    </div>
+                    <div>
+                        <h3 className="text-3xl font-black text-[#004aad] uppercase tracking-tighter mb-4">
+                            Full-Spectrum Lifecycle Support
+                        </h3>
+                        <p className="text-slate-500 font-medium leading-relaxed">
+                            From conceptual design to on-site construction and facility management, we are integrated into every phase. Browse our engineering directory to extract the exact data, architecture details, and construction specs you require to execute flawlessly.
+                        </p>
+                    </div>
+                </div>
+            </motion.div>
+
+            {/* Bottom Row: Split into two smaller data cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Data Card 1: The Database */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 }}
+                  className="bg-white border border-slate-200 p-10 group hover:border-[#1B79EE] transition-all flex flex-col justify-between"
+                >
+                    <div>
+                        <Database className="w-8 h-8 text-[#1B79EE] mb-6" />
+                        <h4 className="text-2xl font-black text-[#004aad] uppercase tracking-tighter mb-4">Parametric BIM</h4>
+                        <p className="text-slate-500 text-sm font-medium leading-relaxed">
+                            Stop paying agencies to build content. We engineer high-performance BIM models with minimal geometry and maximum data logic—ready for immediate download.
+                        </p>
+                    </div>
+                    <div className="mt-8 pt-6 border-t border-slate-100 flex items-center gap-4 text-[#1B79EE] font-black text-[10px] uppercase tracking-widest cursor-pointer">
+                        Access Models <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                    </div>
+                </motion.div>
+
+                {/* Data Card 2: Open Access */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="bg-[#1B79EE] text-white p-10 hover:bg-[#004aad] transition-colors duration-500 flex flex-col justify-between"
+                >
+                    <div>
+                        <Unlock className="w-8 h-8 text-white mb-6" />
+                        <h4 className="text-2xl font-black uppercase tracking-tighter mb-4">Zero-Friction Access</h4>
+                        <p className="text-white/80 text-sm font-medium leading-relaxed">
+                            No paywalls. No mandatory lead-capture forms requiring your phone number. Our architectural detail library and specs are completely open-source. 
+                        </p>
+                    </div>
+                    <div className="mt-8">
+                        <span className="inline-block px-4 py-2 bg-white/10 text-white font-mono text-[9px] uppercase tracking-[0.3em] font-black">
+                            Save Time. Save Budget.
+                        </span>
+                    </div>
+                </motion.div>
+            </div>
+
           </div>
         </div>
-
-        {/* Save Time and Money Section */}
-        <div className="mt-12 space-y-6">
-          <h3 className="text-2xl font-bold text-white">
-            Save Time and Money
-          </h3>
-          <div className="space-y-4 text-slate-200">
-            <p>
-              A BIM company will charge you to create content. PEG is a free building information modeling company. 
-              We create BIM for you and your project. Our architectural detail library and specifications are also 
-              free and available for your next project.
-            </p>
-            <p>You could create this content yourself, but that would take time that you do not have.</p>
-            <p>And, we do not require you to give us your email or phone number to access this building information database and construction project information.</p>
-            <p className="italic font-black text-[#1B79EE]">Free and open allowing you to save time and money on all your projects.</p>
-          </div>
-        </div>
-
       </div>
     </section>
   );

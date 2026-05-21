@@ -10,7 +10,7 @@ import LoginGateway from "./components/(auth)/page";
 import AgencySlider from "./components/AgencySlider";
 import PegLocations from "./components/PegLocations";
 import FutureCulvertComponent from "./components/FutureCulvertComponent";
-import DeliverableUpgrade from "./components/DeliverableUpgrade";
+import DeliverableUpgrade from "./components/DeliverableUpgrade"; 
 
 export default function Home() {
   return (
@@ -25,7 +25,7 @@ export default function Home() {
       {/* <BusinessPodcastSection/> */}
       <AgencySlider />
       <ContentSection />
-      <PegHero />
+      <PegHero /> 
       <FutureCulvertComponent />
       <PegLocations />
     </main>

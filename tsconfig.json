@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "src/app/components/FutureCulvertComponent.tsx", "../../(submenu)/pg/MarinaSystemComponent.tsx", "../../(submenu)/pg/RetainingWallComponent.tsx", "../../(submenu)/pg/UtilityPrecastComponent.tsx", "../../(submenu)/pg/TrenchingSystem.tsx", "../../(submenu)/pg/AffiliationNetwork.tsx", "../../(submenu)/pg/MeetAtShows.tsx", "../../(submenu)/pg/MarketingShowcase.tsx", "../../(submenu)/pg/AgencyShowcase.tsx", "../../(submenu)/pg/DotMatrixSlider.tsx", "src/app/components/AgencySlider.tsx"  ],
+, "src/app/components/FutureCulvertComponent.tsx", "../../(submenu)/pg/MarinaSystemComponent.tsx", "../../(submenu)/pg/RetainingWallComponent.tsx", "../../(submenu)/pg/UtilityPrecastComponent.tsx", "../../(submenu)/pg/TrenchingSystem.tsx", "../../(submenu)/pg/AffiliationNetwork.tsx", "../../(submenu)/pg/MeetAtShows.tsx", "../../(submenu)/pg/MarketingShowcase.tsx", "../../(submenu)/pg/AgencyShowcase.tsx", "../../(submenu)/pg/DotMatrixSlider.tsx", "src/app/components/AgencySlider.tsx", "../../(submenu)/pg/EngineeringExecuted.tsx", "../../(submenu)/pg/MarketingShowcaseGallery.tsx"  ],
   "exclude": ["node_modules"]
 }
