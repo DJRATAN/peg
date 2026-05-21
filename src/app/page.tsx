@@ -17,8 +17,8 @@ export default function Home() {
     <main className="flex-1 flex flex-col items-center bg-slate-50">
       <HeroEngineering />
       <LoginGateway />
-      <GridContent />
       <DeliverableUpgrade />
+      <GridContent />
       <RegistrationBanner txtSrc={'Register now to save projects, bookmark favorites, and get the most out of PEG'} btSrc="Join PEG" />
       <ResourceDirectory />
       <RegistrationBanner txtSrc={'News and Updated Content'} btSrc="" />

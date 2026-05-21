@@ -1,76 +1,131 @@
-import React from 'react';
+"use client";
+
+import React, { useRef, useEffect } from 'react';
 import Link from 'next/link';
+import { 
+  FolderKanban, Video, BookOpen, Leaf, Mail, FileText, 
+  GraduationCap, MonitorPlay, Mic, Award, FileDigit, Accessibility, Play
+} from 'lucide-react';
 
 const resourceColumns = [
+  // ... (Keep your existing resourceColumns array here)
   {
     links: [
-      { name: 'PROJECTS (NEW)', href: '/projects', highlight: true },
-      { name: 'VIDEOS', href: '/videos' },
-      { name: 'CATALOGS', href: '/catalogs' },
-      { name: 'GREENREPORTS', href: '/sustainability' },
-      { name: 'NEWSLETTER', href: '/news' },
-      { name: 'OUTLINE', href: '/outline-specs' },
+      { name: 'PROJECTS', href: '/projects', highlight: true, icon: <FolderKanban className="w-4 h-4" /> },
+      { name: 'VIDEOS', href: '/videos', icon: <Video className="w-4 h-4" /> },
+      { name: 'CATALOGS', href: '/catalogs', icon: <BookOpen className="w-4 h-4" /> },
+      { name: 'GREENREPORTS', href: '/sustainability', icon: <Leaf className="w-4 h-4" /> },
+      { name: 'NEWSLETTER', href: '/news', icon: <Mail className="w-4 h-4" /> },
+      { name: 'OUTLINE', href: '/outline-specs', icon: <FileText className="w-4 h-4" /> },
     ]
   },
   {
     links: [
-      { name: 'CONTINUING ED (NEW)', href: '/education', highlight: true },
-      { name: 'WEBINARS', href: '/webinars' },
-      { name: 'DETAILED PODCAST', href: '/podcasts', italic: true },
-      { name: 'CERTIFICATIONS', href: '/certs' },
-      { name: 'DATA SHEETS', href: '/data-sheets' },
-      { name: 'ADA PRODUCTS', href: '/ada' },
+      { name: 'CONTINUING ED', href: '/education', highlight: true, icon: <GraduationCap className="w-4 h-4" /> },
+      { name: 'WEBINARS', href: '/webinars', icon: <MonitorPlay className="w-4 h-4" /> },
+      { name: 'DETAILED PODCAST', href: '/podcasts', italic: true, icon: <Mic className="w-4 h-4" /> },
+      { name: 'CERTIFICATIONS', href: '/certs', icon: <Award className="w-4 h-4" /> },
+      { name: 'DATA SHEETS', href: '/data-sheets', icon: <FileDigit className="w-4 h-4" /> },
+      { name: 'ADA PRODUCTS', href: '/ada', icon: <Accessibility className="w-4 h-4" /> },
     ]
   }
 ];
 
 export const ResourceDirectory = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Fallback to guarantee playback starts and continues
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.warn("Video autoplay prevented by browser:", error);
+      });
+    }
+  }, []);
+
+  // Bulletproof infinite loop handler
+  const handleVideoEnd = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  };
+
   return (
-    <section className="relative w-full min-h-100 flex items-center overflow-hidden border-y border-slate-200">
-      {/* Background Image with PEG Gradient Overlay */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url('/assets/csd8.1 - Copy.png')` }} // Replace with a high-res precast building shot
+    <section className="relative w-full min-h-[600px] flex items-center overflow-hidden bg-[#004aad]">
+      
+      {/* BULLETPROOF CINEMATIC VIDEO BACKGROUND */}
+      <video 
+        ref={videoRef}
+        autoPlay 
+        loop 
+        muted 
+        playsInline
+        onEnded={handleVideoEnd} // Forces replay if browser stops it
+        className="absolute inset-0 w-full h-full object-cover z-0 opacity-100"
       >
-        <div className="absolute inset-0 " />
-      </div>
+        <source src="/assets/E25 V2 final.mp4" type="video/mp4" />
+      </video>
 
-      <div className="container mx-auto px-6 relative z-10 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          {/* Left: Main Heading */}
-          <div className="lg:col-span-5 border-r-0 lg:border-r border-white/20 pr-0 lg:pr-12">
-            <h2 className="text-4xl md:text-5xl font-serif text-[#004aad] leading-tight">
-              Go beyond specs with reports, videos, podcasts, and more.
-            </h2>
-          </div>
+      {/* COLOR GRADE OVERLAYS */}
+      <div className="absolute inset-0 z-0 bg-[#004aad]/40 mix-blend-multiply" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#004aad] via-[#004aad]/80 to-transparent" />
 
-          {/* Right: Link Columns */}
-          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8 pl-0 lg:pl-12">
-            {resourceColumns.map((col, idx) => (
-              <ul key={idx} className="space-y-3">
-                {col.links.map((link) => (
-                  <li key={link.name}>
-                    <Link 
-                      href={link.href}
-                      className={`
-                        text-sm font-bold tracking-widest text-[#004aad] hover:text-[#1B79EE] transition-colors flex items-center
-                        ${link.italic ? 'italic' : ''}
-                      `}
-                    >
-                      {link.name}
-                      {link.highlight && (
-                        <span className="ml-2 text-[10px] bg-white/20 px-1.5 py-0.5 rounded backdrop-blur-sm">
-                          NEW
+      {/* CONTENT CONTAINER */}
+      <div className="container max-w-[1800px] mx-auto px-10 md:px-20 relative z-10 py-24">
+        
+        {/* FROSTED GLASS TERMINAL */}
+        <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-12 md:p-16 shadow-[0_20px_50px_rgba(0,74,173,0.3)] max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left: Main Heading */}
+            <div className="lg:col-span-6 lg:border-r border-white/20 pr-0 lg:pr-12">
+              <div className="flex items-center gap-3 text-cyan-300 font-mono text-[10px] font-black uppercase tracking-[0.5em] mb-6">
+                 <Play className="w-4 h-4 animate-pulse" /> Active Media Directory
+              </div>
+              <h2 className="text-5xl md:text-6xl font-black text-white tracking-tighter leading-[0.9] uppercase">
+                BEYOND <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-[#1B79EE]">
+                  SPECIFICATIONS.
+                </span>
+              </h2>
+              <p className="mt-6 text-white/80 font-medium leading-relaxed max-w-sm">
+                Access our master library of engineering reports, structural videos, and technical podcasts.
+              </p>
+            </div>
+
+            {/* Right: Link Columns */}
+            <div className="lg:col-span-6 grid grid-cols-1 md:grid-cols-2 gap-8 pl-0 lg:pl-8">
+              {resourceColumns.map((col, idx) => (
+                <ul key={idx} className="space-y-4">
+                  {col.links.map((link) => (
+                    <li key={link.name}>
+                      <Link 
+                        href={link.href}
+                        className="group flex items-center gap-4 text-sm font-black tracking-widest text-white hover:text-cyan-300 transition-colors"
+                      >
+                        {/* Interactive Icon Box */}
+                        <div className="p-2 bg-white/10 border border-white/20 group-hover:bg-cyan-300/20 group-hover:border-cyan-300 transition-all duration-300">
+                          {link.icon}
+                        </div>
+                        
+                        <span className={`uppercase ${link.italic ? 'italic' : ''}`}>
+                          {link.name}
                         </span>
-                      )}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            ))}
-          </div>
 
+                        {/* High-Tech 'NEW' Badge */}
+                        {link.highlight && (
+                          <span className="ml-auto text-[8px] font-mono font-bold bg-cyan-300 text-[#004aad] px-2 py-1 tracking-widest shadow-[0_0_10px_rgba(103,232,249,0.4)] animate-pulse">
+                            NEW_NODE
+                          </span>
+                        )}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              ))}
+            </div>
+
+          </div>
         </div>
       </div>
     </section>
