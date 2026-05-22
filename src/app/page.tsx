@@ -12,6 +12,7 @@ import PegLocations from "./components/PegLocations";
 import FutureCulvertComponent from "./components/FutureCulvertComponent";
 import DeliverableUpgrade from "./components/DeliverableUpgrade"; 
 import DotMatrixSlider from "./components/DotMatrixSlider";
+import MeetAtShows from "./components/MeetAtShows";
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
       <DotMatrixSlider/>
       <FutureCulvertComponent />
       <PegLocations />
+      <MeetAtShows/>
     </main>
   );
 }
