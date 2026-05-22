@@ -144,13 +144,7 @@ export default function PegHero() {
         </motion.div>
       </div>
 
-      {/* Decorative Blueprint Markers */}
-      <div className="absolute top-10 left-20 text-[10px] font-mono text-[#1B79EE] font-bold">
-        VER: 2026.04 // ENGINEERED_PRECISION
-      </div>
-      <div className="absolute bottom-10 right-10 text-[10px] font-mono text-[#004aad] font-bold">
-        PEG_GROUP_USA
-      </div>
+ 
     </section>
   );
 }

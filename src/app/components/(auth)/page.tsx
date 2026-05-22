@@ -79,13 +79,7 @@ export default function PegPortalDashboard() {
       
       {/* 1. DYNAMIC TYPING HEADER */}
       <div className="w-full  mb-20 text-center">
-        <motion.p 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="text-[#004aad] text-[10px] font-mono tracking-[0.5em] mb-4 uppercase"
-        >
-          Secure Access Gateway // Protocol 09
-        </motion.p>
+ 
         
         <h1 className="text-5xl md:text-8xl font-black text-[#004aad] tracking-tighter flex flex-wrap justify-center items-center gap-x-5">
           <span>PORTAL</span>
@@ -143,17 +137,7 @@ export default function PegPortalDashboard() {
           </motion.div>
         ))}
       </div>
-
-      {/* 3. SYSTEM FOOTER INFO (For Ben's 32" Screen) */}
-      <div className="w-full ] mt-20 flex justify-between border-t border-slate-200 pt-8 opacity-70">
-        <div className="text-xs font-mono text-slate-700 space-y-1">
-          <p>LOAD_STRENGTH: 4500_PSI</p>
-          <p>ENCRYPTION: SH-512_RSA</p>
-        </div>
-        <div className="text-xs font-mono text-[#1B79EE] text-right font-bold uppercase tracking-[0.2em]">
-          Precast Engineering Group // USA Division
-        </div>
-      </div>
+ 
     </section>
   );
 }

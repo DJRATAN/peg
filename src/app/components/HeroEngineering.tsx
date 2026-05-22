@@ -13,11 +13,7 @@ const HeroEngineering = () => {
       {/* 1. THE GRID SYSTEM: Increased opacity slightly for 32" monitors */}
       <div className="absolute inset-0 -z-10 opacity-[0.05] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/graphy.png')]"></div>
       
-      {/* 2. THE BACKGROUND DATA DECORATION (Extraordinary Detail) */}
-      <div className="absolute top-20 right-10 opacity-20 hidden 2xl:block">
-        <Activity className="w-12 h-12 text-[#1B79EE] animate-pulse" />
-        <p className="font-mono text-[8px] text-[#004aad] mt-2 uppercase tracking-widest">System_Lat: 0.002ms</p>
-      </div>
+ 
 
       <div className="container px-4 md:px-6 flex flex-col items-center text-center space-y-10 z-10">
         
@@ -33,19 +29,20 @@ const HeroEngineering = () => {
             Precast Engineering Group
           </div>
 
-          <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-[#004aad] leading-[0.9]">
-            HIGH-PERFORMANCE <br />
-            <span style={{ WebkitTextStroke: "1.5px #1B79EE", color: "transparent" }}>PRECAST DATA.</span>
+          {/* THE NEW HEADLINE */}
+          <h1 className="text-5xl md:text-8xl font-black tracking-tighter text-[#004aad] leading-[0.9] uppercase">
+            THE FUTURE OF <br />
+            <span style={{ WebkitTextStroke: "1.5px #1B79EE", color: "transparent" }}>PRECAST ENGINEERING.</span>
           </h1>
 
-          {/* THE UPDATED TEXT: More professional and high-velocity */}
+          {/* THE UPDATED TEXT: Typo fixed in "Futuristic" */}
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
             className="text-xl md:text-2xl text-slate-500 max-w-3xl mx-auto leading-relaxed font-medium italic"
           >
-            "from conception to execution the Futurstic highway of  <span className="text-[#004aad] font-bold">Precast Engineering</span>, <span className="text-[#004aad] font-bold">Advanced Technologies</span> & beyond."
+            "From conception to execution, the Futuristic highway of  <span className="text-[#004aad] font-bold">Precast Engineering</span>, <span className="text-[#004aad] font-bold">Advanced Technologies</span> & beyond."
           </motion.p>
         </motion.div>
 

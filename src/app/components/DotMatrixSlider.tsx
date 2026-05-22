@@ -118,9 +118,7 @@ export default function DotMatrixSlider() {
         {/* LEFT COLUMN: The "Live Telemetry" Active Panel (4 columns) */}
         <div className="lg:col-span-4 h-full flex flex-col justify-center">
           <div className="space-y-2 mb-10">
-            <h2 className="text-[#1B79EE] font-mono text-[10px] font-black uppercase tracking-[0.5em] flex items-center gap-2">
-               <Zap className="w-4 h-4 animate-pulse" /> Active Node Data
-            </h2>
+ 
             <p className="text-5xl md:text-6xl font-black text-[#004aad] tracking-tighter leading-none uppercase">
               Compliance <br /> Matrix.
             </p>

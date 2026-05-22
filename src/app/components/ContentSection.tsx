@@ -11,9 +11,7 @@ export const ContentSection = () => {
         
         {/* HEADER: Massive Structural Typography */}
         <div className="mb-20 space-y-6">
-          <div className="flex items-center gap-4 text-[#1B79EE] font-mono text-[10px] uppercase tracking-[0.5em] font-black">
-             <Activity className="w-4 h-4 animate-pulse" /> System_Architecture
-          </div>
+ 
           <h2 className="text-6xl md:text-8xl font-black text-[#004aad] tracking-tighter leading-[0.9] uppercase">
             SOLUTIONS FOR <br />
             <span style={{ WebkitTextStroke: "1.5px #1B79EE", color: "transparent" }}>THE CRITICAL PATH.</span>

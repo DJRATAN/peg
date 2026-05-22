@@ -175,9 +175,7 @@ const GridContent = () => {
                 </div>
                 {/* INNOVATION FOOTER */}
                 <div className="mt-24 relative">
-                    <div className="absolute inset-0 flex items-center" aria-hidden="true">
-                        <div className="w-full border-t border-slate-100"></div>
-                    </div>
+ 
                     <div className="relative flex justify-center">
                         <span className="bg-white px-6">
                             <Zap className="w-8 h-8 text-[#1B79EE] animate-pulse" />

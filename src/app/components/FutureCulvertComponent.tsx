@@ -42,7 +42,6 @@ export default function FutureCulvertComponent() {
       {/* 1. HEADER STRIP: 32" Screen Information Density */}
       <div className="w-full px-10 md:px-20 py-16 flex justify-between items-end border-b border-white/10 relative z-30">
         <div className="space-y-2">
-          <p className="text-[#1B79EE] font-mono text-[10px] font-black uppercase tracking-[0.5em]">Vision_026_Series // 2030+ OPS</p>
           <h2 className="text-white text-5xl md:text-7xl font-black tracking-tighter leading-[0.9]">
             THE FUTURE OF <br />
             <span style={{ WebkitTextStroke: "1.5px #1B79EE", color: "transparent" }}>BOX CULVERTS.</span>

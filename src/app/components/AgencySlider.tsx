@@ -23,22 +23,13 @@ export default function FullWidthAgencySlider() {
           className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#004aad]/10 pb-10"
         >
           <div className="space-y-2">
-            <h2 className="text-[#004aad] text-xs font-mono tracking-[0.5em] uppercase">
-              Global_Network_Protocol
-            </h2>
+ 
             <p className="text-5xl md:text-7xl font-black text-[#004aad] tracking-tighter leading-none">
               AGENCY <span style={{ WebkitTextStroke: "1.5px #1B79EE", color: "transparent" }}>STANDARDS</span>
             </p>
           </div>
           
-          <div className="text-right">
-            <p className="text-[#1B79EE] font-mono text-xs tracking-widest uppercase mb-1">
-              Auth_Provision
-            </p>
-            <p className="text-slate-400 font-mono text-xs uppercase">
-              Count: 050_Certified_Partners
-            </p>
-          </div>
+ 
         </motion.div>
       </div>
 

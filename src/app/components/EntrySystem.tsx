@@ -81,33 +81,18 @@ export default function EntrySystem() {
             <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={isInitialized ? { opacity: 1, y: 0 } : {}}
-                className="fixed top-20 right-8 z-[100] flex items-center gap-4 bg-white/10 backdrop-blur-md border border-white/20 p-2 pl-6 shadow-2xl"
+                className="fixed top-10 right-8 z-[100] flex items-center gap-4 bg-white/10 backdrop-blur-md border border-white/20   shadow-2xl"
             >
-                {/* Dynamic Frequency Visualizer */}
-                <div className="flex items-end gap-1 h-4 w-12">
-                    {[...Array(5)].map((_, i) => (
-                        <motion.div
-                            key={i}
-                            animate={!isMuted ? { height: [4, 16, 8, 14, 4] } : { height: 2 }}
-                            transition={{ repeat: Infinity, duration: 0.6, delay: i * 0.1 }}
-                            className="w-1 bg-[#1B79EE]"
-                        />
-                    ))}
-                </div>
 
-                <div className="h-6 w-[1px] bg-white/20 mx-2" />
+
 
                 <button
                     onClick={toggleMute}
-                    className="p-3 bg-[#004aad] text-white hover:bg-[#1B79EE] transition-colors"
+                    className="text-[#004aad] curser-pointer"
                 >
                     {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
                 </button>
 
-                {/* FIXED: Changed </button> to </div> here */}
-                <div className="absolute -bottom-6 right-0 font-mono text-[8px] text-[#004aad] font-bold tracking-widest uppercase">
-                    {isMuted ? "Audio_Disabled" : "Audio_Streaming"}
-                </div>
             </motion.div>
         </>
     );

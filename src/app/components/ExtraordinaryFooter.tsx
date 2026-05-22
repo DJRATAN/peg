@@ -129,19 +129,13 @@ export default function ExtraordinaryFooter() {
 
                 {/* BOTTOM BAR: LEGAL & STATUS */}
                 <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div className="flex items-center gap-8 font-mono text-[9px] text-slate-300">
+                    <div className="font-mono text-[9px] text-[#004aad] font-bold tracking-widest flex items-center gap-8   ">
                         <span>© 2026 PRECAST ENGINEER GROUP</span>
                         <span className="hidden md:block w-[1px] h-3 bg-slate-200" />
                         <span className="hover:text-[#1B79EE] cursor-pointer transition-colors uppercase">Privacy Policy</span>
                         <span className="hover:text-[#1B79EE] cursor-pointer transition-colors uppercase">Terms of Service</span>
                     </div>
-
-                    <div className="flex items-center gap-3 bg-[#F8F9FA] px-4 py-2 border border-slate-100">
-                        <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                        <span className="font-mono text-[9px] text-[#004aad] font-bold tracking-widest uppercase">
-                            System_Status: Optimal
-                        </span>
-                    </div>
+ 
                 </div>
 
             </div>
