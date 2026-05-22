@@ -1,14 +1,14 @@
 "use client";
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { 
   FolderKanban, Video, BookOpen, Leaf, Mail, FileText, 
-  GraduationCap, MonitorPlay, Mic, Award, FileDigit, Accessibility, Play
+  GraduationCap, MonitorPlay, Mic, Award, FileDigit, Accessibility, Play,
+  SkipForward, SkipBack, PlayCircle
 } from 'lucide-react';
 
 const resourceColumns = [
-  // ... (Keep your existing resourceColumns array here)
   {
     links: [
       { name: 'PROJECTS', href: '/projects', highlight: true, icon: <FolderKanban className="w-4 h-4" /> },
@@ -31,102 +31,158 @@ const resourceColumns = [
   }
 ];
 
+const videoPlaylist = [
+  "/assets/video/72 precast manhole Doghouse.646.mp4",
+  "/assets/video/DB-6 Distribution Box.631.mp4",
+  "/assets/video/E20 V1 final.mp4",
+  "/assets/video/E25 V2 final.mp4",
+  "/assets/video/E38 V3 final blue bg.mp4",
+];
+
 export const ResourceDirectory = () => {
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Fallback to guarantee playback starts and continues
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.play().catch(error => {
         console.warn("Video autoplay prevented by browser:", error);
       });
     }
-  }, []);
+  }, [currentVideoIndex]);
 
-  // Bulletproof infinite loop handler
-  const handleVideoEnd = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
+  // Advance to next video, loop to start
+  const playNextVideo = () => {
+    setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videoPlaylist.length);
+  };
+
+  // Go to previous video, loop to end
+  const playPrevVideo = () => {
+    setCurrentVideoIndex((prevIndex) => (prevIndex - 1 + videoPlaylist.length) % videoPlaylist.length);
   };
 
   return (
-    <section className="relative w-full min-h-[600px] flex items-center overflow-hidden bg-[#004aad]">
-      
-      {/* BULLETPROOF CINEMATIC VIDEO BACKGROUND */}
-      <video 
-        ref={videoRef}
-        autoPlay 
-        loop 
-        muted 
-        playsInline
-        onEnded={handleVideoEnd} // Forces replay if browser stops it
-        className="absolute inset-0 w-full h-full object-cover z-0 opacity-100"
-      >
-        <source src="/assets/E25 V2 final.mp4" type="video/mp4" />
-      </video>
-
-      {/* COLOR GRADE OVERLAYS */}
-      <div className="absolute inset-0 z-0 bg-[#004aad]/40 mix-blend-multiply" />
-      <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#004aad] via-[#004aad]/80 to-transparent" />
-
-      {/* CONTENT CONTAINER */}
-      <div className="w-full px-10 md:px-20 py-16 relative z-10">
+    <section className="w-full py-20 bg-[#004aad] text-white overflow-hidden">
+      <div className="w-full px-10 md:px-20 py-16">
         
-        {/* FROSTED GLASS TERMINAL */}
-        <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-12 md:p-16 shadow-[0_20px_50px_rgba(0,74,173,0.3)] max-w-6xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 items-stretch">
+          
+          {/* LEFT PANEL: HEADING + DIRECTORY (Spans 7 Columns) */}
+          <div className="xl:col-span-7 flex flex-col justify-between space-y-10">
             
-            {/* Left: Main Heading */}
-            <div className="lg:col-span-6 lg:border-r border-white/20 pr-0 lg:pr-12">
-              <div className="flex items-center gap-3 text-cyan-300 font-mono text-[10px] font-black uppercase tracking-[0.5em] mb-6">
-                 <Play className="w-4 h-4 animate-pulse" /> Active Media Directory
+            {/* Title Block */}
+            <div className="max-w-xl">
+              <div className="flex items-center gap-3 text-cyan-300 font-mono text-[10px] font-black uppercase tracking-[0.5em] mb-4">
+                <Play className="w-4 h-4 animate-pulse" /> Active Media Directory
               </div>
-              <h2 className="text-5xl md:text-6xl font-black text-white tracking-tighter leading-[0.9] uppercase">
+              <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-[0.95] uppercase">
                 BEYOND <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-[#1B79EE]">
                   SPECIFICATIONS.
                 </span>
               </h2>
-              <p className="mt-6 text-white/80 font-medium leading-relaxed max-w-sm">
+              <p className="mt-4 text-white/80 font-medium leading-relaxed text-sm md:text-base">
                 Access our master library of engineering reports, structural videos, and technical podcasts.
               </p>
             </div>
 
-            {/* Right: Link Columns */}
-            <div className="lg:col-span-6 grid grid-cols-1 md:grid-cols-2 gap-8 pl-0 lg:pl-8">
-              {resourceColumns.map((col, idx) => (
-                <ul key={idx} className="space-y-4">
-                  {col.links.map((link) => (
-                    <li key={link.name}>
-                      <Link 
-                        href={link.href}
-                        className="group flex items-center gap-4 text-sm font-black tracking-widest text-white hover:text-cyan-300 transition-colors"
-                      >
-                        {/* Interactive Icon Box */}
-                        <div className="p-2 bg-white/10 border border-white/20 group-hover:bg-cyan-300/20 group-hover:border-cyan-300 transition-all duration-300">
-                          {link.icon}
-                        </div>
-                        
-                        <span className={`uppercase ${link.italic ? 'italic' : ''}`}>
-                          {link.name}
-                        </span>
-
-                        {/* High-Tech 'NEW' Badge */}
-                        {link.highlight && (
-                          <span className="ml-auto text-[8px] font-mono font-bold bg-cyan-300 text-[#004aad] px-2 py-1 tracking-widest shadow-[0_0_10px_rgba(103,232,249,0.4)] animate-pulse">
-                            NEW_NODE
+            {/* Frosted Glass Link Directory Box */}
+            <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 md:p-10 shadow-[0_20px_50px_rgba(0,74,173,0.3)] flex-grow">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full items-center">
+                {resourceColumns.map((col, idx) => (
+                  <ul key={idx} className="space-y-4">
+                    {col.links.map((link) => (
+                      <li key={link.name}>
+                        <Link 
+                          href={link.href}
+                          className="group flex items-center gap-4 text-xs font-black tracking-widest text-white hover:text-cyan-300 transition-colors"
+                        >
+                          <div className="p-2 bg-white/10 border border-white/20 group-hover:bg-cyan-300/20 group-hover:border-cyan-300 transition-all duration-300 shrink-0">
+                            {link.icon}
+                          </div>
+                          
+                          <span className={`uppercase truncate ${link.italic ? 'italic' : ''}`}>
+                            {link.name}
                           </span>
-                        )}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              ))}
+
+                          {link.highlight && (
+                            <span className="ml-auto text-[8px] font-mono font-bold bg-cyan-300 text-[#004aad] px-2 py-0.5 tracking-widest shadow-[0_0_10px_rgba(103,232,249,0.4)] animate-pulse shrink-0">
+                              NEW_NODE
+                            </span>
+                          )}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ))}
+              </div>
             </div>
 
           </div>
+
+          {/* RIGHT PANEL: PLAYLIST VIDEO PLAYER (Spans 5 Columns) */}
+          <div className="xl:col-span-5 w-full h-full min-h-[400px]">
+            {/* FIXED: Removed ALL black. Now using a pure translucent glass layer (bg-white/5) over the deep blue background */}
+            <div className="relative w-full h-full bg-white/5 backdrop-blur-sm border border-white/20 shadow-2xl overflow-hidden group hover:border-cyan-300 transition-colors duration-500">
+              
+              {/* Absolute Positioning Wrapper */}
+              <div className="absolute inset-0 p-1.5">
+                <video 
+                  key={currentVideoIndex}
+                  ref={videoRef}
+                  autoPlay 
+                  muted 
+                  playsInline
+                  onEnded={playNextVideo}
+                  className="w-full h-full object-contain"
+                >
+                  <source src={videoPlaylist[currentVideoIndex]} type="video/mp4" />
+                </video>
+              </div>
+
+              {/* TOP HUD: Status Indicators */}
+              <div className="absolute top-4 left-4 flex gap-1.5 opacity-40 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
+                <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                <div className="w-1.5 h-1.5 rounded-full bg-white" />
+              </div>
+
+              {/* BOTTOM HUD: Playlist Tracker & Prev/Next Icons */}
+              <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                
+                {/* Playlist Counter - Replaced black with frosted white glass */}
+                <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 border border-white/20 shadow-sm">
+                  <PlayCircle className="w-3 h-3 text-cyan-300" />
+                  <span className="font-mono text-[9px] tracking-widest text-white uppercase font-bold">
+                    {currentVideoIndex + 1} / {videoPlaylist.length}
+                  </span>
+                </div>
+
+                {/* Icon-only Navigation Buttons - Replaced black with frosted white glass */}
+                <div className="flex items-center gap-2">
+                  <button 
+                    onClick={playPrevVideo}
+                    className="flex justify-center items-center w-10 h-10 bg-white/10 hover:bg-cyan-300 backdrop-blur-md border border-white/20 hover:border-cyan-300 text-white hover:text-[#004aad] transition-all duration-300 group/btn shadow-sm"
+                    aria-label="Previous Video"
+                  >
+                    <SkipBack className="w-4 h-4 group-hover/btn:-translate-x-0.5 transition-transform" />
+                  </button>
+
+                  <button 
+                    onClick={playNextVideo}
+                    className="flex justify-center items-center w-10 h-10 bg-white/10 hover:bg-cyan-300 backdrop-blur-md border border-white/20 hover:border-cyan-300 text-white hover:text-[#004aad] transition-all duration-300 group/btn shadow-sm"
+                    aria-label="Next Video"
+                  >
+                    <SkipForward className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
+                  </button>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
         </div>
+
       </div>
     </section>
   );

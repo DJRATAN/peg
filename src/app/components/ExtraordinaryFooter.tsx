@@ -16,92 +16,96 @@ const logos = [
     { src: "/assets/footer_logo/totaltech.jpeg", alt: "Partner 04" },
     { src: "/assets/footer_logo/trench-unlimited.jpeg", alt: "Partner 05" },
 ];
-const socialLogos = [
-    { Icon: FaFacebook },
-    { Icon: BsTwitter },
-    { Icon: FaYoutube },
-    { Icon: FaInstagram },
-    { Icon: FaLinkedinIn },
+const socialLinks = [
+    { icon: FaFacebook, href: "#" },
+    { icon: BsTwitter, href: "#" },
+    { icon: FaYoutube, href: "#" },
+    { icon: FaInstagram, href: "#" },
+    { icon: FaLinkedinIn, href: "#" },
 ];
 export default function ExtraordinaryFooter() {
     const marqueeLogos = [...logos, ...logos, ...logos];
     return (
 
-        <footer className="relative w-full bg-white border-t-2 border-slate-100 pt-24 pb-12 overflow-hidden select-none">
+        <footer className="relative w-full bg-white border-t-2 border-slate-100 overflow-hidden select-none">
 
             {/* 32-INCH FULL WIDTH CONTAINER */}
             <div className="w-full px-10 md:px-20 py-16">
-                <div className="text-5xl text-center m-8 font-bold text-[#004aad]"><h1>Our Group Dedicated to Precast </h1></div>
-                <div className="w-full bg-white border-t border-slate-100 py-10 ">
+                <div className="w-full bg-white pb-10 overflow-hidden">
+                    <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
-   
-                    <div className="w-full mx-auto flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-4">
-
-                        {/* 1. LEFT: PEG BRANDING */}
-                        <div className="shrink-0">
+                        {/* 1. LEFT: LOGO + ABOUT (Spans 3 Columns) */}
+                        <div className="lg:col-span-3 flex flex-col items-center lg:items-start space-y-6">
                             <Image
                                 src="/PEG.png"
                                 alt="Precast Engineering Group"
                                 width={200}
-                                height={200}
+                                height={80}
                                 className="object-contain"
                             />
+                            <p className="text-slate-500 font-medium text-sm leading-relaxed text-center lg:text-left max-w-xs">
+                                <strong className="text-[#004aad]">Precast Engineering Group (PEG)</strong> is the global authority dedicated to advancing structural precast technology, engineering, and manufacturing.
+                            </p>
                         </div>
 
-                        <div className="relative flex-1 max-w-[800px] h-24 overflow-hidden border-x border-slate-50 mx-4">
-                            {/* Edge Masks */}
-                            <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-                            <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+                        {/* 2. MIDDLE: HEADLINE + MARQUEE (Spans 6 Columns) */}
+                        <div className="lg:col-span-6 flex flex-col items-center lg:border-x border-slate-100 px-0 lg:px-10">
 
-                            <motion.div
-                                animate={{ x: ["0%", "-50%"] }}
-                                transition={{
-                                    duration: 20,
-                                    ease: "linear",
-                                    repeat: Infinity,
-                                }}
-                                className="flex items-center h-full"
-                            >
-                                {[...marqueeLogos, ...marqueeLogos].map((logo, i) => (
-                                    <div key={i} className="px-8 shrink-0">
-                                        <div className="relative w-36 h-36 opacity-100">
-                                            <Image
-                                                src={logo.src}
-                                                alt={logo.alt}
-                                                fill
-                                                className="object-contain"
-                                            />
-                                        </div>
-                                    </div>
-                                ))}
-                            </motion.div>
-                        </div>
+                            <h3 className="text-3xl font-black text-[#004aad] uppercase tracking-tighter mb-8 text-center">
+                                Our Group Dedicated to Precast
+                            </h3>
 
-                        <div className="flex items-center shrink-0">
-                            {[FaFacebook, BsTwitter, FaYoutube, FaInstagram, FaInstagram].map((Icon, i) => (
+                            <div className="relative w-full max-w-[800px] h-20 overflow-hidden">
+                                {/* Edge Blur Masks for smooth entry/exit */}
+                                <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+                                <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
+                                {/* Infinite Marquee Animation */}
                                 <motion.div
-
-                                    key={i}
-
-                                    whileHover={{ y: -5, backgroundColor: "#004aad", color: "#fff" }}
-
-                                    className="p-4 border flex justify-center lg:justify-end gap-3 mb-12 border-slate-200 cursor-pointer transition-colors text-[#004aad]"
-
+                                    animate={{ x: ["0%", "-50%"] }}
+                                    transition={{
+                                        duration: 20,
+                                        ease: "linear",
+                                        repeat: Infinity,
+                                    }}
+                                    className="flex items-center h-full w-max"
                                 >
-
-                                    <Icon className="w-5 h-5" />
-
+                                    {[...marqueeLogos, ...marqueeLogos].map((logo, i) => (
+                                        <div key={i} className="px-8 shrink-0">
+                                            <div className="relative w-32 h-16 opacity-100 cursor-pointer">
+                                                <Image
+                                                    src={logo.src}
+                                                    alt={logo.alt}
+                                                    fill
+                                                    className="object-contain"
+                                                />
+                                            </div>
+                                        </div>
+                                    ))}
                                 </motion.div>
+                            </div>
+                        </div>
 
-                            ))}
-
-
+                        {/* 3. RIGHT: SOCIAL ICONS (Spans 3 Columns) */}
+                        <div className="lg:col-span-3 flex flex-wrap justify-center lg:justify-end gap-3">
+                            {socialLinks.map((social, i) => {
+                                const Icon = social.icon;
+                                return (
+                                    <motion.a
+                                        key={i}
+                                        href={social.href}
+                                        whileHover={{ y: -5, backgroundColor: "#004aad", borderColor: "#004aad", color: "#ffffff" }}
+                                        className="p-4 border border-slate-200 text-[#004aad] transition-colors duration-300 flex items-center justify-center bg-slate-50"
+                                    >
+                                        <Icon className="w-5 h-5" />
+                                    </motion.a>
+                                );
+                            })}
                         </div>
 
                     </div>
-                </div> 
-                <div className="grid grid-cols-2 md:grid-cols-6 gap-1 border-b border-slate-100 pb-20">
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-6 gap-1 border-b border-slate-100 pb-12 ">
                     {footerData.map((section, idx) => (
                         <div key={idx} className="flex flex-col gap-6">
                             <h3 className="text-[#004aad] text-[11px] font-black uppercase tracking-[0.3em] flex items-center gap-2">
@@ -128,14 +132,14 @@ export default function ExtraordinaryFooter() {
                 </div>
 
                 {/* BOTTOM BAR: LEGAL & STATUS */}
-                <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div className=" flex flex-col md:flex-row justify-between items-center gap-6">
                     <div className="font-mono text-[9px] text-[#004aad] font-bold tracking-widest flex items-center gap-8   ">
                         <span>© 2026 PRECAST ENGINEER GROUP</span>
                         <span className="hidden md:block w-[1px] h-3 bg-slate-200" />
                         <span className="hover:text-[#1B79EE] cursor-pointer transition-colors uppercase">Privacy Policy</span>
                         <span className="hover:text-[#1B79EE] cursor-pointer transition-colors uppercase">Terms of Service</span>
                     </div>
- 
+
                 </div>
 
             </div>

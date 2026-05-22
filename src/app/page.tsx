@@ -20,9 +20,9 @@ export default function Home() {
       <LoginGateway />
       <DeliverableUpgrade />
       <GridContent />
-      <RegistrationBanner txtSrc={'Register now to save projects, bookmark favorites, and get the most out of PEG'} btSrc="Join PEG" />
+      {/* <RegistrationBanner txtSrc={'Register now to save projects, bookmark favorites, and get the most out of PEG'} btSrc="Join PEG" /> */}
       <ResourceDirectory />
-      <RegistrationBanner txtSrc={'News and Updated Content'} btSrc="" />
+      {/* <RegistrationBanner txtSrc={'News and Updated Content'} btSrc="" /> */}
       {/* <BusinessPodcastSection/> */}
       <AgencySlider />
       <ContentSection />

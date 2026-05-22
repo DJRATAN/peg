@@ -73,7 +73,7 @@ const technicalData = [
 ];
 const GridContent = () => {
     return (
-        <section className="w-full py-24 bg-white overflow-hidden">
+        <section className="w-full bg-white overflow-hidden">
             <div className="w-full px-10 md:px-20 py-16">
 
                 {/* HIGH-IMPACT HEADER SECTION */}
