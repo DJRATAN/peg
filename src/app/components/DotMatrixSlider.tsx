@@ -303,14 +303,6 @@ export default function DotMatrixSlider() {
 
                   {/* Core Matrix Metadata */}
                   <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-100">
-                    <div className="bg-slate-50/80 p-3.5 rounded-xl border border-slate-100">
-                      <p className="text-slate-400 font-mono text-[9px] uppercase tracking-widest mb-1.5 flex items-center gap-1">
-                        <Layers className="w-3.5 h-3.5" /> Design Tier
-                      </p>
-                      <p className="font-extrabold text-sm text-[#004aad] uppercase tracking-wider">
-                        {activeEnriched.tier}
-                      </p>
-                    </div>
                     
                     <div className="bg-slate-50/80 p-3.5 rounded-xl border border-slate-100">
                       <p className="text-slate-400 font-mono text-[9px] uppercase tracking-widest mb-1.5 flex items-center gap-1">
