@@ -13,7 +13,6 @@ import FutureCulvertComponent from "./components/FutureCulvertComponent";
 import DeliverableUpgrade from "./components/DeliverableUpgrade"; 
 import DotMatrixSlider from "./components/DotMatrixSlider";
 import MeetAtShows from "./components/MeetAtShows";
-import InteractiveCulvertViewer from "./components/InteractiveCulvertViewer";
 
 export default function Home() {
   return (
@@ -33,7 +32,6 @@ export default function Home() {
       <FutureCulvertComponent />
       <PegLocations />
       <MeetAtShows/>
-      {/* <InteractiveCulvertViewer/> */}
     </main>
   );
 }
