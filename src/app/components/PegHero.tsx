@@ -131,7 +131,7 @@ export default function PegHero() {
           className="flex flex-col sm:flex-row gap-5 mt-14 w-full max-w-lg"
         >
           {/* Primary Button: Dark Blue */}
-          <Button className="flex-1 bg-[#004aad] hover:bg-[#1B79EE] text-white rounded-none h-20 text-sm font-black tracking-[0.2em] transition-all duration-500 group shadow-xl">
+          <Button className="flex-1 bg-[#004aad] hover:bg-[#1B79EE] text-white rounded-none h-20 px-6 text-sm font-black tracking-[0.2em] transition-all duration-500 group shadow-xl">
             INITIALIZE PROPOSAL
             <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-3" />
           </Button>

@@ -10,21 +10,18 @@ const upgradeFeatures = [
     subtitle: "Zero-Friction Approval",
     description: "Upgrade from basic drafting to comprehensive calculation packages, structural load logic, and PE-stamped documentation engineered for immediate agency sign-off.",
     icon: <FileSignature className="w-8 h-8" />,
-    tag: "SYS_SUBMIT"
   },
   {
     title: "Precision Illustrations",
     subtitle: "Multi-Dimensional Clarity",
     description: "Eliminate site-level confusion. We deliver exact-tolerance shop drawings, 3D component isolation, and step-by-step erection sequencing.",
     icon: <PenTool className="w-8 h-8" />,
-    tag: "SYS_VISUAL"
   },
   {
     title: "Dynamic Standards",
     subtitle: "Always Code-Compliant",
     description: "Never fall behind. Our drafting protocols are continuously synchronized with the latest PCI, AASHTO, ASTM, and state-specific DOT master specifications.",
     icon: <BookOpenCheck className="w-8 h-8" />,
-    tag: "SYS_COMPLY"
   }
 ];
 
@@ -45,14 +42,7 @@ export default function DeliverableUpgrade() {
         
         {/* 1. MASSIVE TYPOGRAPHY HEADER */}
         <div className="max-w-5xl mb-24 space-y-6">
-          <motion.div 
-            initial={{ opacity: 0, width: 0 }}
-            whileInView={{ opacity: 1, width: '100px' }}
-            className="h-1 bg-[#1B79EE]"
-          />
-          <div className="flex items-center gap-4 text-[#1B79EE] font-mono text-[10px] uppercase tracking-[0.5em] font-black">
-             <Zap className="w-4 h-4 animate-pulse" /> Engineering Deliverables V2.0
-          </div>
+
           
           <h2 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] uppercase">
             Upgrade your <br />
@@ -79,9 +69,6 @@ export default function DeliverableUpgrade() {
                 <div className="p-5 bg-[#1B79EE] text-white transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-6 group-hover:shadow-xl">
                   {feature.icon}
                 </div>
-                <span className="font-mono text-[9px] uppercase tracking-widest text-white/30 group-hover:text-[#1B79EE]">
-                  {feature.tag}
-                </span>
               </div>
 
               {/* CONTENT */}

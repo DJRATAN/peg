@@ -96,7 +96,7 @@ export default function FullWidthAgencySlider() {
       </div>
 
       {/* 3. FOOTER: FULL WIDTH GRID */}
-      <div className="w-full px-10 md:px-20 mt-16">
+      {/* <div className="w-full px-10 md:px-20 mt-16">
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -121,17 +121,8 @@ export default function FullWidthAgencySlider() {
             </div>
           ))}
         </motion.div>
-      </div>
+      </div> */}
 
-      {/* 32-INCH MONITOR DECORATION */}
-      <div className="absolute top-10 right-10 hidden xl:block">
-        <div className="flex items-center gap-4">
-          <div className="w-12 h-[1px] bg-[#004aad]/20" />
-          <span className="font-mono text-xs text-slate-600 tracking-[0.4em] uppercase">
-            Wide_Format_Display_Active
-          </span>
-        </div>
-      </div>
     </section>
   );
 }

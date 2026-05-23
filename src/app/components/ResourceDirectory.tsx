@@ -73,7 +73,6 @@ export const ResourceDirectory = () => {
             {/* Title Block */}
             <div className="max-w-xl">
               <div className="flex items-center gap-3 text-cyan-300 font-mono text-[10px] font-black uppercase tracking-[0.5em] mb-4">
-                <Play className="w-4 h-4 animate-pulse" /> Active Media Directory
               </div>
               <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-[0.95] uppercase">
                 BEYOND <br />

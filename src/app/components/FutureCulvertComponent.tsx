@@ -46,12 +46,7 @@ export default function FutureCulvertComponent() {
             <span style={{ WebkitTextStroke: "1.5px #1B79EE", color: "transparent" }}>BOX CULVERTS.</span>
           </h2>
         </div>
-        <div className="hidden 2xl:flex flex-col items-end gap-3 text-right opacity-50">
-            <Activity className="w-8 h-8 text-[#1B79EE] animate-pulse" />
-            <p className="font-mono text-xs text-white max-w-[280px] uppercase tracking-wider leading-relaxed">
-              Simulating high-precision precast environments for next-generation ecological continuity and smart-city utility integration.
-            </p>
-        </div>
+ 
       </div>
 
       {/* 2. TRIPTYCH GRID: The 3 vertical panels */}

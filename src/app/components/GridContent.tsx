@@ -34,7 +34,6 @@ const technicalData = [
         // Default colors
         activeBg: "#004aad",
         activeText: "#ffffff",
-        footer: "ENG_SOLUTIONS"
     },
     {
         category: "Technologies",
@@ -46,7 +45,6 @@ const technicalData = [
         ],
         activeBg: "#1B79EE", // Using Light Blue for this one for variety
         activeText: "#ffffff",
-        footer: "SYSTEM_READY"
     },
     {
         category: "Manufacturing",
@@ -57,7 +55,6 @@ const technicalData = [
         ],
         activeBg: "#004aad",
         activeText: "#ffffff",
-        footer: "FAB_ACTIVE"
     },
     {
         category: "IT & Automation",
@@ -68,7 +65,6 @@ const technicalData = [
         ],
         activeBg: "#004aad",
         activeText: "#ffffff",
-        footer: "AUTO_SYNC"
     },
 ];
 const GridContent = () => {
@@ -135,9 +131,7 @@ const GridContent = () => {
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <div className="w-2 h-2 rounded-full bg-[#1B79EE] group-hover:bg-emerald-400 animate-pulse" />
-                                    <span className="font-mono text-[9px] uppercase tracking-widest text-slate-300 group-hover:text-white/50 transition-colors">
-                                        {spec.footer}
-                                    </span>
+                        
                                 </div>
                             </div>
 
