@@ -47,7 +47,6 @@ export default function RootLayout({
       <EntrySystem/>
       <FloatingTelemetryHub/>
       <body className="min-h-full flex flex-col">{children}</body>
-      {/* <Footer/> */}
       <ExtraordinaryFooter/>
     </html>
   );
