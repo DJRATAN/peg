@@ -10,6 +10,9 @@
 .animate-spin-slow {
   animation: spin-slow 8s linear infinite;
 }
+html {
+  scroll-behavior: smooth;
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

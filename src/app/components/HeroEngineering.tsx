@@ -58,7 +58,7 @@ const HeroEngineering = () => {
           </div>
           <Input
             type="text"
-            placeholder="Search structural precast, BIM objects, or technical specs..."
+            placeholder="Search structural precast, or technical specs..."
             className="border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-xl py-10 placeholder:text-slate-300 font-medium"
           />
           <Button className="rounded-none h-20 px-12 bg-[#004aad] hover:bg-[#1B79EE] text-white font-black transition-all text-xl tracking-widest">

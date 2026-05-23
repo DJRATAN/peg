@@ -29,7 +29,7 @@ const technicalData = [
         items: [
             { label: "Hourly Engineering", sub: "Professional PE services billed by the hour for agility." },
             { label: "Structural Submittals", sub: "Calculations & stamped drawings for agency approval." },
-            { label: "BIM/CAD Strategy", sub: "Seamless digital integration into master site models." }
+            { label: "CAD Strategy", sub: "Seamless digital integration into master site models." }
         ],
         // Default colors
         activeBg: "#004aad",
@@ -94,7 +94,7 @@ const GridContent = () => {
                             </h3>
                             <p className="text-slate-500 font-medium text-lg leading-relaxed">
                                 It is the vertical integration of structural precision and manufacturing speed.
-                                We provide the calculations, BIM data, and hourly expertise to turn complex
+                                We provide the calculations, and hourly expertise to turn complex
                                 infrastructure into rapid-assembly reality.
                             </p>
                         </div>

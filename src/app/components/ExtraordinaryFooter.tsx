@@ -134,7 +134,7 @@ export default function ExtraordinaryFooter() {
                 {/* BOTTOM BAR: LEGAL & STATUS */}
                 <div className=" flex flex-col md:flex-row justify-between items-center gap-6">
                     <div className="font-mono text-[9px] text-[#004aad] font-bold tracking-widest flex items-center gap-8   ">
-                        <span>© 2026 PRECAST ENGINEER GROUP</span>
+                        <span>© 2026 PRECAST ENGINEERING GROUP</span>
                         <span className="hidden md:block w-[1px] h-3 bg-slate-200" />
                         <span className="hover:text-[#1B79EE] cursor-pointer transition-colors uppercase">Privacy Policy</span>
                         <span className="hover:text-[#1B79EE] cursor-pointer transition-colors uppercase">Terms of Service</span>

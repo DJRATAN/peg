@@ -10,7 +10,7 @@ const footerLinks = [
   {
     category: "Solutions",
     links: [
-      { name: "CAD/BIM", href: "#" },
+      { name: "CAD", href: "#" },
       { name: "Specs", href: "#" },
       { name: "Building Products", href: "#" },
       { name: "Catalogs/Videos", href: "#" },

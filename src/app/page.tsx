@@ -10,9 +10,10 @@ import LoginGateway from "./components/(auth)/page";
 import AgencySlider from "./components/AgencySlider";
 import PegLocations from "./components/PegLocations";
 import FutureCulvertComponent from "./components/FutureCulvertComponent";
-import DeliverableUpgrade from "./components/DeliverableUpgrade"; 
+import DeliverableUpgrade from "./components/DeliverableUpgrade";
 import DotMatrixSlider from "./components/DotMatrixSlider";
 import MeetAtShows from "./components/MeetAtShows";
+import ContactTerminal from "./components/ContactTerminal";
 
 export default function Home() {
   return (
@@ -27,11 +28,14 @@ export default function Home() {
       {/* <BusinessPodcastSection/> */}
       <AgencySlider />
       <ContentSection />
-      <PegHero /> 
-      <DotMatrixSlider/>
+      <PegHero />
+      <DotMatrixSlider />
       <FutureCulvertComponent />
       <PegLocations />
-      <MeetAtShows/>
+      <MeetAtShows />
+      <section id="contact-us" className="w-full bg-[#004aad] text-white overflow-hidden relative">
+        {/* <ContactTerminal /> */}
+      </section>
     </main>
   );
 }

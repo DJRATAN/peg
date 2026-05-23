@@ -45,7 +45,7 @@ export const ContentSection = () => {
                         The manufacturers are offline. Time is evaporating. You need to select, document, and integrate four complex precast products before the dawn deadline. 
                     </p>
                     <p>
-                        You don't need a sales pitch—you need a high-fidelity BIM, precision CSI specs, and exact architectural details. You need an engineering fail-safe.
+                        You don't need a sales pitch—you need a high-fidelity precision CSI specs, and exact architectural details. You need an engineering fail-safe.
                     </p>
                     <p className="font-black text-white text-xl mt-8">
                         PEG is your on-demand infrastructure.
@@ -89,9 +89,8 @@ export const ContentSection = () => {
                 >
                     <div>
                         <Database className="w-8 h-8 text-[#1B79EE] mb-6" />
-                        <h4 className="text-2xl font-black text-[#004aad] uppercase tracking-tighter mb-4">Parametric BIM</h4>
                         <p className="text-slate-500 text-sm font-medium leading-relaxed">
-                            Stop paying agencies to build content. We engineer high-performance BIM models with minimal geometry and maximum data logic—ready for immediate download.
+                            Stop paying agencies to build content. We engineer high-performance CAD with minimal geometry and maximum data logic—ready for immediate download.
                         </p>
                     </div>
                     <div className="mt-8 pt-6 border-t border-slate-100 flex items-center gap-4 text-[#1B79EE] font-black text-[10px] uppercase tracking-widest cursor-pointer">

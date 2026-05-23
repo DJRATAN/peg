@@ -39,7 +39,7 @@ export default function PegPortalDashboard() {
   const stakeholders = [
     {
       role: "Engineers & Architects",
-      desc: "CAD/BIM Vault & Structural Data",
+      desc: "Structural Data",
       icon: <Cpu className="w-6 h-6" />,
       color: "#1B79EE",
       span: "md:col-span-2",

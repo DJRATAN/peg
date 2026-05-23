@@ -6,13 +6,12 @@ import { ChevronDown, Search } from 'lucide-react';
 
 const menu = [
   {
-    title: 'CAD/BIM',
+    title: 'CAD',
     dropdown: [
       { name: 'CAD Drawings', href: '/products/cad-drawings' },
-      { name: 'BIM Files (Revit)', href: '/bim-files' },
       { name: '3D Models', href: '/3d-models' }
     ],
-  }, 
+  },
   {
     title: 'Specifications',
     dropdown: [
@@ -21,7 +20,7 @@ const menu = [
       { name: 'Short Form Specs', href: '/specs/short' },
       { name: 'Outline Specs', href: '/specs/outline' }
     ],
-  }, 
+  },
   {
     title: 'Products',
     dropdown: [
@@ -30,7 +29,7 @@ const menu = [
       { name: 'Certifications', href: '/products/certs' },
       { name: 'Data Sheets', href: '/products/data-sheets' },
     ],
-  }, 
+  },
   {
     title: 'Resources',
     dropdown: [
@@ -100,9 +99,11 @@ export const Navbar = () => {
           <button className="p-2 text-slate-400 hover:text-[#004aad] transition-colors">
             <Search className="w-5 h-5" />
           </button>
-          <Button className="bg-[#004aad] hover:bg-[#1B79EE] text-white font-bold px-6 py-5 rounded-none uppercase tracking-tighter transition-all shadow-[4px_4px_0px_#1B79EE]">
-            Contact Us
-          </Button>
+          <Link href={'#contact-us'}>
+            <Button className="bg-[#004aad] hover:bg-[#1B79EE] text-white font-bold px-6 py-5 rounded-none uppercase tracking-tighter transition-all shadow-[4px_4px_0px_#1B79EE]">
+              Contact Us
+            </Button>
+            </Link>
         </div>
 
       </div>
