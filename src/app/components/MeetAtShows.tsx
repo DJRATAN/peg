@@ -81,10 +81,17 @@ export default function MeetAtShows() {
 
         {/* HEADER & CONTROLS */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b-2 border-slate-200 pb-10 gap-8">
-          <div className="space-y-2">
-            <h2 className="text-[#1B79EE] font-mono text-[10px] font-black uppercase tracking-[0.5em]">Global_Events_Itinerary</h2>
-            <p className="text-5xl md:text-7xl font-black text-[#004aad] tracking-tighter uppercase leading-none">
-              Meet at <span style={{ WebkitTextStroke: "1px #1B79EE", color: "transparent" }}>the Shows.</span>
+          
+          <div className="space-y-6">
+            <div className="space-y-2">
+              <p className="text-5xl md:text-7xl font-black text-[#004aad] tracking-tighter uppercase leading-none">
+                Meet at <span style={{ WebkitTextStroke: "1px #1B79EE", color: "transparent" }}>the Shows.</span>
+              </p>
+            </div>
+            
+            {/* NEW TAGLINE ADDED HERE */}
+            <p className="text-xl md:text-2xl font-black text-[#004aad]/80 tracking-tight uppercase border-l-4 border-[#1B79EE] pl-4">
+              Make Your Presence Count.
             </p>
           </div>
 

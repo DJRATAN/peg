@@ -208,39 +208,7 @@ export default function DotMatrixSlider() {
               Verify precast concrete standard drawings, roadway plans, and bridge structural details across all 50+ United States jurisdictions in real-time.
             </p>
           </div>
-
-          {/* SEARCH & FILTERS */}
-          <div className="w-full lg:w-auto space-y-3">
-            <div className="relative w-full lg:w-96 shadow-sm rounded-xl">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-              <input
-                type="text"
-                placeholder="Search state DOT (e.g. California, NY)..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-semibold text-[#004aad] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#1B79EE] focus:border-transparent transition-all duration-200"
-              />
-            </div>
-            
-            <div className="flex flex-wrap items-center gap-2">
-              <div className="flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-slate-400 mr-1">
-                <Filter className="w-3 h-3" /> Filter:
-              </div>
-              {["All", "Seismic+", "Freeze-Thaw", "Coastal", "Heavy Load", "Standard"].map((tier) => (
-                <button
-                  key={tier}
-                  onClick={() => setSelectedTier(tier)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider border transition-all duration-150 cursor-pointer ${
-                    selectedTier === tier
-                      ? "bg-[#004aad] text-white border-[#004aad] shadow-md shadow-blue-900/10"
-                      : "bg-white text-slate-500 border-slate-200 hover:border-slate-300 hover:text-slate-700"
-                  }`}
-                >
-                  {tier}
-                </button>
-              ))}
-            </div>
-          </div>
+ 
         </div>
 
         {/* INTERACTIVE WORKSPACE */}

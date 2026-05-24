@@ -43,7 +43,7 @@ const technicalData = [
             { label: "Ready & Custom Softwares", sub: "Proprietary ERP & design automation." },
             { label: "Rapid Approvals", sub: "Accelerated PE stamping & submittal cycles." }
         ],
-        activeBg: "#1B79EE", // Using Light Blue for this one for variety
+        activeBg: "#004aad",
         activeText: "#ffffff",
     },
     {
@@ -128,11 +128,7 @@ const GridContent = () => {
                             <div className="flex justify-between items-start mb-12 relative z-10">
                                 <div className="p-4 bg-[#F1F5F9] text-[#1B79EE] group-hover:bg-white/20 group-hover:text-white transition-colors duration-300">
                                     {spec.icon}
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-[#1B79EE] group-hover:bg-emerald-400 animate-pulse" />
-                        
-                                </div>
+                                </div> 
                             </div>
 
                             <h3 className="text-3xl font-black uppercase tracking-tighter mb-10 text-[#004aad] group-hover:text-white relative z-10 transition-colors duration-300">

@@ -12,7 +12,6 @@ const futureInitiatives = [
     subtitle: "Ecological Continuity",
     description: "Re-engineering culverts into subterranean bridges that restore natural migration paths and reduce vehicle-wildlife collisions.",
     icon: <Rabbit className="w-8 h-8" />,
-    data: "85% FATALITY REDUCTION",
     img: "/assets/images/Box Culvert/11.jpeg", // IMAGE 1
   },
   {
@@ -20,7 +19,6 @@ const futureInitiatives = [
     subtitle: "Modular Smart-Cities",
     description: "Dual-purpose box culverts designed to house fiber optics, power, and water, allowing for maintenance without surface excavation.",
     icon: <Zap className="w-8 h-8" />,
-    data: "REF_UTILITY_V2.0",
     img: "/assets/images/Box Culvert/12.jpeg", // IMAGE 1
   },
   {
@@ -28,7 +26,6 @@ const futureInitiatives = [
     subtitle: "Carbon-Negative Precast",
     description: "Implementing Pozzolanic admixtures and CO2 mineralization to create culverts that actively sequester carbon over their 100-year lifespan.",
     icon: <Leaf className="w-6 h-6" />,
-    data: "NET_ZERO_CERTIFIED",
     img: "/assets/images/Box Culvert/13.jpeg", // IMAGE 1
   }
 ];
@@ -80,9 +77,6 @@ export default function FutureCulvertComponent() {
                 <div className="p-4 bg-white text-[#004aad] transition-transform duration-700 group-hover:rotate-[360deg]">
                   {item.icon}
                 </div>
-                <span className="font-mono text-[9px] text-white/50 tracking-[0.4em] uppercase font-bold">
-                  {item.data}
-                </span>
               </div>
 
               <div>

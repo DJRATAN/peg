@@ -31,10 +31,6 @@ export const ContentSection = () => {
             <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: `radial-gradient(#ffffff 1px, transparent 1px)`, backgroundSize: '24px 24px' }} />
             
             <div className="relative z-10">
-                <div className="flex justify-between items-center mb-12">
-                    <Clock className="w-10 h-10 text-[#1B79EE]" />
-                    <span className="font-mono text-[10px] tracking-[0.4em] uppercase text-white/40">T-Minus_06:00</span>
-                </div>
                 
                 <h3 className="text-4xl font-black uppercase tracking-tighter mb-8 leading-none">
                     01:00 HRS.<br />The Midnight<br />Submittal.
