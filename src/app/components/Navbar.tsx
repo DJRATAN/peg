@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -6,59 +7,59 @@ import { ChevronDown, Search } from 'lucide-react';
 
 const menu = [
   {
-    title: 'CAD',
+    title: 'ENGINEERING & CAD',
     dropdown: [
       { name: 'CAD Drawings', href: '/products/cad-drawings' },
-      { name: '3D Models', href: '/3d-models' }
+      { name: 'Structural Submittals', href: '/structural-submittals' },
+      { name: 'Engineering Services', href: '/engineering-servics' },
+      { name: 'consulting', href: '/consulting' }
     ],
   },
   {
-    title: 'Specifications',
+    title: 'SPECS & COMPLIANCE',
     dropdown: [
-      { name: 'Master Specifications', href: '/specs/master' },
-      { name: 'SpecWizard', href: '/specs/wizard' },
-      { name: 'Short Form Specs', href: '/specs/short' },
-      { name: 'Outline Specs', href: '/specs/outline' }
     ],
   },
   {
-    title: 'Products',
+    title: 'RESOURCES',
     dropdown: [
-      { name: 'CSI Divisions', href: '/products/divisions' },
-      { name: 'Product Categories', href: '/products/categories' },
-      { name: 'Certifications', href: '/products/certs' },
-      { name: 'Data Sheets', href: '/products/data-sheets' },
+      { name: 'Catalogs & Brochures', href: '/resources/catalogs-brochures' },
+      { name: 'Technical Videos', href: '/resources/technical-videos' },
+      { name: 'Project Gallery', href: '/resources/project-gallery' },
+      { name: 'Global Events/Shows', href: '/resources/global-shows' },
     ],
   },
   {
-    title: 'Resources',
+    title: 'PRODUCT & SOLUTION',
     dropdown: [
-      { name: 'Catalogs & Brochures', href: '/resources/catalogs' },
-      { name: 'Technical Videos', href: '/resources/videos' },
-      { name: 'Educational Webinars', href: '/resources/webinars' },
-      { name: 'Project Gallery', href: '/resources/gallery' },
+      { name: 'Product Categories', href: '/products/product-categories' },
+      { name: 'Certifications', href: '/products/certifications' },
+      { name: 'Data Sheets', href: '/products/data-sheet' },
+      { name: 'Materials', href: '/products/materials' },
     ],
   },
   {
-    title: 'BPM Services',
+    title: 'COMPANY/CORPORATE',
     dropdown: [
-      { name: 'Get Specified More', href: '/bpm/specified' },
-      { name: 'Add Products to Library', href: '/bpm/add' }
+      { name: 'About PEG', href: '/about' },
+      { name: 'Blog', href: '/blog' },
+      { name: 'Global Locations', href: '/global-location' },
+      { name: 'Contacts', href: '/contact' }
     ],
   },
 ];
 
 export const Navbar = () => {
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white border-b-2 border-slate-100 h-22.5 flex items-center">
+    <nav className="relative top-0 w-full z-50 bg-white border-b-2 border-slate-100 h-22.5 flex items-center">
       <div className="w-full px-10 md:px-20 py-16 flex items-center justify-between">
         <div className="flex items-center">
           <Link href="/">
             <Image
               src="/PEG.png"
               alt="Precast Engineering Group"
-              width={180}
-              height={50}
+              width={280}
+              height={180}
               className="object-contain"
               priority
             />
@@ -96,12 +97,12 @@ export const Navbar = () => {
 
         {/* RIGHT: Action Buttons */}
         <div className="flex items-center gap-4">
-          <button className="p-2 text-slate-400 hover:text-[#004aad] transition-colors">
+          {/* <button className="p-2 text-slate-400 hover:text-[#004aad] transition-colors">
             <Search className="w-5 h-5" />
-          </button>
+          </button> */}
           <Link href={'#contact-us'}>
             <Button className="bg-[#004aad] hover:bg-[#1B79EE] text-white font-bold px-6 py-5 rounded-none uppercase tracking-tighter transition-all shadow-[4px_4px_0px_#1B79EE]">
-              Contact Us
+              ACCESS TECHNICAL VAULT
             </Button>
             </Link>
         </div>
