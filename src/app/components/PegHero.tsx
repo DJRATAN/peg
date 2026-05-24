@@ -101,15 +101,7 @@ export default function PegHero() {
             FOR ANY SITUATION.
           </motion.div>
 
-          {/* Engineering Sub-text for 32" Screens */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.4 }}
-            transition={{ delay: 2.2 }}
-            className="mt-8 font-mono text-[10px] tracking-[0.5em] text-[#004aad]"
-          >
-            PEG_EST_1998 // INFRASTRUCTURE_PRECISION
-          </motion.p>
+
         </div>
 
         {/* Professional Subtext */}

@@ -102,7 +102,6 @@ const GridContent = () => {
 
                 {/* HEADER: Brutalist Style */}
                 <div className="mb-16 border-l-8 border-[#1B79EE] pl-8">
-                    <h2 className="text-[#004aad] text-[10px] font-mono tracking-[0.5em] uppercase mb-2">Core_Capabilities</h2>
                     <p className="text-5xl md:text-7xl font-black text-[#004aad] tracking-tighter">
                         TECHNICAL <span style={{ WebkitTextStroke: "1px #1B79EE", color: "transparent" }}>SPECS.</span>
                     </p>

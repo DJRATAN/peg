@@ -16,12 +16,14 @@ import MeetAtShows from "./components/MeetAtShows";
 import ContactTerminal from "./components/ContactTerminal";
 import FuturisticCTA from "./components/FuturisticCTA";
 import PrecastersGoDigital from "./components/PrecastersGoDigital";
+import PrecasterManifesto from "./components/PrecasterManifesto";
 
 export default function Home() {
   return (
     <main className="flex-1 flex flex-col items-center bg-slate-50">
       <FuturisticCTA/>
       <HeroEngineering />
+      <PrecasterManifesto/>
       <LoginGateway />
       <DeliverableUpgrade />
       <section id="technical-vault" className="w-full bg-[#004aad] text-white overflow-hidden relative">
@@ -41,7 +43,7 @@ export default function Home() {
       <section id="contact-us" className="w-full bg-[#004aad] text-white overflow-hidden relative">
         {/* <ContactTerminal /> */}
       </section>
-      <PrecastersGoDigital/>
+      {/* <PrecastersGoDigital/> */}
     </main>
   );
 }

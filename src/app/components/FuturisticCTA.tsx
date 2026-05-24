@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function FuturisticCTA() {
   return (
-    <section className="relative w-full px-10 md:px-20 py-32 bg-[#03152b] overflow-hidden flex items-center justify-center min-h-[60vh]">
+    <section className="relative w-full px-10 md:px-20 py-32 bg-[#004aad] overflow-hidden flex items-center justify-center min-h-[60vh]">
       
       {/* BACKGROUND: Futuristic CAD Grid & Glows */}
       <div 
@@ -46,7 +46,7 @@ export default function FuturisticCTA() {
           className="text-6xl md:text-8xl lg:text-9xl font-black text-white uppercase tracking-tighter leading-[0.85] mb-6"
         >
           PEG YOUR <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#004aad]  to-[#1B79EE]">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white  to-[#1B79EE]">
             IDEAS.
           </span>
         </motion.h2>

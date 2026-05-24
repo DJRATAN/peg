@@ -33,7 +33,6 @@ const resourceColumns = [
 
 const videoPlaylist = [
   "/assets/video/72 precast manhole Doghouse.646.mp4",
-  "/assets/video/DB-6 Distribution Box.631.mp4",
   "/assets/video/E20 V1 final.mp4",
   "/assets/video/E25 V2 final.mp4",
   "/assets/video/E38 V3 final blue bg.mp4",
@@ -62,7 +61,7 @@ export const ResourceDirectory = () => {
   };
 
   return (
-    <section className="w-full py-20 bg-[#004aad] text-white overflow-hidden">
+    <section className="w-full bg-[#004aad] text-white overflow-hidden">
       <div className="w-full px-10 md:px-20 py-16">
         
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-12 items-stretch">
@@ -72,11 +71,11 @@ export const ResourceDirectory = () => {
             
             {/* Title Block */}
             <div className="max-w-xl">
-              <div className="flex items-center gap-3 text-cyan-300 font-mono text-[10px] font-black uppercase tracking-[0.5em] mb-4">
+              <div className="flex items-center gap-3 text-[#1B79EE] font-mono text-[10px] font-black uppercase tracking-[0.5em] mb-4">
               </div>
               <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-[0.95] uppercase">
                 BEYOND <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-[#1B79EE]">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1B79EE] to-[#1B79EE]">
                   SPECIFICATIONS.
                 </span>
               </h2>
@@ -94,9 +93,9 @@ export const ResourceDirectory = () => {
                       <li key={link.name}>
                         <Link 
                           href={link.href}
-                          className="group flex items-center gap-4 text-xs font-black tracking-widest text-white hover:text-cyan-300 transition-colors"
+                          className="group flex items-center gap-4 text-xs font-black tracking-widest text-white hover:text-[#1B79EE] transition-colors"
                         >
-                          <div className="p-2 bg-white/10 border border-white/20 group-hover:bg-cyan-300/20 group-hover:border-cyan-300 transition-all duration-300 shrink-0">
+                          <div className="p-2 bg-white/10 border border-white/20 group-hover:bg-[#1B79EE]/20 group-hover:border-[#1B79EE] transition-all duration-300 shrink-0">
                             {link.icon}
                           </div>
                           
@@ -105,7 +104,7 @@ export const ResourceDirectory = () => {
                           </span>
 
                           {link.highlight && (
-                            <span className="ml-auto text-[8px] font-mono font-bold bg-cyan-300 text-[#004aad] px-2 py-0.5 tracking-widest shadow-[0_0_10px_rgba(103,232,249,0.4)] animate-pulse shrink-0">
+                            <span className="ml-auto text-[8px] font-mono font-bold bg-[#1B79EE] text-[#004aad] px-2 py-0.5 tracking-widest shadow-[0_0_10px_rgba(103,232,249,0.4)] animate-pulse shrink-0">
                               NEW_NODE
                             </span>
                           )}
@@ -122,7 +121,7 @@ export const ResourceDirectory = () => {
           {/* RIGHT PANEL: PLAYLIST VIDEO PLAYER (Spans 5 Columns) */}
           <div className="xl:col-span-5 w-full h-full min-h-[400px]">
             {/* FIXED: Removed ALL black. Now using a pure translucent glass layer (bg-white/5) over the deep blue background */}
-            <div className="relative w-full h-full bg-white/5 backdrop-blur-sm border border-white/20 shadow-2xl overflow-hidden group hover:border-cyan-300 transition-colors duration-500">
+            <div className="relative w-full h-full bg-white/5 backdrop-blur-sm border border-white/20 shadow-2xl overflow-hidden group hover:border-[#1B79EE] transition-colors duration-500">
               
               {/* Absolute Positioning Wrapper */}
               <div className="absolute inset-0 p-1.5">
@@ -141,7 +140,7 @@ export const ResourceDirectory = () => {
 
               {/* TOP HUD: Status Indicators */}
               <div className="absolute top-4 left-4 flex gap-1.5 opacity-40 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
-                <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                <div className="w-1.5 h-1.5 rounded-full bg-[#1B79EE] animate-pulse" />
                 <div className="w-1.5 h-1.5 rounded-full bg-white" />
               </div>
 
@@ -150,7 +149,7 @@ export const ResourceDirectory = () => {
                 
                 {/* Playlist Counter - Replaced black with frosted white glass */}
                 <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 border border-white/20 shadow-sm">
-                  <PlayCircle className="w-3 h-3 text-cyan-300" />
+                  <PlayCircle className="w-3 h-3 text-[#1B79EE]" />
                   <span className="font-mono text-[9px] tracking-widest text-white uppercase font-bold">
                     {currentVideoIndex + 1} / {videoPlaylist.length}
                   </span>
@@ -160,7 +159,7 @@ export const ResourceDirectory = () => {
                 <div className="flex items-center gap-2">
                   <button 
                     onClick={playPrevVideo}
-                    className="flex justify-center items-center w-10 h-10 bg-white/10 hover:bg-cyan-300 backdrop-blur-md border border-white/20 hover:border-cyan-300 text-white hover:text-[#004aad] transition-all duration-300 group/btn shadow-sm"
+                    className="flex justify-center items-center w-10 h-10 bg-white/10 hover:bg-[#1B79EE] backdrop-blur-md border border-white/20 hover:border-[#1B79EE] text-white hover:text-[#004aad] transition-all duration-300 group/btn shadow-sm"
                     aria-label="Previous Video"
                   >
                     <SkipBack className="w-4 h-4 group-hover/btn:-translate-x-0.5 transition-transform" />
@@ -168,7 +167,7 @@ export const ResourceDirectory = () => {
 
                   <button 
                     onClick={playNextVideo}
-                    className="flex justify-center items-center w-10 h-10 bg-white/10 hover:bg-cyan-300 backdrop-blur-md border border-white/20 hover:border-cyan-300 text-white hover:text-[#004aad] transition-all duration-300 group/btn shadow-sm"
+                    className="flex justify-center items-center w-10 h-10 bg-white/10 hover:bg-[#1B79EE] backdrop-blur-md border border-white/20 hover:border-[#1B79EE] text-white hover:text-[#004aad] transition-all duration-300 group/btn shadow-sm"
                     aria-label="Next Video"
                   >
                     <SkipForward className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
