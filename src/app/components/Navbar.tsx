@@ -3,168 +3,359 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Button } from "@/components/ui/button";
-import { ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import {
+  ChevronDown, Search, Menu, X, FileText,
+  ClipboardCheck, Wrench, Plus, Minus
+} from 'lucide-react';
 
-const menu = [
+const navData = [
   {
     title: 'ENGINEERING & CAD',
-    dropdown: [
+    links: [
       { name: 'CAD Drawings', href: '/products/cad-drawings' },
       { name: 'Structural Submittals', href: '/structural-submittals' },
       { name: 'Engineering Services', href: '/engineering-servics' },
       { name: 'Consulting', href: '/consulting' }
-    ],
+    ]
   },
   {
     title: 'SPECS & COMPLIANCE',
-    dropdown: [], 
-  },
-  {
-    title: 'RESOURCES',
-    dropdown: [
-      { name: 'Catalogs & Brochures', href: '/resources/catalogs-brochures' },
-      { name: 'Technical Videos', href: '/resources/technical-videos' },
-      { name: 'Project Gallery', href: '/resources/project-gallery' },
-      { name: 'Global Events/Shows', href: '/resources/global-shows' },
+    megaMenu: [
+      {
+        heading: 'SPECIFICATIONS',
+        icon: FileText,
+        links: [
+          { name: 'Master Specifications', href: '#' },
+          { name: 'SpecWizard', href: '#' },
+          { name: 'Outline & Short Form Specs', href: '#' },
+          { name: 'State DOT Standards Matrix', href: '#' },
+        ]
+      },
+      {
+        heading: 'COMPLIANCE & STANDARDS',
+        icon: ClipboardCheck,
+        links: [
+          { name: 'AASHTO & ACI Standards', href: '#' },
+          { name: 'Compliance Certifications', href: '#' },
+          { name: 'Technical Bulletins', href: '#' },
+        ]
+      }
     ],
+    featured: {
+      title: 'STATE DOT STANDARDS DATABANK',
+      description: 'Instantly find and access up-to-date compliance requirements for your state.',
+      buttonText: 'START COMPLIANCE SEARCH',
+      icon: Wrench,
+      href: '#'
+    }
   },
   {
-    title: 'PRODUCT & SOLUTION',
-    dropdown: [
+    title: 'PRODUCTS & SOLUTIONS',
+    links: [
       { name: 'Product Categories', href: '/products/product-categories' },
       { name: 'Certifications', href: '/products/certifications' },
       { name: 'Data Sheets', href: '/products/data-sheet' },
       { name: 'Materials', href: '/products/materials' },
-    ],
+    ]
   },
   {
-    title: 'COMPANY/CORPORATE',
-    dropdown: [
+    title: 'RESOURCES & KNOWLEDGE',
+    links: [
+      { name: 'Catalogs & Brochures', href: '/resources/catalogs-brochures' },
+      { name: 'Technical Videos', href: '/resources/technical-videos' },
+      { name: 'Project Gallery', href: '/resources/project-gallery' },
+      { name: 'Global Events/Shows', href: '/resources/global-shows' },
+    ]
+  },
+  {
+    title: 'COMPANY',
+    links: [
       { name: 'About PEG', href: '/about' },
       { name: 'Blog', href: '/blog' },
       { name: 'Global Locations', href: '/global-location' },
       { name: 'Contacts', href: '/contact' }
-    ],
-  },
+    ]
+  }
 ];
 
 export const Navbar = () => {
-  // STATE: Tracks which dropdown is currently open
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  
-  // REF: Used to detect clicks outside the navbar
-  const navRef = useRef<HTMLDivElement>(null);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [mobileExpandedNode, setMobileExpandedNode] = useState<string | null>(null);
 
-  // LOGIC: Toggle menu open/close on Click
-  const toggleMenu = (title: string) => {
-    if (activeMenu === title) {
-      setActiveMenu(null); // Close if clicking the currently open menu
-    } else {
-      setActiveMenu(title); // Open the new menu
-    }
-  };
+  const navRef = useRef<HTMLElement>(null);
 
-  // LOGIC: Close menu if user clicks anywhere outside the navbar
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(event.target as Node)) {
         setActiveMenu(null);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
-    <nav ref={navRef} className="sticky top-10 w-full z-[90] bg-white border-b-2 border-slate-100 shadow-sm">
-      
-      <div className="w-full px-10 md:px-20 h-24 flex items-center justify-between">
-        
-        {/* LEFT: Logo Container */}
-        <div className="flex items-center shrink-0">
-          <Link href="/" onClick={() => setActiveMenu(null)}>
+    <header ref={navRef} className="fixed top-0 left-0 w-full z-[100] flex flex-col shadow-sm">
+
+      {/* 1. TOP UTILITY BAR (PEG Dark Blue) */}
+      <div className="bg-[#004aad] text-white h-10 w-full px-10 md:px-20 flex justify-between">
+        <div className="h-full flex justify-end items-center gap-2 text-[11px] font-bold tracking-wider">
+          <div className="uppercase hidden sm:block">
+            PEG
+          </div>
+          <div className="uppercase hidden sm:block">
+            |
+          </div>
+          <div className="hidden sm:block">
+            peg.com
+          </div>
+        </div>
+        <div className="h-full flex justify-end items-center gap-6 text-[11px] font-bold tracking-wider">
+
+          <button className="flex items-center gap-1 hover:cursor-pointer transition-colors uppercase">
+            PORTALS <ChevronDown className="w-3 h-3" />
+          </button>
+
+          {/* Integrated Search Bar */}
+          <div className="flex items-center bg-white/10 rounded px-3 py-1.5 w-64 border border-white/20 focus-within:border-[#1B79EE] transition-colors">
+            <Search className="w-3.5 h-3.5 text-white/70 mr-2 shrink-0" />
+            <input
+              type="text"
+              placeholder="Search CAD, Specs, Products..."
+              className="bg-transparent border-0 text-[11px] w-full text-white placeholder:text-white/60 focus:outline-none focus:ring-0"
+            />
+          </div>
+
+          <div className="uppercase hidden sm:block">
+            CONTACT: +1 631 452-1111
+          </div>
+
+        </div>
+      </div>
+
+      {/* 2. MAIN NAVIGATION BAR (White) */}
+      <div className="bg-white border-b border-[#004aad]/10 h-18 w-full relative">
+        <div className="w-full px-10 md:px-20 h-full flex justify-between items-center relative">
+
+          {/* Logo */}
+          <Link href="/" onClick={() => setActiveMenu(null)} className="shrink-0 flex items-center pr-8 border-r border-[#004aad]/10 h-10">
             <Image
               src="/PEG.png"
-              alt="Precast Engineering Group"
-              width={180} 
-              height={80}
+              alt="PEG Precast Engineering Group"
+              width={260}
+              height={50}
               className="object-contain"
               priority
             />
           </Link>
-        </div>
 
-        {/* MIDDLE: Engineering-Grade Navigation */}
-        <div className="hidden lg:flex items-center gap-1 h-full">
-          {menu.map((link) => {
-            const isOpen = activeMenu === link.title;
+          {/* Desktop Navigation Links */}
+          <nav className="hidden lg:flex items-center h-full flex-1 justify-center gap-2">
+            {navData.map((item) => {
+              const isOpen = activeMenu === item.title;
+              const hasMegaMenu = !!item.megaMenu;
 
-            return (
-              <div 
-                key={link.title} 
-                className="relative h-full flex items-center"
-                // 1. Opens immediately on hover
-                onMouseEnter={() => {
-                  if (link.dropdown.length > 0) setActiveMenu(link.title);
-                }}
-                // 2. We REMOVED onMouseLeave so it doesn't turn off when the mouse moves away!
-              >
-                
-                {/* Nav Item Button */}
-                <button 
-                  // 3. Click toggles it off if it's already open
-                  onClick={() => toggleMenu(link.title)}
-                  className={`flex items-center gap-1 px-4 h-full text-[12px] font-black uppercase tracking-widest transition-all duration-200
-                    ${isOpen ? 'text-[#1B79EE]' : 'text-[#004aad] hover:text-[#1B79EE]'}
-                  `}
+              return (
+                <div
+                  key={item.title}
+                  className="h-full flex items-center"
+                  onMouseEnter={() => setActiveMenu(item.title)}
                 >
-                  {link.title}
-                  {link.dropdown.length > 0 && (
-                    <ChevronDown 
-                      className={`w-3 h-3 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} 
-                    />
-                  )}
-                </button>
-
-                {/* High-Density Dropdown */}
-                {link.dropdown.length > 0 && (
-                  <div 
-                    className={`absolute left-0 top-full transition-all duration-200 
-                      ${isOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'}
+                  <button
+                    className={`h-full px-4 flex items-center gap-1 text-[12px] font-black uppercase tracking-tight transition-all duration-200 border-t-4
+                      ${isOpen ? 'text-[#004aad] border-[#004aad] bg-[#004aad]/5' : 'text-[#004aad]/70 border-transparent hover:text-[#1B79EE]'}
                     `}
                   >
-                    <ul className="w-64 bg-white border-t-4 border-[#1B79EE] shadow-[0_15px_40px_-10px_rgba(0,74,173,0.15)] ring-1 ring-slate-100 flex flex-col">
-                      {link.dropdown.map((item) => (
-                        <li key={item.name}>
-                          <Link
-                            href={item.href}
-                            onClick={() => setActiveMenu(null)} // Closes menu when a link is clicked
-                            className="block px-6 py-4 text-[11px] font-bold uppercase tracking-wider text-slate-600 hover:bg-slate-50 hover:text-[#1B79EE] border-b border-slate-50 last:border-0 transition-colors"
-                          >
-                            {item.name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
+                    {item.title}
+                  </button>
 
-        {/* RIGHT: Action Buttons */}
-        <div className="flex items-center gap-4 shrink-0">
-          <Link href="#contact-us">
-            <Button className="bg-[#004aad] hover:bg-[#1B79EE] text-white font-black text-[11px] px-6 py-6 rounded-none uppercase tracking-widest transition-all shadow-[4px_4px_0px_#1B79EE] hover:shadow-[2px_2px_0px_#1B79EE] hover:translate-y-[2px] hover:translate-x-[2px]">
-              ACCESS TECHNICAL VAULT
-            </Button>
-          </Link>
-        </div>
+                  {/* DROP DOWN / MEGA MENU RENDERER */}
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 5 }}
+                        transition={{ duration: 0.2 }}
+                        className={`absolute top-full left-1/2 -translate-x-1/2 bg-white border border-[#004aad]/10 shadow-[0_20px_50px_rgba(0,74,173,0.1)] rounded-b-md overflow-hidden z-50
+                          ${hasMegaMenu ? 'w-[800px]' : 'w-[280px]'}
+                        `}
+                      >
+                        {/* Standard Link Dropdown */}
+                        {!hasMegaMenu && item.links && (
+                          <ul className="flex flex-col py-2 border-t-2 border-[#1B79EE]">
+                            {item.links.map((link) => (
+                              <li key={link.name}>
+                                <Link
+                                  href={link.href}
+                                  onClick={() => setActiveMenu(null)}
+                                  className="block px-6 py-3 text-xs font-bold text-[#004aad]/70 hover:bg-[#004aad]/5 hover:text-[#004aad] transition-colors"
+                                >
+                                  {link.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
 
+                        {/* Mega Menu */}
+                        {hasMegaMenu && (
+                          <div className="flex h-[320px] border-t-2 border-[#1B79EE]">
+                            {item.megaMenu?.map((col, idx) => {
+                              const Icon = col.icon;
+                              return (
+                                <div key={idx} className="flex-1 p-8 border-r border-[#004aad]/5">
+                                  <div className="flex items-center gap-2 text-[#004aad] mb-6">
+                                    <Icon className="w-5 h-5" />
+                                    <h4 className="font-black text-xs uppercase tracking-widest">{col.heading}</h4>
+                                  </div>
+                                  <ul className="space-y-4">
+                                    {col.links.map(link => (
+                                      <li key={link.name}>
+                                        <Link
+                                          href={link.href}
+                                          className="text-sm font-medium text-[#004aad]/70 hover:text-[#1B79EE] transition-colors"
+                                        >
+                                          {link.name}
+                                        </Link>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              )
+                            })}
+
+                            {/* Featured Tool Box */}
+                            <div className="w-[280px] p-8 bg-[#004aad]/5 flex flex-col">
+                              <div className="flex items-center gap-2 text-[#004aad] mb-6">
+                                <Wrench className="w-5 h-5" />
+                                <h4 className="font-black text-xs uppercase tracking-widest">Featured Tool</h4>
+                              </div>
+
+                              <div className="w-full h-24 bg-white border border-[#1B79EE]/20 rounded mb-4 flex items-center justify-center text-[#1B79EE]/40">
+                                [Illustration]
+                              </div>
+
+                              <h5 className="font-bold text-sm text-[#004aad] mb-2 leading-tight uppercase">{item.featured?.title}</h5>
+                              <p className="text-xs text-[#004aad]/60 mb-6 leading-relaxed">{item.featured?.description}</p>
+
+                              <Link
+                                href={item.featured?.href || "#"}
+                                className="mt-auto block text-center w-full border-2 border-[#004aad] text-[#004aad] py-2 text-[10px] font-black uppercase tracking-wider hover:bg-[#004aad] hover:text-white transition-colors"
+                              >
+                                {item.featured?.buttonText}
+                              </Link>
+                            </div>
+                          </div>
+                        )}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </nav>
+
+          {/* Desktop CTA Button (PEG Bright Blue) */}
+          <div className="hidden lg:block shrink-0 pl-8 border-l border-[#004aad]/10 h-10 flex items-center">
+            <Link
+              href="#vault"
+              className="bg-[#1B79EE] hover:bg-[#004aad] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider rounded transition-colors"
+            >
+              Access Technical Vault
+            </Link>
+          </div>
+
+          {/* Mobile Hamburger (Right Side) */}
+          <div className="lg:hidden flex items-center gap-4">
+            <button
+              onClick={() => setIsMobileOpen(!isMobileOpen)}
+              className="bg-[#004aad] hover:bg-[#1B79EE] transition-colors p-2 rounded text-white"
+            >
+              {isMobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
+
+        </div>
       </div>
-    </nav>
+
+      {/* 3. MOBILE MENU (Accordion Style) */}
+      <AnimatePresence>
+        {isMobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: 'tween', duration: 0.3 }}
+            className="fixed top-0 right-0 w-[300px] h-screen bg-white shadow-[-20px_0_50px_rgba(0,74,173,0.1)] z-[200] flex flex-col"
+          >
+            <div className="flex justify-between items-center p-6 border-b border-[#004aad]/10">
+              <Image src="/PEG.png" alt="PEG" width={100} height={30} className="object-contain" />
+              <button onClick={() => setIsMobileOpen(false)}>
+                <X className="w-6 h-6 text-[#004aad]" />
+              </button>
+            </div>
+
+            <div className="flex-1 overflow-y-auto">
+              {navData.map((item) => {
+                const isExpanded = mobileExpandedNode === item.title;
+
+                return (
+                  <div key={item.title} className="border-b border-[#004aad]/5">
+                    <button
+                      onClick={() => setMobileExpandedNode(isExpanded ? null : item.title)}
+                      className={`w-full flex justify-between items-center px-6 py-4 text-xs font-black uppercase tracking-wider transition-colors
+                        ${isExpanded ? 'bg-[#004aad]/5 text-[#1B79EE]' : 'text-[#004aad]'}
+                      `}
+                    >
+                      {item.title}
+                      {isExpanded ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                    </button>
+
+                    <AnimatePresence>
+                      {isExpanded && (
+                        <motion.div
+                          initial={{ height: 0 }}
+                          animate={{ height: 'auto' }}
+                          exit={{ height: 0 }}
+                          className="overflow-hidden bg-[#004aad]/5 border-t border-[#1B79EE]/10"
+                        >
+                          <ul className="px-6 py-2 pb-6 space-y-3">
+                            {(item.links || item.megaMenu?.flatMap(m => m.links))?.map((link: any, i) => (
+                              <li key={i}>
+                                <Link
+                                  href={link.href}
+                                  onClick={() => setIsMobileOpen(false)}
+                                  className="text-sm font-medium text-[#004aad]/70 pl-4 border-l-2 border-[#1B79EE]/30 hover:border-[#1B79EE] hover:text-[#004aad] block py-1 transition-all"
+                                >
+                                  {link.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="p-6 border-t border-[#004aad]/10">
+              <Link
+                href="#technical-vault"
+                onClick={() => setIsMobileOpen(false)}
+                className="block text-center w-full bg-[#004aad] hover:bg-[#1B79EE] text-white py-4 text-xs font-bold uppercase tracking-wider rounded transition-colors"
+              >
+                Access Technical Vault
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+    </header>
   );
 };

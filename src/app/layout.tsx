@@ -7,7 +7,6 @@ import { Footer } from "./components/Footer";
 import ExtraordinaryFooter from "./components/ExtraordinaryFooter";
 import EntrySystem from "./components/EntrySystem";
 import FloatingTelemetryHub from "./components/FloatingTelemetryHub";
-import TopNavbar from "./components/top-navbar";
  
 const figtree = Figtree({subsets:['latin'],variable:'--font-sans'});
 
@@ -44,8 +43,8 @@ export default function RootLayout({
       lang="en"
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", figtree.variable)}
     >
-      <TopNavbar/>
       <Navbar/>
+      
       <EntrySystem/>
       <FloatingTelemetryHub/>
       <body className="min-h-full flex flex-col">{children}</body>

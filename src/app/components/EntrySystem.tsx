@@ -37,7 +37,7 @@ export default function EntrySystem() {
             <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={isInitialized ? { opacity: 1, y: 0 } : {}}
-                className="fixed top-10 right-8 z-[100] flex items-center gap-4 bg-white/10 backdrop-blur-md border border-white/20   shadow-2xl"
+                className="fixed top-15 right-8 z-[100] flex items-center gap-4 bg-white/10 backdrop-blur-md border border-white/20   shadow-2xl"
             >
                 <button
                     onClick={toggleMute}
