@@ -14,11 +14,12 @@ import DeliverableUpgrade from "./components/DeliverableUpgrade";
 import DotMatrixSlider from "./components/DotMatrixSlider";
 import MeetAtShows from "./components/MeetAtShows";
 import ContactTerminal from "./components/ContactTerminal";
+import FuturisticCTA from "./components/FuturisticCTA";
 
 export default function Home() {
   return (
     <main className="flex-1 flex flex-col items-center bg-slate-50">
-      {/* <FuturisticCTA/> */}
+      <FuturisticCTA/>
       <HeroEngineering />
       <LoginGateway />
       <DeliverableUpgrade />
