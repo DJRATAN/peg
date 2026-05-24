@@ -15,6 +15,7 @@ import DotMatrixSlider from "./components/DotMatrixSlider";
 import MeetAtShows from "./components/MeetAtShows";
 import ContactTerminal from "./components/ContactTerminal";
 import FuturisticCTA from "./components/FuturisticCTA";
+import PrecastersGoDigital from "./components/PrecastersGoDigital";
 
 export default function Home() {
   return (
@@ -40,6 +41,7 @@ export default function Home() {
       <section id="contact-us" className="w-full bg-[#004aad] text-white overflow-hidden relative">
         {/* <ContactTerminal /> */}
       </section>
+      <PrecastersGoDigital/>
     </main>
   );
 }

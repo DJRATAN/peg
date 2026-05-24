@@ -261,7 +261,7 @@ export const Navbar = () => {
           {/* Desktop CTA Button (PEG Bright Blue) */}
           <div className="hidden lg:block shrink-0 pl-8 border-l border-[#004aad]/10 h-10 flex items-center">
             <Link
-              href="#vault"
+              href="#technical-vault"
               className="bg-[#1B79EE] hover:bg-[#004aad] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider rounded transition-colors"
             >
               Access Technical Vault
