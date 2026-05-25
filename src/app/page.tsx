@@ -17,6 +17,7 @@ import FuturisticCTA from "./components/FuturisticCTA";
 import PrecastersGoDigital from "./components/PrecastersGoDigital";
 import PrecasterManifesto from "./components/PrecasterManifesto";
 import AdvancedEngineeringTech from "./components/AdvancedEngineeringTech";
+import TargetAudience from "./components/TargetAudience";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
       <FuturisticCTA />
       <PrecasterManifesto />
       <AdvancedEngineeringTech />
+      <TargetAudience/>
       <LoginGateway />
       <DeliverableUpgrade />
       <section id="technical-vault" className="w-full bg-[#004aad] text-white overflow-hidden relative">
