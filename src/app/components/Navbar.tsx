@@ -86,6 +86,14 @@ export const Navbar = () => {
 
   const navRef = useRef<HTMLElement>(null);
 
+  const toggleMenu = (title: string) => {
+    if (activeMenu === title) {
+      setActiveMenu(null);
+    } else {
+      setActiveMenu(title);
+    }
+  };
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(event.target as Node)) {
@@ -99,60 +107,57 @@ export const Navbar = () => {
   return (
     <header ref={navRef} className="fixed top-0 left-0 w-full z-[100] flex flex-col shadow-sm">
 
-      {/* 1. TOP UTILITY BAR (PEG Dark Blue) */}
-      <div className="bg-[#004aad] text-white h-10 w-full px-10 md:px-20 flex justify-between">
+      {/* 1. TOP UTILITY BAR */}
+      {/* Adjusted padding for smaller screens */}
+      <div className="bg-[#004aad] text-white h-10 w-full px-6 xl:px-20 flex justify-between">
         <div className="h-full flex justify-end items-center gap-2 text-[11px] font-bold tracking-wider">
-          <div className="uppercase hidden sm:block">
-            PEG
-          </div>
-          <div className="uppercase hidden sm:block">
-            |
-          </div>
-          <div className="hidden sm:block">
-            peg.com
-          </div>
+          <div className="uppercase hidden md:block">PEG</div>
+          <div className="uppercase hidden md:block">|</div>
+          <div className="hidden md:block">peg.com</div>
         </div>
         <div className="h-full flex justify-end items-center gap-6 text-[11px] font-bold tracking-wider">
 
-          <button className="flex items-center gap-1 hover:cursor-pointer transition-colors uppercase">
-            PORTALS <ChevronDown className="w-3 h-3" />
-          </button>
+          <Link href={'#portal'}>
+            <button className="flex items-center gap-1 hover:cursor-pointer transition-colors uppercase">
+              PORTALS <ChevronDown className="w-3 h-3" />
+            </button></Link>
 
-          {/* Integrated Search Bar */}
-          <div className="flex items-center bg-white/10 rounded px-3 py-1.5 w-64 border border-white/20 focus-within:border-[#1B79EE] transition-colors">
+          {/* Integrated Search Bar - Hidden on very small screens to save space */}
+          <div className="hidden sm:flex items-center bg-white/10 rounded px-3 py-1.5 w-48 md:w-64 border border-white/20 focus-within:border-[#1B79EE] transition-colors">
             <Search className="w-3.5 h-3.5 text-white/70 mr-2 shrink-0" />
             <input
               type="text"
-              placeholder="Search CAD, Specs, Products..."
+              placeholder="Search..."
               className="bg-transparent border-0 text-[11px] w-full text-white placeholder:text-white/60 focus:outline-none focus:ring-0"
             />
           </div>
 
-          <div className="uppercase hidden sm:block">
+          <div className="uppercase hidden lg:block">
             CONTACT: +1 631 452-1111
           </div>
 
         </div>
       </div>
 
-      {/* 2. MAIN NAVIGATION BAR (White) */}
+      {/* 2. MAIN NAVIGATION BAR */}
       <div className="bg-white border-b border-[#004aad]/10 h-18 w-full relative">
-        <div className="w-full px-10 md:px-20 h-full flex justify-between items-center relative">
+        {/* Adjusted padding to flow nicely when zoomed in */}
+        <div className="w-full px-6 xl:px-20 h-full flex justify-between items-center relative">
 
           {/* Logo */}
-          <Link href="/" onClick={() => setActiveMenu(null)} className="shrink-0 flex items-center pr-8 border-r border-[#004aad]/10 h-10">
+          <Link href="/" onClick={() => setActiveMenu(null)} className="shrink-0 flex items-center pr-4 xl:pr-8 border-r border-[#004aad]/10 h-10">
             <Image
               src="/PEG.png"
               alt="PEG Precast Engineering Group"
-              width={260}
-              height={50}
+              width={220} // Scaled down slightly to help fit on zoomed screens
+              height={45}
               className="object-contain"
               priority
             />
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center h-full flex-1 justify-center gap-2">
+          {/* Desktop Navigation Links - Shifted to xl breakpoint (1280px) */}
+          <nav className="hidden xl:flex items-center h-full flex-1 justify-center gap-1">
             {navData.map((item) => {
               const isOpen = activeMenu === item.title;
               const hasMegaMenu = !!item.megaMenu;
@@ -160,15 +165,17 @@ export const Navbar = () => {
               return (
                 <div
                   key={item.title}
-                  className="h-full flex items-center"
-                  onMouseEnter={() => setActiveMenu(item.title)}
+                  className="h-full flex items-center relative"
                 >
                   <button
-                    className={`h-full px-4 flex items-center gap-1 text-[12px] font-black uppercase tracking-tight transition-all duration-200 border-t-4
+                    onClick={() => toggleMenu(item.title)}
+                    // Added whitespace-nowrap and slightly smaller horizontal padding (px-3) for zoom tolerance
+                    className={`h-full px-3 2xl:px-4 whitespace-nowrap flex items-center gap-1 text-[12px] font-black uppercase tracking-tight transition-all duration-200 border-t-4
                       ${isOpen ? 'text-[#004aad] border-[#004aad] bg-[#004aad]/5' : 'text-[#004aad]/70 border-transparent hover:text-[#1B79EE]'}
                     `}
                   >
                     {item.title}
+                    <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#004aad]' : 'text-[#004aad]/50'}`} />
                   </button>
 
                   {/* DROP DOWN / MEGA MENU RENDERER */}
@@ -216,6 +223,7 @@ export const Navbar = () => {
                                       <li key={link.name}>
                                         <Link
                                           href={link.href}
+                                          onClick={() => setActiveMenu(null)}
                                           className="text-sm font-medium text-[#004aad]/70 hover:text-[#1B79EE] transition-colors"
                                         >
                                           {link.name}
@@ -243,6 +251,7 @@ export const Navbar = () => {
 
                               <Link
                                 href={item.featured?.href || "#"}
+                                onClick={() => setActiveMenu(null)}
                                 className="mt-auto block text-center w-full border-2 border-[#004aad] text-[#004aad] py-2 text-[10px] font-black uppercase tracking-wider hover:bg-[#004aad] hover:text-white transition-colors"
                               >
                                 {item.featured?.buttonText}
@@ -258,18 +267,18 @@ export const Navbar = () => {
             })}
           </nav>
 
-          {/* Desktop CTA Button (PEG Bright Blue) */}
-          <div className="hidden lg:block shrink-0 pl-8 border-l border-[#004aad]/10 h-10 flex items-center">
+          {/* Desktop CTA Button - Shifted to xl breakpoint */}
+          <div className="hidden xl:flex shrink-0 pl-4 xl:pl-8 border-l border-[#004aad]/10 h-10 items-center">
             <Link
               href="#technical-vault"
-              className="bg-[#1B79EE] hover:bg-[#004aad] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider rounded transition-colors"
+              className="bg-[#1B79EE] whitespace-nowrap hover:bg-[#004aad] text-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider rounded transition-colors"
             >
-              Access Technical Vault
+              Access Vault
             </Link>
           </div>
 
-          {/* Mobile Hamburger (Right Side) */}
-          <div className="lg:hidden flex items-center gap-4">
+          {/* Mobile Hamburger - Shifted to xl breakpoint */}
+          <div className="xl:hidden flex items-center gap-4">
             <button
               onClick={() => setIsMobileOpen(!isMobileOpen)}
               className="bg-[#004aad] hover:bg-[#1B79EE] transition-colors p-2 rounded text-white"

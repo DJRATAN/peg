@@ -26,8 +26,11 @@ export default function Home() {
       <FuturisticCTA />
       <PrecasterManifesto />
       <AdvancedEngineeringTech />
-      <TargetAudience/>
-      <LoginGateway />
+      <TargetAudience />
+      <section id="portal" className="w-full bg-[#004aad] text-white overflow-hidden relative">
+        <LoginGateway />
+      </section>
+
       <DeliverableUpgrade />
       <section id="technical-vault" className="w-full bg-[#004aad] text-white overflow-hidden relative">
         <GridContent />
