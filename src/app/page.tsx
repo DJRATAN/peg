@@ -13,19 +13,18 @@ import FutureCulvertComponent from "./components/FutureCulvertComponent";
 import DeliverableUpgrade from "./components/DeliverableUpgrade";
 import DotMatrixSlider from "./components/DotMatrixSlider";
 import MeetAtShows from "./components/MeetAtShows";
-import ContactTerminal from "./components/ContactTerminal";
 import FuturisticCTA from "./components/FuturisticCTA";
 import PrecastersGoDigital from "./components/PrecastersGoDigital";
 import PrecasterManifesto from "./components/PrecasterManifesto";
-import TargetAudience from "./components/TargetAudience";
+import AdvancedEngineeringTech from "./components/AdvancedEngineeringTech";
 
 export default function Home() {
   return (
     <main className="flex-1 flex flex-col items-center bg-slate-50">
       <HeroEngineering />
-      <FuturisticCTA/>
-      <PrecasterManifesto/>
-      {/* <TargetAudience/> */}
+      <FuturisticCTA />
+      <PrecasterManifesto />
+      <AdvancedEngineeringTech />
       <LoginGateway />
       <DeliverableUpgrade />
       <section id="technical-vault" className="w-full bg-[#004aad] text-white overflow-hidden relative">
@@ -45,7 +44,7 @@ export default function Home() {
       <section id="contact-us" className="w-full bg-[#004aad] text-white overflow-hidden relative">
         {/* <ContactTerminal /> */}
       </section>
-      <PrecastersGoDigital/>
+      <PrecastersGoDigital />
     </main>
   );
 }
