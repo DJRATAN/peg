@@ -12,10 +12,7 @@ export default function FuturisticCTA() {
       {/* BACKGROUND: Futuristic CAD Grid & Glows */}
       <div 
         className="absolute inset-0 z-0 opacity-20 pointer-events-none"
-        style={{ 
-          backgroundImage: `linear-gradient(#1B79EE 1px, transparent 1px), linear-gradient(90deg, #1B79EE 1px, transparent 1px)`, 
-          backgroundSize: '40px 40px' 
-        }}
+        
       />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#004aad] rounded-full blur-[150px] opacity-30 z-0 pointer-events-none" />
 

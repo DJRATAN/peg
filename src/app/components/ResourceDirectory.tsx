@@ -121,7 +121,7 @@ export const ResourceDirectory = () => {
           {/* RIGHT PANEL: PLAYLIST VIDEO PLAYER (Spans 5 Columns) */}
           <div className="xl:col-span-5 w-full h-full min-h-[400px]">
             {/* FIXED: Removed ALL black. Now using a pure translucent glass layer (bg-white/5) over the deep blue background */}
-            <div className="relative w-full h-full bg-white/5 backdrop-blur-sm border border-white/20 shadow-2xl overflow-hidden group hover:border-[#1B79EE] transition-colors duration-500">
+            <div className="relative w-full h-full    overflow-hidden group  0">
               
               {/* Absolute Positioning Wrapper */}
               <div className="absolute inset-0 p-1.5">
@@ -138,11 +138,7 @@ export const ResourceDirectory = () => {
                 </video>
               </div>
 
-              {/* TOP HUD: Status Indicators */}
-              <div className="absolute top-4 left-4 flex gap-1.5 opacity-40 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#1B79EE] animate-pulse" />
-                <div className="w-1.5 h-1.5 rounded-full bg-white" />
-              </div>
+        
 
               {/* BOTTOM HUD: Playlist Tracker & Prev/Next Icons */}
               <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
