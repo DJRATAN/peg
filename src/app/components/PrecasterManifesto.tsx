@@ -42,14 +42,7 @@ export default function PrecasterManifesto() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-12 border-b-4 border-[#004aad] pb-12">
           
           <div className="space-y-6 max-w-4xl">
-            <motion.p 
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-[#1B79EE] font-mono text-[12px] font-black uppercase tracking-[0.5em]"
-            >
-              Knowledge & Expertise
-            </motion.p>
+
             
             <motion.h2 
               initial={{ opacity: 0, y: 10 }}

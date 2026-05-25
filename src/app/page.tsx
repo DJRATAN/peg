@@ -21,9 +21,9 @@ import PrecasterManifesto from "./components/PrecasterManifesto";
 export default function Home() {
   return (
     <main className="flex-1 flex flex-col items-center bg-slate-50">
-      <FuturisticCTA/>
       <HeroEngineering />
-      {/* <PrecasterManifesto/> */}
+      <FuturisticCTA/>
+      <PrecasterManifesto/>
       <LoginGateway />
       <DeliverableUpgrade />
       <section id="technical-vault" className="w-full bg-[#004aad] text-white overflow-hidden relative">
