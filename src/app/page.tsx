@@ -17,6 +17,7 @@ import ContactTerminal from "./components/ContactTerminal";
 import FuturisticCTA from "./components/FuturisticCTA";
 import PrecastersGoDigital from "./components/PrecastersGoDigital";
 import PrecasterManifesto from "./components/PrecasterManifesto";
+import TargetAudience from "./components/TargetAudience";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <HeroEngineering />
       <FuturisticCTA/>
       <PrecasterManifesto/>
+      {/* <TargetAudience/> */}
       <LoginGateway />
       <DeliverableUpgrade />
       <section id="technical-vault" className="w-full bg-[#004aad] text-white overflow-hidden relative">
