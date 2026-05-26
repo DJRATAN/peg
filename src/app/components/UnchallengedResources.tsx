@@ -57,7 +57,7 @@ export default function UnchallengedResources() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] uppercase text-white"
+              className="text-5xl md:text-7xl font-black tracking-tighter leading-[0.9] uppercase text-white"
             >
               Unchallenged <br />
               <span className="text-[#1B79EE]">Resources</span> <br />

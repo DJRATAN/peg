@@ -47,7 +47,7 @@ const digitalChannels = [
 
 export default function PrecastersGoDigital() {
   return (
-    <section className="w-full py-32 bg-[#004aad] text-white overflow-hidden relative">
+    <section className="w-full bg-[#004aad] text-white overflow-hidden relative">
       
       {/* BACKGROUND DIGITAL WAVES */}
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none flex flex-col justify-between py-20">
@@ -56,7 +56,7 @@ export default function PrecastersGoDigital() {
         ))}
       </div>
 
-      <div className="w-full px-10 md:px-20 py-16 relative z-10">
+      <div className="w-full px-10 md:px-20 py-4 relative z-10">
         
         {/* 1. BROADCAST HEADER */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-10">
@@ -69,7 +69,7 @@ export default function PrecastersGoDigital() {
         </div>
 
         {/* 2. THE 4-COLUMN DIGITAL FEED GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
           {digitalChannels.map((channel, idx) => (
             <motion.div
               key={idx}
@@ -78,11 +78,11 @@ export default function PrecastersGoDigital() {
               transition={{ delay: idx * 0.15 }}
               viewport={{ once: true }}
               // FIXED HOVER LOGIC: White default -> Bright Blue on hover
-              className="group relative flex flex-col h-[500px] bg-white hover:bg-[#1B79EE] border border-white/10 hover:border-[#1B79EE] hover:shadow-[0_20px_50px_rgba(27,121,238,0.5)] transition-all duration-700 cursor-pointer overflow-hidden"
+              className="group relative flex flex-col h-[440px] bg-white hover:bg-[#1B79EE] border border-white/10 hover:border-[#1B79EE] hover:shadow-[0_20px_50px_rgba(27,121,238,0.5)] transition-all duration-700 cursor-pointer overflow-hidden"
             >
               
               {/* Main Content Area */}
-              <div className="flex-grow p-10 flex flex-col justify-center relative z-10">
+              <div className="flex-grow px-8 py-2 flex flex-col justify-center relative z-10">
                 {/* ICON: Dark Blue -> White on hover */}
                 <div className="mb-8 text-[#004aad] group-hover:text-white transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-2">
                   {channel.icon}
@@ -104,7 +104,7 @@ export default function PrecastersGoDigital() {
 
               {/* Action Footer */}
               {/* FOOTER BACKGROUND: Light Blue Tint -> Slightly Darker Tint on hover */}
-              <div className="p-8 bg-[#004aad]/5 group-hover:bg-[#004aad]/20 transition-colors duration-500 flex justify-between items-center mt-auto relative z-10">
+              <div className="px-8 py-2 bg-[#004aad]/5 group-hover:bg-[#004aad]/20 transition-colors duration-500 flex justify-between items-center mt-auto relative z-10">
                 <span className="font-mono text-[10px] font-black text-[#1B79EE] group-hover:text-white tracking-widest uppercase transition-colors duration-500">
                   {channel.metric}
                 </span>
