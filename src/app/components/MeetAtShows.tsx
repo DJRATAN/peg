@@ -4,8 +4,10 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import {
-  Users, Globe, LayoutGrid, Rows3, ArrowRight, MapPin, Calendar
+  Users, Globe, LayoutGrid, Rows3, ArrowRight, MapPin, Calendar,
+  ExternalLink
 } from 'lucide-react';
+import Link from 'next/link';
 
 const exhibitionData = [
   {
@@ -77,18 +79,18 @@ export default function MeetAtShows() {
 
   return (
     <section className="w-full py-24 bg-slate-50 px-10 md:px-20 overflow-hidden">
-      <div className="max-w-[1800px] mx-auto">
+      <div className="">
 
         {/* HEADER & CONTROLS */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b-2 border-slate-200 pb-10 gap-8">
-          
+
           <div className="space-y-6">
             <div className="space-y-2">
               <p className="text-5xl md:text-7xl font-black text-[#004aad] tracking-tighter uppercase leading-none">
                 Meet at <span style={{ WebkitTextStroke: "1px #1B79EE", color: "transparent" }}>the Shows.</span>
               </p>
             </div>
-            
+
             {/* NEW TAGLINE ADDED HERE */}
             <p className="text-xl md:text-2xl font-black text-[#004aad]/80 tracking-tight uppercase border-l-4 border-[#1B79EE] pl-4">
               Make Your Presence Count.
@@ -149,7 +151,7 @@ export default function MeetAtShows() {
 
               {/* THE IMAGE/LOGO CONTAINER - Adjusted for smaller logo with padding */}
               <div className={`relative overflow-hidden bg-slate-50 shrink-0 transition-all duration-500 border-b border-slate-100
-                ${viewMode === 'stack' ? 'w-full md:w-[350px] h-[220px] md:h-auto p-12' : 'w-full h-[200px] p-10'}
+                ${viewMode === 'stack' ? 'w-full md:w-87.5 h-55 md:h-auto p-12' : 'w-full h-40 p-10'}
               `}>
                 <div className="relative h-full w-full group-hover:scale-105 transition-transform duration-700 ease-out">
                   <Image
@@ -162,17 +164,28 @@ export default function MeetAtShows() {
                 <div className="absolute top-4 left-4 z-10 px-3 py-1 bg-white border border-slate-200 text-[#004aad] text-[8px] font-black tracking-widest uppercase shadow-sm">
                   {show.tag}
                 </div>
+                <div className="absolute top-4 right-4 z-10 px-3 py-1 bg-white border border-slate-200 cursor-pointer text-[#004aad] text-[8px] font-black tracking-widest uppercase shadow-sm">
+                  <Link href={show.link}>
+                    <ExternalLink className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform " />
+                  </Link>
+                </div>
+                <div className="absolute bottom-0 right-4 z-10 text-[#004aad] text-[8px] font-black tracking-widest uppercase shadow-sm">
+                  <div className="flex items-start gap-3">
+                    <Calendar className="w-3.5 h-3.5 text-[#1B79EE] shrink-0 mt-0.5" />
+                    <span className="font-bold text-slate-700 text-[13px]">{show.date}</span>
+                  </div>
+                </div>
               </div>
 
               {/* DETAILED CONTENT AREA */}
-              <div className="relative p-8 flex flex-col flex-1 bg-white z-10">
+              <div className="relative px-8 pt-2 flex flex-col flex-1 bg-white z-10">
 
-                <h3 className="text-xl font-black text-[#004aad] uppercase tracking-tighter group-hover:text-[#1B79EE] transition-colors duration-300 leading-tight mb-6">
+                <h3 className="text-lg font-black text-[#004aad] uppercase tracking-tighter group-hover:text-[#1B79EE] transition-colors duration-300 leading-tight mb-6">
                   {show.title}
                 </h3>
 
                 {/* Telemetry Data Box */}
-                <div className="bg-slate-50 border border-slate-100 p-4 space-y-3 mb-6 group-hover:bg-[#004aad]/5 group-hover:border-[#004aad]/10 transition-colors duration-300">
+                {/* <div className="bg-slate-50 border border-slate-100 p-4 space-y-3 mb-6 group-hover:bg-[#004aad]/5 group-hover:border-[#004aad]/10 transition-colors duration-300">
                   <div className="flex items-start gap-3">
                     <Calendar className="w-3.5 h-3.5 text-[#1B79EE] shrink-0 mt-0.5" />
                     <span className="font-bold text-slate-700 text-[13px]">{show.date}</span>
@@ -181,10 +194,10 @@ export default function MeetAtShows() {
                     <MapPin className="w-3.5 h-3.5 text-[#1B79EE] shrink-0 mt-0.5" />
                     <span className="font-medium text-slate-600 text-[13px]">{show.location}</span>
                   </div>
-                </div>
+                </div> */}
 
                 {/* Multiline Description */}
-                <div className="text-slate-500 text-[13px] leading-relaxed space-y-4 flex-1 mb-8 font-medium">
+                {/* <div className="text-slate-500 text-[13px] leading-relaxed space-y-4 flex-1 mb-8 font-medium">
                   {show.description.split('\n\n').map((paragraph, pIdx) => {
                     const isBold = paragraph.includes("Early Bird") || paragraph.includes("Opening Hours");
                     return (
@@ -193,17 +206,16 @@ export default function MeetAtShows() {
                       </p>
                     )
                   })}
-                </div>
+                </div> */}
 
-                <div className="mt-auto">
+                {/* <div className="mt-auto">
                   <a
                     href={show.link}
-                    className="group/btn flex items-center justify-center gap-3 w-full bg-[#004aad] text-white py-4 font-mono text-[10px] font-black uppercase tracking-widest hover:bg-[#1B79EE] transition-all duration-300 shadow-lg shadow-[#004aad]/20"
+                    className="group/btn flex items-center justify-center gap-3  bg-[#004aad] text-white py-4 font-mono text-[10px] font-black uppercase tracking-widest hover:bg-[#1B79EE] transition-all duration-300 shadow-lg shadow-[#004aad]/20"
                   >
-                    Access Website
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   </a>
-                </div>
+                </div> */}
 
               </div>
 

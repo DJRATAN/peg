@@ -93,10 +93,7 @@ const GridContent = () => {
                                 We provide the calculations, and hourly expertise to turn complex
                                 infrastructure into rapid-assembly reality.
                             </p>
-                        </div>
-                        <Button className="bg-[#004aad] hover:bg-[#1B79EE] text-white px-10 py-8 text-xs font-black uppercase tracking-widest rounded-none transition-all shadow-[8px_8px_0px_#1B79EE20]">
-                            Access Technical Vault
-                        </Button>
+                        </div> 
                     </div>
                 </div>
 
@@ -107,7 +104,7 @@ const GridContent = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
                     {technicalData.map((spec, idx) => (
                         <motion.div
                             key={idx}
@@ -130,7 +127,7 @@ const GridContent = () => {
                                 </div> 
                             </div>
 
-                            <h3 className="text-3xl font-black uppercase tracking-tighter mb-10 text-[#004aad] group-hover:text-white relative z-10 transition-colors duration-300">
+                            <h3 className="text-2xl font-black uppercase tracking-tighter mb-10 text-[#004aad] group-hover:text-white relative z-10 transition-colors duration-300">
                                 {spec.category}
                             </h3>
 
