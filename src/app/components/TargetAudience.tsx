@@ -37,13 +37,13 @@ const targetAudiences = [
 
 export default function TargetAudience() {
   return (
-    <section className="w-full py-32 bg-white overflow-hidden relative">
+    <section className="w-full bg-white overflow-hidden relative">
       
       {/* BACKGROUND ACCENTS */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#004aad]/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#1B79EE]/5 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-[1800px] mx-auto px-10 md:px-20 relative z-10">
+      <div className="w-full px-10 md:px-20 py-16 relative z-10">
         
         {/* 1. HEADER SECTION (Using your exact phrasing) */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-24 gap-12">

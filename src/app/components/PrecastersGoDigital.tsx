@@ -56,7 +56,7 @@ export default function PrecastersGoDigital() {
         ))}
       </div>
 
-      <div className="max-w-[1800px] mx-auto px-10 md:px-20 relative z-10">
+      <div className="w-full px-10 md:px-20 py-16 relative z-10">
         
         {/* 1. BROADCAST HEADER */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-10">

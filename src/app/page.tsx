@@ -18,7 +18,8 @@ import PrecastersGoDigital from "./components/PrecastersGoDigital";
 import PrecasterManifesto from "./components/PrecasterManifesto";
 import AdvancedEngineeringTech from "./components/AdvancedEngineeringTech";
 import TargetAudience from "./components/TargetAudience";
-
+import UnchallengedResources from "./components/UnchallengedResources";
+ 
 export default function Home() {
   return (
     <main className="flex-1 flex flex-col items-center bg-slate-50">
@@ -27,6 +28,8 @@ export default function Home() {
       <PrecasterManifesto />
       <AdvancedEngineeringTech />
       <TargetAudience />
+      <UnchallengedResources />
+      {/* <SeamlessConnection/> */}
       <section id="portal" className="w-full bg-[#004aad] text-white overflow-hidden relative">
         <LoginGateway />
       </section>

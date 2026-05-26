@@ -41,7 +41,7 @@ export default function DeliverableUpgrade() {
       {/* GLOWING ACCENT (Behind the grid) */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#1B79EE] rounded-full blur-[200px] opacity-30 pointer-events-none" />
 
-      <div className="w-full px-10 md:px-20 relative z-10 max-w-[1800px] mx-auto">
+      <div className="w-full px-10 md:px-20 py-16 relative z-10 mx-auto">
         
         {/* 1. MASSIVE TYPOGRAPHY HEADER */}
         <div className="max-w-5xl mb-24 space-y-6">
