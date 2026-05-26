@@ -20,6 +20,7 @@ import AdvancedEngineeringTech from "./components/AdvancedEngineeringTech";
 import TargetAudience from "./components/TargetAudience";
 import UnchallengedResources from "./components/UnchallengedResources";
 import SeamlessConnection from "./components/SeamlessConnection";
+import TrenchingSystem from "./components/TrenchingSystem";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
       <TargetAudience />
       <UnchallengedResources />
       <SeamlessConnection />
+      <TrenchingSystem/>
       <section id="portal" className="w-full bg-[#004aad] text-white overflow-hidden relative">
         <LoginGateway />
       </section>
