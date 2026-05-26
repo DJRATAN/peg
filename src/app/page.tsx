@@ -19,7 +19,8 @@ import PrecasterManifesto from "./components/PrecasterManifesto";
 import AdvancedEngineeringTech from "./components/AdvancedEngineeringTech";
 import TargetAudience from "./components/TargetAudience";
 import UnchallengedResources from "./components/UnchallengedResources";
- 
+import SeamlessConnection from "./components/SeamlessConnection";
+
 export default function Home() {
   return (
     <main className="flex-1 flex flex-col items-center bg-slate-50">
@@ -29,11 +30,10 @@ export default function Home() {
       <AdvancedEngineeringTech />
       <TargetAudience />
       <UnchallengedResources />
-      {/* <SeamlessConnection/> */}
+      <SeamlessConnection />
       <section id="portal" className="w-full bg-[#004aad] text-white overflow-hidden relative">
         <LoginGateway />
       </section>
-
       <DeliverableUpgrade />
       <section id="technical-vault" className="w-full bg-[#004aad] text-white overflow-hidden relative">
         <GridContent />

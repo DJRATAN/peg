@@ -34,6 +34,7 @@ const resourceColumns = [
 const videoPlaylist = [
   "/assets/video/72 precast manhole Doghouse.646.mp4",
   "/assets/video/E20 V1 final.mp4",
+  "/assets/video/E24 v3 final blue bg.mp4",
   "/assets/video/E25 V2 final.mp4",
   "/assets/video/E38 V3 final blue bg.mp4",
 ];
