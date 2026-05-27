@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function FuturisticCTA() {
   return (
-    <section className="relative w-full px-10 md:px-20 py-32 bg-[#004aad] overflow-hidden flex items-center justify-center min-h-[60vh]">
+    <section className="relative w-full px-10 md:px-20 py-12 bg-[#004aad] overflow-hidden flex items-center justify-center min-h-[60vh]">
       
       {/* BACKGROUND: Futuristic CAD Grid & Glows */}
       <div 
@@ -25,7 +25,7 @@ export default function FuturisticCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="flex items-center gap-3 bg-[#004aad]/20 border border-[#1B79EE]/30 px-6 py-2 mb-8 backdrop-blur-sm"
+          className="flex items-center gap-3 bg-[#004aad]/20 border border-[#1B79EE]/70 px-6 py-2 mb-8 backdrop-blur-sm"
         >
           <Box className="w-4 h-4 text-white animate-pulse" />
           <span className="font-mono text-[11px] font-black uppercase tracking-[0.4em] text-white">

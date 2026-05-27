@@ -97,7 +97,7 @@ export default function UnchallengedResources() {
                   transition={{ delay: idx * 0.1 }}
                   viewport={{ once: true }}
                   // DEFAULT: Pure White -> HOVER: PEG Bright Blue
-                  className="group relative bg-white hover:bg-[#1B79EE] p-10 transition-all duration-500 cursor-pointer overflow-hidden border border-white/10 hover:shadow-[0_20px_60px_rgba(27,121,238,0.4)] shrink-0"
+                  className="group relative bg-white hover:bg-[#1B79EE] px-10 py-4 transition-all duration-500 cursor-pointer overflow-hidden border border-white/10 hover:shadow-[0_20px_60px_rgba(27,121,238,0.4)] shrink-0"
                 >
                   
                   <div className="flex justify-between items-start mb-8 relative z-10">
@@ -123,7 +123,7 @@ export default function UnchallengedResources() {
                   </div>
 
                   {/* FOOTER ACTION */}
-                  <div className="mt-10 pt-6 border-t border-[#004aad]/10 group-hover:border-white/30 flex justify-between items-center relative z-10 transition-colors duration-500">
+                  <div className="mt-2 pt-2 border-t border-[#004aad]/10 group-hover:border-white/30 flex justify-between items-center relative z-10 transition-colors duration-500">
                     <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#004aad] group-hover:text-white transition-colors duration-500">
                       Access Resource
                     </span>

@@ -101,19 +101,7 @@ export default function RetainingWallComponent() {
             </motion.div>
           ))}
         </div>
-
-        {/* BOTTOM METRIC STRIP (Extraordinary Detail for 32") */}
-        <div className="mt-16 flex flex-wrap gap-12 opacity-30">
-          <div className="flex gap-4 items-center">
-            <ShieldCheck className="w-5 h-5 text-[#004aad]" />
-            <span className="font-mono text-[9px] tracking-widest uppercase text-[#004aad]">ASTM_C1776_COMPLIANT</span>
-          </div>
-          <div className="flex gap-4 items-center">
-            <Layers className="w-5 h-5 text-[#004aad]" />
-            <span className="font-mono text-[9px] tracking-widest uppercase text-[#004aad]">ISO_9001_FABRICATION</span>
-          </div>
-        </div>
-
+ 
       </div>
     </section>
   );

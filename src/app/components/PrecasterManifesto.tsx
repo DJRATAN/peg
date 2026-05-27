@@ -79,7 +79,7 @@ export default function PrecasterManifesto() {
               transition={{ delay: idx * 0.15 }}
               viewport={{ once: true }}
               // DEFAULT: PEG Dark Blue -> HOVER: PEG Bright Blue
-              className="group relative bg-[#004aad] hover:bg-[#1B79EE] p-12 transition-all duration-500 cursor-pointer flex flex-col h-full overflow-hidden shadow-[15px_15px_0px_#1B79EE] hover:shadow-[15px_15px_0px_#004aad]"
+              className="group relative bg-[#004aad] hover:bg-[#1B79EE] px-12 py-6 transition-all duration-500 cursor-pointer flex flex-col h-full overflow-hidden shadow-[15px_15px_0px_#1B79EE] hover:shadow-[15px_15px_0px_#004aad]"
             >
               
               {/* LARGE BACKGROUND WATERMARK */}
@@ -88,7 +88,7 @@ export default function PrecasterManifesto() {
               </div>
 
               {/* TOP HEADER: Icon & Label */}
-              <div className="flex justify-between items-start mb-16 relative z-10">
+              <div className="flex justify-between items-start mb-4 relative z-10">
                 <div className="text-white">
                   {item.icon}
                 </div>
@@ -113,7 +113,7 @@ export default function PrecasterManifesto() {
               </div>
 
               {/* ACTION FOOTER */}
-              <div className="mt-16 pt-8 border-t border-white/20 group-hover:border-white/40 flex justify-between items-center relative z-10 transition-colors duration-500">
+              <div className="mt-2 pt-4 border-t border-white/20 group-hover:border-white/40 flex justify-between items-center relative z-10 transition-colors duration-500">
                 <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">
                   Explore {item.title}
                 </span>

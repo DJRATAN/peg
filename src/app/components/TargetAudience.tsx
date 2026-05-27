@@ -46,7 +46,7 @@ export default function TargetAudience() {
       <div className="w-full px-10 md:px-20 py-16 relative z-10">
         
         {/* 1. HEADER SECTION (Using your exact phrasing) */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-24 gap-12">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-8 gap-12">
           
           <div className="space-y-6 max-w-4xl">
  
@@ -86,7 +86,7 @@ export default function TargetAudience() {
               transition={{ delay: idx * 0.1 }}
               viewport={{ once: true }}
               // CARD HOVER STATE: Default Dark Blue -> Hovers to Bright Blue
-              className="group relative bg-[#004aad] hover:bg-[#1B79EE] p-10 transition-all duration-500 cursor-pointer flex flex-col h-[450px] overflow-hidden shadow-lg shadow-[#004aad]/10 hover:shadow-[0_20px_50px_rgba(27,121,238,0.4)]"
+              className="group relative bg-[#004aad] hover:bg-[#1B79EE] px-10 py-6 transition-all duration-500 cursor-pointer flex flex-col h-[380px] overflow-hidden shadow-lg shadow-[#004aad]/10 hover:shadow-[0_20px_50px_rgba(27,121,238,0.4)]"
             >
               
               {/* LARGE BACKGROUND NUMBER */}
@@ -112,14 +112,6 @@ export default function TargetAudience() {
                 <p className="text-white/70 group-hover:text-white/90 text-sm leading-relaxed font-medium transition-colors duration-500">
                   {audience.description}
                 </p>
-              </div>
-
-              {/* ACTION FOOTER */}
-              <div className="mt-8 pt-6 border-t border-white/20 group-hover:border-white/40 flex justify-between items-center relative z-10 transition-colors duration-500">
-                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white">
-                  Identify Profile
-                </span>
-                <ArrowRight className="w-5 h-5 text-white transform group-hover:translate-x-2 transition-transform duration-500" />
               </div>
               
             </motion.div>
