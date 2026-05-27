@@ -24,61 +24,58 @@ const socialLinks = [
     { icon: FaLinkedinIn, href: "#" },
 ];
 export default function ExtraordinaryFooter() {
-    const marqueeLogos = [...logos, ...logos, ...logos];
     return (
 
-        <footer className="relative w-full bg-white border-t-2 border-slate-100 overflow-hidden select-none">
+        <footer className="relative w-full bg-[#004aad] text-white border-t-2 border-slate-100 overflow-hidden select-none">
 
             {/* 32-INCH FULL WIDTH CONTAINER */}
             <div className="w-full px-10 md:px-20 py-16">
-                <div className="w-full bg-white pb-10 overflow-hidden">
+                <div className="w-full bg-[#004aad] text-white pb-10 overflow-hidden">
                     <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
-                        {/* 1. LEFT: LOGO + ABOUT (Spans 3 Columns) */}
-                        <div className="lg:col-span-3 flex flex-col items-center lg:items-start space-y-6">
-                            <Image
-                                src="/PEG.png"
-                                alt="Precast Engineering Group"
-                                width={200}
-                                height={80}
-                                className="object-contain"
-                            />
-                            <p className="text-slate-500 font-medium text-sm leading-relaxed text-center lg:text-left max-w-xs">
-                                <strong className="text-[#004aad]">Precast Engineering Group (PEG)</strong> is the global authority dedicated to advancing structural precast technology, engineering, and manufacturing.
+                        {/* 1. LEFT: LOGO + ABOUT */}
+                        <div className="lg:col-span-3 flex flex-col items-center lg:items-start space-y-8">
+                            {/* BIG LOGO CONTAINER: White Background, Rounded, Increased Size */}
+                            <div className="bg-white p-4 rounded-md shadow-sm w-full max-w-[280px] flex items-center justify-center">
+                                <Image
+                                    src="/PEG.png"
+                                    alt="Precast Engineering Group"
+                                    width={280} // Increased width for "Big Logo"
+                                    height={100}
+                                    className="object-contain"
+                                    priority
+                                />
+                            </div>
+
+                            <p className="text-white/80 font-medium text-sm leading-relaxed text-center lg:text-left max-w-xs">
+                                <strong className="text-white">Precast Engineering Group (PEG)</strong> is the global authority dedicated to advancing structural precast technology, engineering, and manufacturing.
                             </p>
                         </div>
 
                         {/* 2. MIDDLE: HEADLINE + MARQUEE (Spans 6 Columns) */}
                         <div className="lg:col-span-6 flex flex-col items-center lg:border-x border-slate-100 px-0 lg:px-10">
 
-                            <h3 className="text-3xl font-black text-[#004aad] uppercase tracking-tighter mb-8 text-center">
+                            <h3 className="text-3xl font-black text-white uppercase tracking-tighter mb-8 text-center">
                                 Our Group Dedicated to Precast
                             </h3>
 
-                            <div className="relative w-full max-w-[800px] h-20 overflow-hidden">
-                                {/* Edge Blur Masks for smooth entry/exit */}
-                                <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-                                <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
-
-                                {/* Infinite Marquee Animation */}
-                                <motion.div
-                                    animate={{ x: ["0%", "-50%"] }}
-                                    transition={{
-                                        duration: 20,
-                                        ease: "linear",
-                                        repeat: Infinity,
-                                    }}
-                                    className="flex items-center h-full w-max"
-                                >
-                                    {[...marqueeLogos, ...marqueeLogos].map((logo, i) => (
-                                        <div key={i} className="px-8 shrink-0">
-                                            <div className="relative w-32 h-16 opacity-100 cursor-pointer">
-                                                <Image
-                                                    src={logo.src}
-                                                    alt={logo.alt}
-                                                    fill
-                                                    className="object-contain"
-                                                />
+                            <div className="relative w-full h-24 flex items-center justify-center">
+                                <motion.div className="flex items-center justify-center gap-4 h-full">
+                                    {logos.map((logo, i) => (
+                                        <div
+                                            key={i}
+                                            className="flex items-center justify-center shrink-0"
+                                        >
+                                            {/* FIXED WHITE CONTAINER: Same size for every logo */}
+                                            <div className="relative w-20 h-12 bg-white rounded-xl flex items-center justify-center  p-1 shadow-sm cursor-pointer hover:scale-110 transition-transform duration-300">
+                                                <div className="relative w-full h-full">
+                                                    <Image
+                                                        src={logo.src}
+                                                        alt={logo.alt}
+                                                        fill
+                                                        className="object-contain p-1"
+                                                    />
+                                                </div>
                                             </div>
                                         </div>
                                     ))}
@@ -86,29 +83,40 @@ export default function ExtraordinaryFooter() {
                             </div>
                         </div>
 
-                        {/* 3. RIGHT: SOCIAL ICONS (Spans 3 Columns) */}
-                        <div className="lg:col-span-3 flex flex-wrap justify-center lg:justify-end gap-3">
-                            {socialLinks.map((social, i) => {
-                                const Icon = social.icon;
-                                return (
-                                    <motion.a
-                                        key={i}
-                                        href={social.href}
-                                        whileHover={{ y: -5, backgroundColor: "#004aad", borderColor: "#004aad", color: "#ffffff" }}
-                                        className="p-4 border border-slate-200 text-[#004aad] transition-colors duration-300 flex items-center justify-center bg-slate-50"
-                                    >
-                                        <Icon className="w-5 h-5" />
-                                    </motion.a>
-                                );
-                            })}
+                        {/* 3. RIGHT: SOCIAL ICONS */}
+                        <div className="lg:col-span-3 flex items-center justify-center lg:justify-end">
+                            {/* flex-row ensures they stay in one line */}
+                            <div className="flex flex-row gap-3">
+                                {socialLinks.map((social, i) => {
+                                    const Icon = social.icon;
+                                    return (
+                                        <motion.a
+                                            key={i}
+                                            href={social.href}
+                                            // Same lift effect as the logos
+                                            whileHover={{ y: -4 }}
+                                            className="group relative"
+                                        >
+                                            {/* FIXED CIRCLE: 
+                        - Same size as logos (w-12 h-12)
+                        - White background
+                        - Hover effect turns it PEG Bright Blue
+                    */}
+                                            <div className="w-12 h-12 bg-white   flex items-center justify-center shadow-sm transition-all duration-300 group-hover:bg-[#1B79EE]">
+                                                <Icon className="w-5 h-5 text-[#004aad] group-hover:text-white transition-colors duration-300" />
+                                            </div>
+                                        </motion.a>
+                                    );
+                                })}
+                            </div>
                         </div>
 
                     </div>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-6 gap-1 border-b border-slate-100 pb-12 ">
+                <div className="grid grid-cols-2 md:grid-cols-6 gap-1 border-b mb-4 border-slate-100 pb-12 ">
                     {footerData.map((section, idx) => (
                         <div key={idx} className="flex flex-col gap-6">
-                            <h3 className="text-[#004aad] text-[11px] font-black uppercase tracking-[0.3em] flex items-center gap-2">
+                            <h3 className="text-white text-[11px] font-black uppercase tracking-[0.3em] flex items-center gap-2">
                                 <span className="w-2 h-2 bg-[#1B79EE]" />
                                 {section.title}
                             </h3>
@@ -120,8 +128,8 @@ export default function ExtraordinaryFooter() {
                                         whileHover={{ x: 5 }}
                                         className="group flex items-center gap-2 cursor-pointer"
                                     >
-                                        <Plus className="w-3 h-3 text-[#1B79EE] opacity-40 group-hover:opacity-100 group-hover:rotate-90 transition-all" />
-                                        <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider group-hover:text-[#004aad] transition-colors">
+                                        <Plus className="w-3 h-3 text-white opacity-40 group-hover:opacity-100 group-hover:rotate-90 transition-all" />
+                                        <span className="text-[11px] font-bold text-white/80 uppercase tracking-wider group-hover:text-white transition-colors">
                                             {link}
                                         </span>
                                     </motion.li>
@@ -133,11 +141,11 @@ export default function ExtraordinaryFooter() {
 
                 {/* BOTTOM BAR: LEGAL & STATUS */}
                 <div className=" flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div className="font-mono text-[9px] text-[#004aad] font-bold tracking-widest flex items-center gap-8   ">
+                    <div className="font-mono text-[9px] text-white/80 font-bold tracking-widest flex items-center gap-8   ">
                         <span>© 2026 PRECAST ENGINEERING GROUP</span>
                         <span className="hidden md:block w-[1px] h-3 bg-slate-200" />
-                        <span className="hover:text-[#1B79EE] cursor-pointer transition-colors uppercase">Privacy Policy</span>
-                        <span className="hover:text-[#1B79EE] cursor-pointer transition-colors uppercase">Terms of Service</span>
+                        <span className="hover:text-white cursor-pointer transition-colors uppercase">Privacy Policy</span>
+                        <span className="hover:text-white cursor-pointer transition-colors uppercase">Terms of Service</span>
                     </div>
 
                 </div>
