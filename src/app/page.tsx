@@ -27,14 +27,15 @@ export default function Home() {
   return (
     <main className="flex-1 flex flex-col items-center bg-slate-50">
       <HeroEngineering />
-      <FuturisticCTA />
+      <ResourceDirectory />
       <PrecasterManifesto />
+      <FuturisticCTA />
       <AdvancedEngineeringTech />
       <TargetAudience />
       <UnchallengedResources />
       <SeamlessConnection />
-      <TrenchingSystem/>
-      <RetainingWallComponent/>
+      <TrenchingSystem />
+      <RetainingWallComponent />
       <section id="portal" className="w-full bg-[#004aad] text-white overflow-hidden relative">
         <LoginGateway />
       </section>
@@ -43,7 +44,6 @@ export default function Home() {
         <GridContent />
       </section>
       {/* <RegistrationBanner txtSrc={'Register now to save projects, bookmark favorites, and get the most out of PEG'} btSrc="Join PEG" /> */}
-      <ResourceDirectory />
       {/* <RegistrationBanner txtSrc={'News and Updated Content'} btSrc="" /> */}
       {/* <BusinessPodcastSection/> */}
       <AgencySlider />

@@ -73,7 +73,7 @@ const GridContent = () => {
             <div className="w-full px-10 md:px-20 py-16">
 
                 {/* HIGH-IMPACT HEADER SECTION */}
-                <div className="mb-20 space-y-4">
+                <div className="mb-8 space-y-4">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -83,7 +83,7 @@ const GridContent = () => {
                         <span style={{ WebkitTextStroke: "1px #1B79EE", color: "transparent" }}>FOR THE WHOLE TEAM.</span>
                     </motion.h2>
 
-                    <div className="flex flex-col md:flex-row justify-between items-end gap-8 pt-10 border-t border-slate-100">
+                    <div className="flex flex-col md:flex-row justify-between items-end gap-8 pt-2 border-t border-slate-100">
                         <div className="max-w-2xl">
                             <h3 className="text-3xl font-black text-[#004aad] uppercase tracking-tight mb-4">
                                 What is Precast Engineering?
@@ -98,7 +98,7 @@ const GridContent = () => {
                 </div>
 
                 {/* HEADER: Brutalist Style */}
-                <div className="mb-16 border-l-8 border-[#1B79EE] pl-8">
+                <div className="mb-8 border-l-8 border-[#1B79EE] pl-8">
                     <p className="text-5xl md:text-7xl font-black text-[#004aad] tracking-tighter">
                         TECHNICAL <span style={{ WebkitTextStroke: "1px #1B79EE", color: "transparent" }}>SPECS.</span>
                     </p>
@@ -118,10 +118,10 @@ const GridContent = () => {
                                 transition: { duration: 0.3, ease: "circOut" }
                             }}
                             viewport={{ once: true }}
-                            className="relative border border-slate-200 p-10 flex flex-col h-full group cursor-pointer overflow-hidden"
+                            className="relative border border-slate-200 px-10 py-4 flex flex-col h-full group cursor-pointer overflow-hidden"
                         >
                             {/* Module Header */}
-                            <div className="flex justify-between items-start mb-12 relative z-10">
+                            <div className="flex justify-between items-start mb-4 relative z-10">
                                 <div className="p-4 bg-[#F1F5F9] text-[#1B79EE] group-hover:bg-white/20 group-hover:text-white transition-colors duration-300">
                                     {spec.icon}
                                 </div> 

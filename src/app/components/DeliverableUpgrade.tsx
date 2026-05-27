@@ -41,10 +41,10 @@ export default function DeliverableUpgrade() {
       {/* GLOWING ACCENT (Behind the grid) */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#1B79EE] rounded-full blur-[200px] opacity-30 pointer-events-none" />
 
-      <div className="w-full px-10 md:px-20 py-16 relative z-10 mx-auto">
+      <div className="w-full px-10 md:px-20 py-8 relative z-10 mx-auto">
         
         {/* 1. MASSIVE TYPOGRAPHY HEADER */}
-        <div className="max-w-5xl mb-24 space-y-6">
+        <div className="max-w-5xl mb-8 space-y-6">
           <h2 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9] uppercase">
             Upgrade your <br />
             {/* ONLY White and Bright Blue used here */}
@@ -68,7 +68,7 @@ export default function DeliverableUpgrade() {
               transition={{ delay: idx * 0.15 }}
               viewport={{ once: true }}
               // CARD BACKGROUND: White -> Hovers to PEG Bright Blue
-              className="group relative bg-white border border-[#004aad]/10 px-10 py-6 hover:bg-[#1B79EE] hover:border-[#1B79EE] hover:shadow-[0_20px_60px_rgba(27,121,238,0.5)] transition-all duration-500 cursor-pointer flex flex-col h-full overflow-hidden"
+              className="group relative bg-white border border-[#004aad]/10 px-10 py-2 hover:bg-[#1B79EE] hover:border-[#1B79EE] hover:shadow-[0_20px_60px_rgba(27,121,238,0.5)] transition-all duration-500 cursor-pointer flex flex-col h-full overflow-hidden"
             >
               
               {/* TOP STRIP */}
