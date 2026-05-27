@@ -18,10 +18,10 @@ export default function SeamlessConnection() {
         }}
       />
 
-      <div className="w-full px-10 md:px-20 py-16 relative z-10">
+      <div className="w-full px-10 md:px-20 pt-16 relative z-10">
         
         {/* HEADER SECTION */}
-        <div className="flex flex-col items-center text-center max-w-5xl mx-auto mb-24 space-y-8">
+        <div className="flex flex-col items-center text-center max-w-5xl mx-auto mb-12 space-y-8">
           
           <motion.div 
             initial={{ opacity: 0, y: 10 }}
@@ -81,15 +81,15 @@ export default function SeamlessConnection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="group bg-white border-2 border-[#004aad]/10 hover:border-[#1B79EE] hover:bg-[#1B79EE] p-10 xl:p-16 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(27,121,238,0.4)] flex flex-col items-center text-center"
+              className="group bg-white border-2 border-[#004aad]/10 hover:border-[#1B79EE] hover:bg-[#1B79EE] p-8 xl:p-6 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(27,121,238,0.4)] flex flex-col items-center text-center"
             >
-              <div className="w-24 h-24 rounded-full bg-[#004aad]/5 group-hover:bg-white flex items-center justify-center mb-8 transition-colors duration-500">
+              <div className="w-24 h-24 rounded-full bg-[#004aad]/5 group-hover:bg-white flex items-center justify-center mb-4 transition-colors duration-500">
                 <Monitor className="w-10 h-10 text-[#004aad] group-hover:text-[#1B79EE] transition-colors duration-500" />
               </div>
               <h3 className="text-3xl font-black text-[#004aad] group-hover:text-white uppercase tracking-tighter mb-4 transition-colors duration-500">
                 From Your Desk
               </h3>
-              <p className="text-[#1B79EE] group-hover:text-white font-black text-[10px] uppercase tracking-[0.2em] mb-6 transition-colors duration-500">
+              <p className="text-[#1B79EE] group-hover:text-white font-black text-[10px] uppercase tracking-[0.2em] mb-4 transition-colors duration-500">
                 Phase 01: Before Pouring
               </p>
               <p className="text-[#004aad]/80 group-hover:text-white/90 text-sm font-medium leading-relaxed transition-colors duration-500 max-w-sm">
@@ -103,9 +103,9 @@ export default function SeamlessConnection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
-              className="group bg-white border-2 border-[#004aad]/10 hover:border-[#1B79EE] hover:bg-[#1B79EE] p-10 xl:p-16 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(27,121,238,0.4)] flex flex-col items-center text-center"
+              className="group bg-white border-2 border-[#004aad]/10 hover:border-[#1B79EE] hover:bg-[#1B79EE] p-8 xl:p-6 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(27,121,238,0.4)] flex flex-col items-center text-center"
             >
-              <div className="w-24 h-24 rounded-full bg-[#004aad]/5 group-hover:bg-white flex items-center justify-center mb-8 transition-colors duration-500">
+              <div className="w-24 h-24 rounded-full bg-[#004aad]/5 group-hover:bg-white flex items-center justify-center mb-4 transition-colors duration-500">
                 <Factory className="w-10 h-10 text-[#004aad] group-hover:text-[#1B79EE] transition-colors duration-500" />
               </div>
               <h3 className="text-3xl font-black text-[#004aad] group-hover:text-white uppercase tracking-tighter mb-4 transition-colors duration-500">

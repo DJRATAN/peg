@@ -52,7 +52,7 @@ export default function TrenchingSystemScroll() {
         <motion.div style={{ x }} className="flex gap-8 items-center relative z-10">
           
           {/* INTRO BLOCK: THE MANIFESTO */}
-          <div className="flex h-[450px] w-[450px] shrink-0 flex-col justify-center p-12 bg-[#004aad] text-white relative shadow-xl">
+          <div className="flex h-[400px] w-[450px] shrink-0 flex-col justify-center p-12 bg-[#004aad] text-white relative shadow-xl">
             <div className="absolute top-0 left-0 w-2 h-full bg-[#1B79EE]" />
             <Waypoints className="w-10 h-10 text-[#1B79EE] mb-6" />
             <h3 className="text-5xl font-black uppercase tracking-tighter leading-[0.9] mb-6">
@@ -71,7 +71,7 @@ export default function TrenchingSystemScroll() {
             <motion.div
               key={item.id}
               whileHover={{ y: -10 }}
-              className={`group relative h-[450px] w-[350px] shrink-0 border transition-all duration-500 overflow-hidden
+              className={`group relative h-[400px] w-[350px] shrink-0 border transition-all duration-500 overflow-hidden
                 ${item.isPrimary 
                   ? 'bg-[#1B79EE] border-[#1B79EE] text-white shadow-[0_20px_50px_rgba(27,121,238,0.3)]' 
                   : 'bg-white border-[#004aad]/10 text-[#004aad] hover:border-[#1B79EE] hover:shadow-[0_20px_50px_rgba(0,74,173,0.1)]'
@@ -127,7 +127,7 @@ export default function TrenchingSystemScroll() {
           ))}
 
           {/* FINAL ACTION BLOCK */}
-          <div className="flex h-[450px] w-[400px] shrink-0 flex-col items-center justify-center p-10 bg-white border-2 border-dashed border-[#1B79EE] relative">
+          <div className="flex h-[400px] w-[400px] shrink-0 flex-col items-center justify-center p-10 bg-white border-2 border-dashed border-[#1B79EE] relative">
              <Zap className="w-12 h-12 text-[#1B79EE] mb-6 animate-pulse" />
              <h3 className="text-3xl font-black text-[#004aad] text-center uppercase tracking-tighter leading-none mb-4">
                 Scalable <br /> Systems.

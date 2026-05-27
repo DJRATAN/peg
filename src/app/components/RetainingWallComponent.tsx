@@ -25,7 +25,7 @@ const wallSystems = [
 
 export default function RetainingWallComponent() {
   return (
-    <section className="w-full py-24 bg-slate-50 px-10 md:px-20 overflow-hidden">
+    <section className="w-full bg-slate-50 px-10 md:px-20 overflow-hidden">
       <div className="max-w-[1800px] mx-auto">
         
         {/* HEADER: Technical Alignment */}

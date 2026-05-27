@@ -27,7 +27,7 @@ const upgradeFeatures = [
 
 export default function DeliverableUpgrade() {
   return (
-    <section className="relative w-full py-32 bg-[#004aad] text-white overflow-hidden">
+    <section className="relative w-full bg-[#004aad] text-white overflow-hidden">
       
       {/* BACKGROUND BLUEPRINT GRID */}
       <div 
@@ -53,7 +53,7 @@ export default function DeliverableUpgrade() {
             </span>
           </h2>
           
-          <p className="text-xl md:text-2xl text-white/80 font-medium max-w-3xl leading-relaxed mt-8 border-l-4 border-[#1B79EE] pl-6">
+          <p className="text-xl md:text-2xl text-white/80 font-medium max-w-3xl leading-relaxed mt-2 border-l-4 border-[#1B79EE] pl-6">
             Stop losing time on revisions. Elevate your production pipeline with bulletproof submittals, hyper-accurate illustrations, and non-stop code compliance.
           </p>
         </div>
@@ -68,11 +68,11 @@ export default function DeliverableUpgrade() {
               transition={{ delay: idx * 0.15 }}
               viewport={{ once: true }}
               // CARD BACKGROUND: White -> Hovers to PEG Bright Blue
-              className="group relative bg-white border border-[#004aad]/10 p-10 hover:bg-[#1B79EE] hover:border-[#1B79EE] hover:shadow-[0_20px_60px_rgba(27,121,238,0.5)] transition-all duration-500 cursor-pointer flex flex-col h-full overflow-hidden"
+              className="group relative bg-white border border-[#004aad]/10 px-10 py-6 hover:bg-[#1B79EE] hover:border-[#1B79EE] hover:shadow-[0_20px_60px_rgba(27,121,238,0.5)] transition-all duration-500 cursor-pointer flex flex-col h-full overflow-hidden"
             >
               
               {/* TOP STRIP */}
-              <div className="flex justify-between items-start mb-16 relative z-10">
+              <div className="flex justify-between items-start mb-8 relative z-10">
                 {/* ICON BOX: Dark Blue -> Hovers to White */}
                 <div className="p-5 bg-[#004aad] text-white group-hover:bg-white group-hover:text-[#1B79EE] transition-all duration-500 group-hover:-translate-y-2 group-hover:rotate-6 group-hover:shadow-[0_10px_20px_rgba(0,0,0,0.15)]">
                   {feature.icon}
@@ -86,7 +86,7 @@ export default function DeliverableUpgrade() {
                   {feature.subtitle}
                 </p>
                 {/* Title: Dark Blue -> Hovers to White */}
-                <h3 className="text-[#004aad] group-hover:text-white text-3xl font-black uppercase tracking-tighter mb-6 leading-none transition-colors duration-500">
+                <h3 className="text-[#004aad] group-hover:text-white text-3xl font-black uppercase tracking-tighter mb-3 leading-none transition-colors duration-500">
                   {feature.title}
                 </h3>
                 {/* Description: Dark Blue faded -> Hovers to White faded */}
@@ -97,7 +97,7 @@ export default function DeliverableUpgrade() {
 
               {/* ACTION FOOTER */}
               {/* Border: Dark Blue faded -> Hovers to White faded */}
-              <div className="mt-12 pt-6 border-t border-[#004aad]/10 group-hover:border-white/30 flex justify-between items-center relative z-10 transition-colors duration-500">
+              <div className="mt-4 pt-4 border-t border-[#004aad]/10 group-hover:border-white/30 flex justify-between items-center relative z-10 transition-colors duration-500">
                 <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#004aad] group-hover:text-white opacity-0 group-hover:opacity-100 transition-all duration-500">
                   Initialize Upgrade
                 </span>
