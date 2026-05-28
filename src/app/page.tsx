@@ -23,12 +23,14 @@ import SeamlessConnection from "./components/SeamlessConnection";
 import TrenchingSystem from "./components/TrenchingSystem";
 import RetainingWallComponent from "./components/RetainingWallComponent";
 import MarinaSystemComponent from "./components/MarinaSystemComponent";
+import SponsorMarquee from "./components/SponsorMarquee";
 
 export default function Home() {
   return (
     <main className="flex-1 flex flex-col items-center bg-slate-50">
       <HeroEngineering />
       <ResourceDirectory />
+      <SponsorMarquee />
       <PrecasterManifesto />
       <FuturisticCTA />
       <AdvancedEngineeringTech />
