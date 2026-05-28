@@ -44,12 +44,12 @@ export default function MarinaSystemComponent() {
               FLOATING <br />
               <span className="text-[#1B79EE]">MARINAS.</span>
             </h2>
-            <p className="text-slate-500 font-medium text-lg leading-relaxed max-w-md">
+            <p className="text-[#004aad]/70 font-medium text-lg leading-relaxed max-w-md">
               Engineered for the harshest marine environments. Our precast floating docks redefine durability through hydro-dynamic design and carbon-fiber reinforcement.
             </p>
           </div>
 
-          <div className="space-y-8 bg-slate-50 p-10 border-l-8 border-[#004aad]">
+          <div className="space-y-8 bg-[#004aad]/5 p-10 border-l-8 border-[#004aad]">
             {marinaSpecs.map((spec, i) => (
               <div key={i} className="flex gap-6 group">
                 <div className="text-[#1B79EE] shrink-0">{spec.icon}</div>
@@ -57,7 +57,7 @@ export default function MarinaSystemComponent() {
                   <h4 className="text-[#004aad] font-black text-xs uppercase tracking-[0.2em] mb-2 flex items-center gap-3">
                     {spec.title}
                   </h4>
-                  <p className="text-slate-500 text-sm leading-relaxed">{spec.detail}</p>
+                  <p className="text-[#004aad]/70 text-sm leading-relaxed">{spec.detail}</p>
                 </div>
               </div>
             ))}
@@ -67,38 +67,51 @@ export default function MarinaSystemComponent() {
         {/* RIGHT COLUMN: The "Visual Component Hub" (Occupies 7/12 columns) */}
         <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
           
-          {/* Main Visual Card */}
+          {/* Main Visual Card - Embedded Video System */}
           <motion.div 
             whileHover={{ y: -10 }}
-            className="md:col-span-2 relative aspect-video bg-[#004aad] overflow-hidden group border border-slate-200"
+            className="md:col-span-2 relative aspect-video bg-[#004aad] overflow-hidden group border border-[#004aad]/10"
           >
-            {/* Image Placeholder - Replace with your 3D Render of Marina */}
-            <div className="absolute inset-0 bg-slate-800 opacity-40 mix-blend-multiply" />
-            <div className="absolute inset-0 flex flex-col justify-end p-12 text-white">
+            {/* BACKGROUND VIDEO INTERFACE */}
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover z-0"
+            >
+              <source src="/assets/video/MARINE PRODUCT/MARINE PRODUCT.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            {/* Overlapping Identity Tint Matrix */}
+            <div className="absolute inset-0 bg-[#004aad]/40 mix-blend-multiply z-10 group-hover:opacity-30 transition-opacity duration-500" />
+            
+            {/* Content Layers */}
+            <div className="absolute inset-0 flex flex-col justify-end p-12 text-white z-20">
               <div className="flex justify-between items-end">
                 <div>
                   <h3 className="text-4xl font-black uppercase tracking-tighter">Monolithic Concrete Pontoons</h3>
                 </div>
-                <div className="p-4 rounded-full border border-white/20 group-hover:bg-[#1B79EE] group-hover:border-[#1B79EE] transition-all">
+                <div className="p-4 rounded-full border border-white/20 bg-[#004aad]/40 group-hover:bg-[#1B79EE] group-hover:border-[#1B79EE] transition-all">
                   <ArrowUpRight className="w-6 h-6" />
                 </div>
               </div>
             </div>
-            {/* Decorative waves */}
-            <Waves className="absolute top-10 right-10 w-32 h-32 text-white/5 opacity-20 rotate-12" />
+            
+            {/* Decorative waves overlaying video depth */}
+            <Waves className="absolute top-10 right-10 w-32 h-32 text-white/5 opacity-20 rotate-12 z-10" />
           </motion.div>
 
           {/* Secondary Sub-Modules */}
-          <div className="bg-white border-2 border-[#004aad] p-8 flex flex-col justify-between hover:bg-slate-50 transition-colors group">
+          <div className="bg-white border-2 border-[#004aad] p-8 flex flex-col justify-between hover:bg-[#004aad]/5 transition-colors group">
              <Anchor className="w-10 h-10 text-[#1B79EE] mb-6" />
              <h4 className="text-2xl font-black text-[#004aad] uppercase tracking-tighter">Anchoring <br />Systems</h4>
-             <p className="text-xs text-slate-400 mt-4 uppercase font-bold tracking-widest group-hover:text-[#1B79EE]">Deploy_Auto_Anchor</p>
           </div>
 
           <div className="bg-[#1B79EE] p-8 flex flex-col justify-between text-white hover:bg-[#004aad] transition-colors group">
              <Navigation className="w-10 h-10 text-white mb-6" />
              <h4 className="text-2xl font-black uppercase tracking-tighter">Modular <br />Expansion</h4>
-             <p className="text-xs text-white/50 mt-4 uppercase font-bold tracking-widest group-hover:text-white">Scalable_Grid_Ready</p>
           </div>
 
         </div>

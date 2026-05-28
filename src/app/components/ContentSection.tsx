@@ -10,7 +10,7 @@ export const ContentSection = () => {
       <div className="">
         
         {/* HEADER: Massive Structural Typography */}
-        <div className="mb-20 space-y-6">
+        <div className="mb-4 space-y-6">
  
           <h2 className="text-6xl md:text-8xl font-black text-[#004aad] tracking-tighter leading-[0.9] uppercase">
             SOLUTIONS FOR <br />
@@ -25,7 +25,7 @@ export const ContentSection = () => {
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            className="lg:col-span-5 bg-[#004aad] text-white p-12 md:p-16 flex flex-col justify-between relative overflow-hidden group"
+            className="lg:col-span-5 bg-[#004aad] text-white px-12 py-6 md:px-16 md:py-8 flex flex-col justify-between relative overflow-hidden group"
           >
             {/* Background Grid Pattern */}
             <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{ backgroundImage: `radial-gradient(#ffffff 1px, transparent 1px)`, backgroundSize: '24px 24px' }} />

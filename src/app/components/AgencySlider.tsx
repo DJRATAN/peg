@@ -12,7 +12,7 @@ const AGENCIES = Array.from({ length: 50 }).map((_, i) => ({
 export default function FullWidthAgencySlider() {
   return (
     /* overflow-x-hidden on the section prevents the scrollbar entirely */
-    <section className="relative w-full py-24 bg-[#F5F5F5] overflow-x-hidden select-none">
+    <section className="relative w-full   bg-[#F5F5F5] overflow-x-hidden select-none">
       
       {/* 1. HEADER: FULL WIDTH WITH PADDING */}
       <div className="w-full px-10 md:px-20 py-16">

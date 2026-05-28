@@ -22,6 +22,7 @@ import UnchallengedResources from "./components/UnchallengedResources";
 import SeamlessConnection from "./components/SeamlessConnection";
 import TrenchingSystem from "./components/TrenchingSystem";
 import RetainingWallComponent from "./components/RetainingWallComponent";
+import MarinaSystemComponent from "./components/MarinaSystemComponent";
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
       <SeamlessConnection />
       <TrenchingSystem />
       <RetainingWallComponent />
+      <MarinaSystemComponent />
       <section id="portal" className="w-full bg-[#004aad] text-white overflow-hidden relative">
         <LoginGateway />
       </section>
