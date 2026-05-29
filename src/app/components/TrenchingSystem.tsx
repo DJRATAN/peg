@@ -62,7 +62,7 @@ export default function StaticTrenchingGrid() {
         {/* SECTION HEADER: Title + Manifesto */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center border-b border-[#004aad]/5 pb-16">
           <div className="md:col-span-5">
-            <h3 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.9] text-[#004aad]">
+            <h3 className="text-6xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] text-[#004aad]">
               Trenching <br /> Systems.
             </h3>
           </div>
