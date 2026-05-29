@@ -115,7 +115,7 @@ export const Navbar = () => {
           <div className="uppercase hidden md:block">|</div>
           <div className="hidden md:block">peg.com</div>
         </div>
-        <div className="h-full flex justify-end items-center gap-6 text-[11px] font-bold tracking-wider">
+        <div className="h-full flex justify-end items-center gap-6 pr-14 xl:pr-0 text-[11px] font-bold tracking-wider">
 
           <Link href={'#portal'}>
             <button className="flex items-center gap-1 hover:cursor-pointer transition-colors uppercase">
